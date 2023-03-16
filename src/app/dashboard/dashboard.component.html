@@ -439,7 +439,8 @@ padding-left: 10px;">
                                                                 </div>
                                                                 <div class="col-xs-10 text-right">
                                                                     <div class="huge">
-                                                                        <h3 class="PancardStatus">Confirmed</h3>
+                                                                        <h3 class="PancardStatus" *ngIf="pancard_status == 'CONFIRMED'">Confirmed</h3>
+                                                                        <h3 class="PancardStatus" *ngIf="pancard_status != 'CONFIRMED'">Not Confirmed</h3>
                                                                     </div>
                                                                     <div>
                                                                         <h5>My Pancard</h5>
@@ -472,7 +473,8 @@ padding-left: 10px;">
                                                                 </div>
                                                                 <div class="col-xs-10 text-right">
                                                                     <div class="huge">
-                                                                        <h3 id="KycDocumentStatus">Completed</h3>
+                                                                        <h3 id="KycDocumentStatus" *ngIf="front_adhar_status == 'CONFIRMED' && back_adhar_status == 'CONFIRMED' && pancard_status == 'CONFIRMED' && profile_status =='CONFIRMED' && cancelled_check_status=='CONFIRMED'">Completed</h3>
+                                                                        <h3 id="KycDocumentStatus" *ngIf="front_adhar_status != 'CONFIRMED' || back_adhar_status != 'CONFIRMED' || pancard_status != 'CONFIRMED' || profile_status !='CONFIRMED' || cancelled_check_status!='CONFIRMED'">Not Completed</h3>
                                                                     </div>
                                                                     <div>
                                                                         <h5>KYC Status</h5>
