@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: #1F1F1F;
+    overflow-x: hidden;
+}
+@media screen and (max-width:991px) {
+    .content-inner-all{
+        margin-left: 0 !important;
+         transition: all 0.3s;
+    }
+  }
+  @media screen and (min-width:991px) {
+    .content-inner-all{
+         margin-top: -11vh !important;
+     }
+  }

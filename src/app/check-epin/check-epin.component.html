@@ -1,0 +1,160 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <style>
+                            @media all and (min-width: 320px) and (max-width:980px) {
+                                #dvAlign {
+                                    text-align: center !important;
+                                }
+                            }
+
+                            #dvAlign {
+                                text-align: left;
+                            }
+                        </style>
+                        <br>
+                        <link href="/content/treeview/mytreestyle.css" rel="stylesheet">
+                        <form action="/Epin/CheckEpin" method="post" (ngSubmit)=" checkPassword()"><input name="__RequestVerificationToken"
+                                type="hidden"
+                                value="v_zvF5Aj1btuvZXIonAp-PknqKNm5V8PkGHhFGVpSCX5yQbRvezYyr5yDqKd_hHt-Z6M2rle-BAWs7LOUuZRBhv8P7UcCist6tMBnMWgPpo1">
+                            <div class="sparkline9-list shadow-reset">
+                                <div class="sparkline9-hd">
+                                    <div class="main-sparkline16-hd">
+                                        <h1>Generate E-Pin</h1>
+                                    </div>
+                                </div>
+
+                                <div class="sparkline9-graph">
+                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+
+                                                <div class="all-form-element-inner">
+
+                                                    <div style="text-align:center;">
+
+                                                    </div>
+                                                    <div id="result"><span class="field-validation-valid"
+                                                            data-valmsg-for="result" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="SerialNo">Mobile No</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input class="form-control" id="txtSerialNo"
+                                                                    name="SerialNo" type="text" value="" [(ngModel)] = "phone_no">
+                                                                <span class="field-validation-valid"
+                                                                    data-valmsg-for="SerialNo"
+                                                                    data-valmsg-replace="true"></span>
+                                                            </div>
+                                                            <div class="col-md-1" id="requiedAttricSymbol">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <div class="form-group-inner my-5"> -->
+                                                        <div class="form-group-inner">
+
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="SecretCode">Password</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input class="form-control" id="txtSecretCode"
+                                                                    name="SecretCode" type="text" value="" [(ngModel)] = "password">
+                                                                <span class="field-validation-valid"
+                                                                    data-valmsg-for="SecretCode"
+                                                                    data-valmsg-replace="true"></span>
+                                                            </div>
+                                                            <div class="col-md-1" id="requiedAttricSymbol">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="login-horizental cancel-wp align-middle">
+
+                                            <button type="submit" class="btn btn-custon-four btn-primary"
+                                                id="ChkPin-button" name="ChkPin-button" tabindex="2">  Generate E-pin</button>
+                                            <!-- <button type="button" class="btn btn-custon-four btn-warning" id="btnreset"
+                                                tabindex="1"><i class="fa fa-refresh"></i> Reset</button> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="sparkline16-list shadow-reset" id="dvHideForReadyPosition"
+                                style="display: none;">
+                                <div class="sparkline16-hd">
+                                    <div class="main-sparkline16-hd">
+                                        <h1>E-pin Info</h1>
+                                    </div>
+                                </div>
+                                <div class="sparkline16-graph">
+                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="all-form-element-inner">
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="CurrentOwner">Current Owner</label>
+                                                            </div>
+                                                            <div class="col-md-6" id="dvAlign">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="Expiry">Expiry</label>
+                                                            </div>
+                                                            <div class="col-md-6" id="dvAlign">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="Status">Status</label>
+                                                            </div>
+                                                            <div class="col-md-6" id="dvAlign">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="e1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

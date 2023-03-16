@@ -1,0 +1,363 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area" style="user-select: text;">
+            <div class="container-fluid" style="user-select: text;">
+                <div class="row" style="user-select: text;">
+                    <div class="col-lg-12" style="user-select: text;">
+
+                        <form action="/ComposeMessage" method="post" style="user-select: text;" (ngSubmit)="onSubmit()"
+                            #myForm="ngForm">
+                            <input name="__RequestVerificationToken" type="hidden"
+                                value="FZHYy8HqAdW-0d7YFRAPzXXYWD1kw5FrhuzsZFszAT4GUVHlQa9LkCpwdlLF6hdw4rDSs4YIlw5wmy5rFIF9nlKWItVnRSqpMfvolpKqyyg1"
+                                style="user-select: text;"><input id="SelectedIds" name="SelectedIds" type="hidden"
+                                value="" style="user-select: text;">
+                            <div class="result" style="text-align: center; user-select: text;">
+                            </div>
+                            <br style="user-select: text;">
+                            <div class="sparkline16-list shadow-reset" style="user-select: text;">
+
+                                <div class="sparkline16-hd" style="user-select: text;">
+                                    <div class="main-sparkline16-hd" style="user-select: text;">
+                                        <h1 style="visibility: hidden; user-select: text;">Compose Message</h1>
+                                        <div class="sparkline16-outline-icon" style="user-select: text;">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                    <div class="sparkline16-graph" style="user-select: text;">
+                                        <div id="ScrollableDiv" style="user-select: text;">
+                                            <div class="datatable-dashv1-list custom-datatable-overright"
+                                                id="ScrollableDiv111" style="user-select: text;">
+                                                <br style="user-select: text;">
+
+                                                <style style="user-select: text;">
+                                                    .ccMenu a {
+                                                        /*padding: 15px;
+                                                         padding: 15px;*/
+                                                        /*display: block;*/
+                                                        /*width: 125%;*/
+                                                        font-size: 1em !important;
+                                                        text-align: left;
+                                                        display: inline-block;
+                                                        max-width: 100%;
+                                                        margin-bottom: 1%;
+                                                    }
+
+                                                    .ccMenu {
+                                                        /*display: inline-block;*/
+                                                        width: 100%;
+                                                    }
+                                                </style>
+
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="text-align: center; user-select: text;">
+                                                    <ul class="ccMenu" style="user-select: text;">
+                                                        <li style="user-select: text;">
+
+                                                            <a href="/Inbox" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+
+                                                                <i class="fa-solid fa-inbox"></i>
+                                                                <!-- <i class="fa fa-inbox" style="user-select: text;"></i> -->
+                                                                Inbox
+                                                            </a>
+                                                            <a href="/ComposeMessage"
+                                                                class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-message"></i>
+                                                                Compose Message
+                                                            </a>
+                                                            <a href="/Sent" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-envelope-circle-check"></i>
+                                                                Sent
+                                                            </a>
+                                                            <!-- <a href="/Folders" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-folder-closed"></i>
+                                                                Folders
+                                                            </a> -->
+
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br id="hideshowbr" style="user-select: text;">
+                            <div class="page account-page return-request-list-page " style="user-select: text;">
+
+
+                                <div class="page registration-result-page" style="user-select: text;">
+                                    <div class="page-body" style="user-select: text;">
+
+
+                                        <div class="customer-blocks" style="user-select: text;">
+                                            <div class="panel panel-default" style="user-select: text;">
+
+
+                                                <div class="sparkline13-list shadow-reset" style="user-select: text;">
+                                                    <!-- <div class="sparkline13-hd" style="user-select: text;">
+                                                        <div class="main-sparkline13-hd" style="user-select: text;">
+                                                            <h1 style="user-select: text;">Filter Options</h1>
+                                                            <div class="sparkline13-outline-icon"
+                                                                style="user-select: text;">
+                                                                <span class="sparkline13-collapse-link"
+                                                                    style="user-select: text;"><i
+                                                                        class="fa fa-chevron-up"
+                                                                        style="user-select: text;"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="sparkline13-graph" style="user-select: text;">
+                                                        <div class="datatable-dashv1-list custom-datatable-overright"
+                                                            style="user-select: text;">
+                                                            <div class="basic-login-form-ad" style="user-select: text;">
+                                                                <div class="row" style="user-select: text;">
+                                                                    <div class="col-lg-12" style="user-select: text;">
+                                                                        <div class="all-form-element-inner"
+                                                                            style="user-select: text;">
+                                                                            <br style="user-select: text;">
+                                                                            <div class="form-group-inner"
+                                                                                style="user-select: text;">
+                                                                                <div class="row"
+                                                                                    style="user-select: text;">
+                                                                                    <div class="col-md-4"
+                                                                                        style="user-select: text;">
+                                                                                        <label for="MessageTo"
+                                                                                            style="user-select: text;">Message
+                                                                                            to</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-6"
+                                                                                        style="user-select: text;">
+                                                                                        <select class="form-control"
+                                                                                            id="MessageTo"
+                                                                                            name="MessageTo"
+                                                                                            style="user-select: text;">
+                                                                                            <option selected="selected"
+                                                                                                value="0"
+                                                                                                style="user-select: text;">
+                                                                                                Admin
+                                                                                            </option>
+                                                                                            <option value="2"
+                                                                                                style="user-select: text;">
+                                                                                                Downline ID(s)</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+
+
+
+                                                                            <div class="login-horizental cancel-wp align-middle"
+                                                                                style="user-select: text;">
+
+                                                                                <button type="submit"
+                                                                                    id="Search-ComposeMessageGrid"
+                                                                                    name="Search-ComposeMessageGrid"
+                                                                                    class="btn btn-custon-four btn-primary"
+                                                                                    style="user-select: text;"><i
+                                                                                        class="fa fa-search"
+                                                                                        style="user-select: text;"></i>
+                                                                                    Search</button>
+                                                                                <button type="button" id="btnreset"
+                                                                                    class="btn btn-custon-four btn-warning"
+                                                                                    style="user-select: text;"><i
+                                                                                        class="fa fa-refresh"
+                                                                                        style="user-select: text;"></i>
+                                                                                    Reset
+                                                                                </button>
+                                                                            </div>
+
+
+
+
+
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <br style="user-select: text;">
+
+
+
+
+                                                <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                                    <div class="sparkline16-hd" style="user-select: text;">
+                                                        <div class="main-sparkline16-hd" style="user-select: text;">
+                                                            <h1 style="text-align: left; user-select: text;">Compose
+                                                                Message
+                                                            </h1>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="sparkline16-list shadow-reset"
+                                                        style="user-select: text;">
+                                                        <div class="sparkline16-graph" style="user-select: text;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="sparkline16-graph" style="user-select: text;">
+                                                    <div class="datatable-dashv1-list custom-datatable-overright"
+                                                        style="user-select: text;">
+                                                        <div class="basic-login-form-ad" style="user-select: text;">
+                                                            <div class="row" style="user-select: text;">
+                                                                <div class="col-lg-12" style="user-select: text;">
+                                                                    <div class="all-form-element-inner"
+                                                                        style="user-select: text;">
+
+
+                                                                        <div class="form-group-inner"
+                                                                            style="user-select: text;">
+
+
+                                                                            <div class="row" style="user-select: text;">
+                                                                                <div class="col-md-4"
+                                                                                    style="user-select: text;">
+                                                                                    <label for="ComposeMsgSubject"
+                                                                                        style="user-select: text;">Enter
+                                                                                        Subject:</label>
+                                                                                </div>
+                                                                                <div class="col-md-6"
+                                                                                    style="user-select: text;">
+                                                                                    <input class="form-control"
+                                                                                        type="text"
+                                                                                        [(ngModel)]="formData.subject"
+                                                                                        id="subject" name="subject"
+                                                                                        type="text" value=""
+                                                                                        style="user-select: text;"
+                                                                                        required>
+
+                                                                                    <span class="field-validation-valid"
+                                                                                        data-valmsg-for="ComposeMsgSubject"
+                                                                                        data-valmsg-replace="true"
+                                                                                        style="user-select: text;"></span>
+                                                                                </div>
+                                                                                <div class="col-md-1"
+                                                                                    id="requiedAttricSymbol"
+                                                                                    style="user-select: text;">
+                                                                                    <span class="required"
+                                                                                        style="user-select: text;">*</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="form-group-inner"
+                                                                            style="user-select: text;">
+                                                                            <div class="row" style="user-select: text;">
+                                                                                <div class="col-md-4"
+                                                                                    style="user-select: text;">
+                                                                                    <label for="Body"
+                                                                                        style="user-select: text;">Enter
+                                                                                        Message</label>
+                                                                                </div>
+                                                                                <div class="col-md-6"
+                                                                                    style="user-select: text;">
+                                                                                    <textarea class="form-control"
+                                                                                        cols="20" id="message"
+                                                                                        maxlength="300" name="message"
+                                                                                        [(ngModel)]="formData.message"
+                                                                                        rows="2"
+                                                                                        style="user-select: text;"
+                                                                                        required></textarea>
+                                                                                    <span class="field-validation-valid"
+                                                                                        data-valmsg-for="Body"
+                                                                                        data-valmsg-replace="true"
+                                                                                        style="user-select: text;"></span>
+                                                                                    <div class="inputs"
+                                                                                        style="text-align: center; user-select: text;">
+                                                                                        <span id="charsLeft"
+                                                                                            style="user-select: text;"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-1"
+                                                                                    id="requiedAttricSymbol"
+                                                                                    style="user-select: text;">
+                                                                                    <span class="required"
+                                                                                        style="user-select: text;">*</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="login-horizental cancel-wp align-middle"
+                                                                            style="padding-bottom: 3%; user-select: text;">
+
+                                                                            <button type="submit"
+                                                                                id="Send-ComposeMessage"
+                                                                                name="Send-ComposeMessage"
+                                                                                class="btn btn-sm btn-primary login-submit-cs"
+                                                                                style="user-select: text;"><i
+                                                                                    class="fa-regular fa-paper-plane"></i>
+                                                                                Send
+                                                                                Message</button>
+
+                                                                            <p class="mx-3 my-2 green">{{sms}}</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br style="user-select: text;">
+                        </form>
+
+
+                        <ul>
+                            <li *ngFor="let msg of msgs | async" class="text-white">
+                                {{ msg.subject }} - {{ msg.message }}
+                            </li>
+                        </ul>
+
+                        <script style="user-select: text;">
+                            window.onbeforeunload = function () {
+                                var buttons = document.getElementsByTagName("BUTTON");
+                                for (var i in buttons) {
+                                    if (buttons[i].type == "button" || buttons[i].type == "submit") {
+                                        buttons[i].disabled = true;
+                                    }
+                                }
+                            };
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

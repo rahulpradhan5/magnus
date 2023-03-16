@@ -1,0 +1,169 @@
+<div class="row" >
+    <div class="col">
+<app-side-menu></app-side-menu>
+    </div>
+</div>
+
+<div class="admin-dashone-data-table-area" style="user-select: text;">
+    <div class="container-fluid" style="user-select: text;">
+        <div class="row" style="user-select: text;">
+            <div class="col-lg-12" style="user-select: text;">
+
+                <style style="user-select: text;">
+                    @media all and (min-width: 320px) and (max-width:980px) {
+                        #dvAlign {
+                            text-align: center !important;
+                        }
+                    }
+
+                    #dvAlign {
+                        text-align: left;
+                    }
+                </style>
+                <br style="user-select: text;">
+                <link href="/content/treeview/mytreestyle.css" rel="stylesheet" style="user-select: text;">
+                <form action="/Epin/CheckEpin" method="post" style="user-select: text;"><input name="__RequestVerificationToken" type="hidden" value="ZmWob0cH1KhjLdirOnGE-TjH6U2Bz_PqUOfJKS1j_tQhoUejY_hRerhvIeYFlXPyTVfMYdrFyPmFh31juSrSGNMyYn16jWjqwTu013IqNyQ1" style="user-select: text;">
+                    <div class="sparkline9-list shadow-reset" style="user-select: text;">
+                        <div class="sparkline9-hd" style="user-select: text;">
+                            <div class="main-sparkline16-hd" style="user-select: text;">
+                                <h1 style="user-select: text;">Check E-Pin</h1>
+                            </div>
+                        </div>
+
+                        <div class="sparkline9-graph" style="user-select: text;">
+                            <div class="datatable-dashv1-list custom-datatable-overright" style="user-select: text;">
+                                <div class="row" style="user-select: text;">
+                                    <div class="col-lg-12" style="user-select: text;">
+
+                                        <div class="all-form-element-inner" style="user-select: text;">
+
+                                            <div style="text-align: center; user-select: text;">
+
+                                            </div>
+                                            <div id="result" style="user-select: text;"><span class="field-validation-valid" data-valmsg-for="result" data-valmsg-replace="true" style="user-select: text;"></span></div>
+                                            <div class="form-group-inner" style="user-select: text;">
+                                                <div class="row" style="user-select: text;">
+                                                    <div class="col-md-4" style="user-select: text;">
+                                                        <label for="SerialNo" style="user-select: text;">Serial No</label>
+                                                    </div>
+                                                    <div class="col-md-6" style="user-select: text;">
+                                                        <input class="form-control" id="txtSerialNo" name="SerialNo" type="text" value="" style="user-select: text;">
+                                                        <span class="field-validation-valid" data-valmsg-for="SerialNo" data-valmsg-replace="true" style="user-select: text;"></span>
+                                                    </div>
+                                                    <div class="col-md-1" id="requiedAttricSymbol" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-inner" style="user-select: text;">
+                                                <div class="row" style="user-select: text;">
+                                                    <div class="col-md-4" style="user-select: text;">
+                                                        <label for="SecretCode" style="user-select: text;">Secret Code</label>
+                                                    </div>
+                                                    <div class="col-md-6" style="user-select: text;">
+                                                        <input class="form-control" id="txtSecretCode" name="SecretCode" type="text" value="" style="user-select: text;">
+                                                        <span class="field-validation-valid" data-valmsg-for="SecretCode" data-valmsg-replace="true" style="user-select: text;"></span>
+                                                    </div>
+                                                    <div class="col-md-1" id="requiedAttricSymbol" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="login-horizental cancel-wp align-middle" style="user-select: text;">
+
+                                    <button type="submit" class="btn btn-custon-four btn-primary" id="ChkPin-button" name="ChkPin-button" tabindex="2" style="user-select: text;"><i class="fa fa-search" style="user-select: text;"></i> Search</button>
+                                    <button type="button" class="btn btn-custon-four btn-warning" id="btnreset" tabindex="1" style="user-select: text;"><i class="fa fa-refresh" style="user-select: text;"></i>
+                                        Reset</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br style="user-select: text;">
+                    <div class="sparkline16-list shadow-reset" id="dvHideForReadyPosition" style="display: none; user-select: text;">
+                        <div class="sparkline16-hd" style="user-select: text;">
+                            <div class="main-sparkline16-hd" style="user-select: text;">
+                                <h1 style="user-select: text;">E-pin Info</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline16-graph" style="user-select: text;">
+                            <div class="datatable-dashv1-list custom-datatable-overright" style="user-select: text;">
+                                <div class="row" style="user-select: text;">
+                                    <div class="col-lg-12" style="user-select: text;">
+                                        <div class="all-form-element-inner" style="user-select: text;">
+                                            <div class="form-group-inner" style="user-select: text;">
+                                                <div class="row" style="user-select: text;">
+                                                    <div class="col-md-4" style="user-select: text;">
+                                                        <label for="CurrentOwner" style="user-select: text;">Current Owner</label>
+                                                    </div>
+                                                    <div class="col-md-6" id="dvAlign" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner" style="user-select: text;">
+                                                <div class="row" style="user-select: text;">
+                                                    <div class="col-md-4" style="user-select: text;">
+                                                        <label for="Expiry" style="user-select: text;">Expiry</label>
+                                                    </div>
+                                                    <div class="col-md-6" id="dvAlign" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner" style="user-select: text;">
+                                                <div class="row" style="user-select: text;">
+                                                    <div class="col-md-4" style="user-select: text;">
+                                                        <label for="Status" style="user-select: text;">Status</label>
+                                                    </div>
+                                                    <div class="col-md-6" id="dvAlign" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="e1" style="user-select: text;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+ 
+  
+
+  <style>
+    .form-group {
+  border: 1px solid #ced4da;
+  padding: 5px;
+  border-radius: 6px;
+  width: auto;
+}
+.form-group:focus {
+  color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.form-group input {
+  display: inline-block;
+  width: auto;
+  border: none;
+}
+.form-group input:focus {
+  box-shadow: none;
+}</style>

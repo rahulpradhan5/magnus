@@ -1,0 +1,317 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <style>
+                            .wrap {
+                                border: gray 2px solid;
+                                height: 842px;
+                                width: 595px;
+                                margin: 0 auto;
+                                background-size: cover;
+                            }
+
+                            .ReciptDetailshead {
+                                width: 595px;
+                                height: 120px;
+                                margin: 0px auto;
+                            }
+
+                            .Ilogo {
+                                width: 30%;
+                                float: left;
+                                margin-left: 10px;
+                                margin-top: 20px;
+                            }
+
+                            .contact {
+                                float: right;
+                                width: 50%;
+                                color: #FFFFFF;
+                            }
+
+                            clr {
+                                clear: both;
+                            }
+
+                            .content {
+                                width: 90%;
+                                margin: 0px auto;
+                            }
+
+                            p {
+                                font-family: 'Open Sans', sans-serif !important;
+                                font-size: 12px !important;
+                                line-height: 20px !important;
+                            }
+
+                            h4 {
+                                font-family: 'Open Sans', sans-serif !important;
+                                font-size: 14px !important;
+                                color: #2B68B9 !important;
+                                font-weight: bold !important;
+                            }
+
+                            .ReciptDetailsfooterbg {
+                                width: 595px;
+                                height: 30px;
+                                margin: 45px auto;
+                                color: #fff;
+                                border-radius: 20px 20px 0px 0px;
+                            }
+
+                            hr {
+                                color: #2B68B9 !important;
+                            }
+                        </style>
+                        <br>
+
+
+
+                        <div class="inbox-mailbox-area mg-b-15">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+
+
+                                                <style>
+                                                    #onManualView {
+                                                        display: block;
+                                                    }
+
+                                                    #onMObileView {
+                                                        display: none;
+                                                    }
+
+                                                    @media (min-width: 1026px) {
+                                                        #MemPanelPosition {
+                                                            display: block;
+                                                        }
+                                                    }
+
+
+                                                    @media (min-width: 320px) and (max-width: 1025px) {
+                                                        #onMObileView {
+                                                            display: block;
+                                                        }
+
+                                                        #onManualView {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                </style>
+
+                                                <div
+                                                    class="block block-account-navigation  mobile.account-navigation-wrapper">
+                                                    <div class="inbox-email-menu-list compose-b-mg-30 shadow-reset">
+                                                        <div class="compose-email" id="onManualView">
+                                                            <strong>My Account</strong>
+                                                        </div>
+                                                        <div class="compose-email" id="onMObileView"
+                                                            data-toggle="collapse" data-target="#MemPanelPosition"
+                                                            style="cursor:pointer">
+                                                            <strong>My Account</strong>
+                                                        </div>
+                                                        <div id="MemPanelPosition" class="collapse">
+                                                            <ul class="nav nav-tabs">
+
+
+                                                                <li>
+                                                                    <a href="/Customerinfo" class="inactive"><span
+                                                                            class="inbox-icon"> <i
+                                                                                class="fa-solid fa-info fa-7x"></i></span>Student
+                                                                        Info</a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="/OrderHistory" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-brands fa-first-order fa-7x"></i></span>Order
+                                                                        Details</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/CustomerInvoices" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="/CustomerKYCDocument"
+                                                                        class="inactive"><span class="inbox-icon"><i
+                                                                                class="fa-solid fa-id-card fa-7x"></i></span>KYC
+                                                                        Document</a>
+                                                                </li>
+                                                                <!-- <li>
+                                                                    <a href="/download" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa fa-cloud-download fa-7x"></i></span>Download
+                                                                        Document</a>
+                                                                </li> -->
+
+                                                                <li>
+                                                                    <a href="/customerChangepassword"
+                                                                        class="inactive"><span class="inbox-icon"><i
+                                                                                class="fa-solid fa-lock-open fa-7x"></i></span>Change
+                                                                        Password</a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a href="/WelcomeLetterDetails" class="active"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-regular fa-handshake fa-7x"></i></span>Welcome
+                                                                        Letter</a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a href="/UpgradeDetails" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-solid fa-gears fa-7x"></i></span>Upgrade
+                                                                        Details</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/RenewalDetails" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-solid fa-recycle fa-7x"></i></span>
+                                                                        Renewal Details</a>
+                                                                </li>
+
+
+                                                                <li>
+                                                                    <a href="/ShowIdCardDetails" class="inactive"><span
+                                                                            class="inbox-icon"><i
+                                                                                class="fa-solid fa-id-card-clip fa-7x"></i></span>Id
+                                                                        Card</a>
+                                                                </li>
+
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div
+                                                    class="tab-pane fade in animated zoomInDown shadow-reset custom-inbox-message">
+                                                    <form action="/WelcomeLetterDetails" method="post"><input
+                                                            name="__RequestVerificationToken" type="hidden"
+                                                            value="vsP6xLCTbKfRZXdLBVuOtJ-rrnlF_URckKlbqGfUP_nhthvwIqZGACkewcJACUGeT3PM8uEEtcFXMX4PtpfH7Z_CYWM4uVwp7uEW6GG2FH81">
+                                                        <div class="page account-page return-request-list-page ">
+                                                            <div class="page-title">
+                                                                <!--<h1>Welcome Letter</h1>-->
+                                                            </div>
+                                                            <div class="page registration-result-page">
+
+                                                                <div id="ReciptDetailshead"></div>
+                                                                <div class="returning-wrapper fieldset" id="dvContainer"
+                                                                    style="overflow-x: scroll;">
+                                                                    <div class="" id="frmIDSearch">
+                                                                        <div class="wrap" style="background: #FFFFFF">
+
+                                                                            <div class="ReciptDetailshead h-25">
+                                                                                <div class="Ilogo"><img
+                                                                                        src="../../assets/img/logonew.png"
+                                                                                        alt=""></div>
+
+                                                                                <div class="contact ">
+                                                                                    <p class="my-4">
+                                                                                        MoneySaga Consultancy
+                                                                                        Services LLP<br>
+                                                                                        Address - Flat no.7, Lane no.
+                                                                                        1<br>
+                                                                                        Saikrupa Apartment,
+                                                                                        Shani Mandir Lane,<br>
+                                                                                        Netaji Nagar, Pimple Gurav,
+                                                                                        Pune.- 411061 <br>
+                                                                                        Contact No- +919673768585 <br>
+                                                                                        Email ID -
+                                                                                        info@moneysagaconsultancy.com
+                                                                                        <br>
+                                                                                        URL -
+                                                                                        Https://moneysagaconsultancy.com
+                                                                                    </p>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="clr"></div>
+
+                                                                            <div
+                                                                                style="margin-right: 30px; margin-left: 30px; margin-top: 20px;">
+
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>&nbsp;</p>
+                                                                                <p>&nbsp;</p>
+                                                                                <p>Dear Mr./Ms&nbsp;Abhinandan Sugga</p>
+                                                                                <p>We are glad that through our
+                                                                                    MoneySaga Subscription Program,
+                                                                                    you chose us as the partner in
+                                                                                    fulfilling your long cherished dream
+                                                                                    of achieving self-reliance. And you
+                                                                                    are not alone. Like you, thousands
+                                                                                    of people across the length and
+                                                                                    breadth of this country have laid
+                                                                                    their trust on us, to realize the
+                                                                                    ambitions that they hold dear.</p>
+                                                                                <p>We assure, the road ahead will be
+                                                                                    filled with nothing but convenience
+                                                                                    and delight. And we’ll ensure that
+                                                                                    you get to cherish every single
+                                                                                    moment of pride, which comes from
+                                                                                    becoming self-reliance, in true
+                                                                                    sense.</p>
+                                                                                <p>Id No.:&nbsp;MCS000018<br>Full
+                                                                                    Name:&nbsp;Abhinandan
+                                                                                    Sugga<br>Password:&nbsp;Abhi@123</p>
+                                                                                <p>&nbsp;</p>
+                                                                                <p>Warm Regards,</p>
+                                                                                <p>Bajirao M Kolekar<br>CMD</p>
+                                                                                <p></p>
+                                                                            </div>
+
+                                                                            <div class="ReciptDetailsfooterbg"> </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div class="inputs" align="center">
+
+                                                                    <button type="button" id="btnPrint"
+                                                                        class="btn btn-custon-two btn-success"><i
+                                                                            class="fa fa-print"></i> Print</button>
+                                                                </div>
+                                                                <br>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,776 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+
+        <div class="admin-dashone-data-table-area" style="user-select: text;">
+            <div class="container-fluid" style="user-select: text;">
+                <div class="row" style="user-select: text;">
+                    <div class="col-lg-12" style="user-select: text;">
+
+
+                        <br style="user-select: text;">
+                        <form action="/MyDownline" method="post" style="user-select: text;"><input
+                                id="HideExportToExcelFunctionality" name="HideExportToExcelFunctionality" type="hidden"
+                                value="False" style="user-select: text;"> <input type="hidden" value="0"
+                                id="AllCommitionIncomeFlag" style="user-select: text;">
+                            <input name="__RequestVerificationToken" type="hidden"
+                                value="fASpocJMX-Pir_S913WC_Nq3S940Ul6LVsablgV5zm9HAx3yAm3dn5sBE-UmmzlfuxuBu8UJTmko97NyebchjUOmOks1X72hoaLIfHYdKhI1"
+                                style="user-select: text;"> <br style="user-select: text;">
+                            <div class="sparkline13-list shadow-reset" style="user-select: text;">
+
+                                <div class="sparkline13-graph" style="display: none; user-select: text;">
+                                    <div class="datatable-dashv1-list custom-datatable-overright"
+                                        style="user-select: text;">
+
+                                        <div class="row" style="user-select: text;">
+                                            <div class="col-lg-12" style="user-select: text;">
+                                                <div class="all-form-element-inner" style="user-select: text;">
+
+                                                    <div class="message-error error" id="validationMessages"
+                                                        style="user-select: text;"></div>
+                                                    <div class="form-group-inner" style="user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="ddlOption" style="user-select: text;">Select
+                                                                    Option</label>
+                                                            </div>
+                                                            <div class="col-md-6" style="user-select: text;">
+                                                                <select id="ddlOption" class="form-control"
+                                                                    name="ddlOption" style="user-select: text;">
+                                                                    <option selected="selected" value="0"
+                                                                        style="user-select: text;">Date-Wise</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group-inner" id="datewsiediv"
+                                                        style="user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="DatewiseFrom"
+                                                                    style="user-select: text;">From Date</label>
+                                                            </div>
+                                                            <div class="col-md-6 data-custon-pick"
+                                                                style="user-select: text;">
+                                                                <div class="input-group date"
+                                                                    style="user-select: text;">
+                                                                    <span class="input-group-addon"
+                                                                        style="user-select: text;"><i
+                                                                            class="fa fa-calendar"
+                                                                            style="user-select: text;"></i></span>
+
+                                                                    <input id="DatewiseFrom" name="DatewiseFrom"
+                                                                        type="text"
+                                                                        style="border-color: rgb(229, 230, 231); user-select: text;">
+
+                                                                    <span class="field-validation-valid"
+                                                                        data-valmsg-for="DatewiseFrom"
+                                                                        data-valmsg-replace="true"
+                                                                        style="user-select: text;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br style="user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="DatewiseTo" style="user-select: text;">To
+                                                                    Date</label>
+                                                            </div>
+                                                            <div class="col-md-6 data-custon-pick"
+                                                                style="user-select: text;">
+                                                                <div class="input-group date"
+                                                                    style="user-select: text;">
+                                                                    <span class="input-group-addon"
+                                                                        style="user-select: text;"><i
+                                                                            class="fa fa-calendar"
+                                                                            style="user-select: text;"></i></span>
+
+                                                                    <input id="DatewiseTo" name="DatewiseTo" type="text"
+                                                                        style="border-color: rgb(229, 230, 231); user-select: text;">
+
+                                                                    <span class="field-validation-valid"
+                                                                        data-valmsg-for="DatewiseTo"
+                                                                        data-valmsg-replace="true"
+                                                                        style="user-select: text;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group-inner" id="payoutwisediv"
+                                                        style="display: none; user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="PM_ID" style="user-select: text;">Select
+                                                                    Plan Type</label>
+                                                            </div>
+                                                            <div class="col-md-6" style="user-select: text;">
+                                                                <select id="ddlPlanType" autocomplete="off"
+                                                                    class="form-control" maxlength="22" name="PM_ID"
+                                                                    style="user-select: text;">
+                                                                    <option value="" style="user-select: text;">Select
+                                                                        Plan Type</option>
+                                                                    <option value="1" style="user-select: text;">
+                                                                        Matching Income</option>
+                                                                    <option value="2" style="user-select: text;">
+                                                                        Leadership/CCM Bonus</option>
+                                                                    <option value="6" style="user-select: text;">Direct
+                                                                        &amp; Renewal Income</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner" id="trPayoutNoList"
+                                                        style="display: none; user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="PN_ID" style="user-select: text;">Select
+                                                                    Payout No.</label>
+                                                            </div>
+                                                            <div class="col-md-6" style="user-select: text;">
+                                                                <select id="ddlPayoutFrom" autocomplete="off"
+                                                                    class="form-control" maxlength="22" name="PN_ID"
+                                                                    style="user-select: text;">
+                                                                    <option value="" style="user-select: text;">Select
+                                                                        Payout Number</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner" id="trPayoutStartDate"
+                                                        style="display: none; user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="PayoutStartDate"
+                                                                    style="user-select: text;">Payout From Date</label>
+                                                            </div>
+                                                            <div class="col-md-6" id="divPayoutDate"
+                                                                style="user-select: text;">
+                                                                <span id="PayoutStartDate"
+                                                                    style="user-select: text;"></span>
+                                                                <input class="form-control" id="payoutStartDate"
+                                                                    name="PayoutStartDate" type="hidden" value=""
+                                                                    style="user-select: text;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner" id="trPayoutEndDate"
+                                                        style="display: none; user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="PayoutEndDate"
+                                                                    style="user-select: text;">Payout To Date</label>
+                                                            </div>
+                                                            <div class="col-md-6" id="divPayoutDate"
+                                                                style="user-select: text;">
+                                                                <span id="PayoutEndDate"
+                                                                    style="user-select: text;"></span>
+                                                                <input class="form-control" id="payoutEndDate"
+                                                                    name="PayoutEndDate" type="hidden" value=""
+                                                                    style="user-select: text;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="form-group-inner" style="user-select: text;">
+                                                        <div class="row" style="user-select: text;">
+                                                            <div class="col-md-4" style="user-select: text;">
+                                                                <label for="PS_ID"
+                                                                    style="user-select: text;">Position-Wise</label>
+                                                            </div>
+                                                            <div class="col-md-6" style="user-select: text;">
+                                                                <select id="PositionList" autocomplete="off"
+                                                                    class="form-control" maxlength="22" name="PS_ID"
+                                                                    style="user-select: text;">
+                                                                    <option value="All" style="user-select: text;">All
+                                                                    </option>
+                                                                    <option value="Left" style="user-select: text;">Left
+                                                                    </option>
+                                                                    <option value="Right" style="user-select: text;">
+                                                                        Right</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="login-horizental cancel-wp align-middle"
+                                                        style="user-select: text;">
+                                                        <button type="button" class="btn btn-custon-four btn-primary"
+                                                            id="search" tabindex="2" style="user-select: text;"><i
+                                                                class="fa fa-search" style="user-select: text;"></i>
+                                                            Search</button>
+                                                        <button type="button" class="btn btn-custon-four btn-warning"
+                                                            id="btnreset" tabindex="1" style="user-select: text;"><i
+                                                                class="fa fa-refresh" style="user-select: text;"></i>
+                                                            Reset</button>
+
+                                                        <input type="hidden" name="hdnReset" id="hdnReset" value=""
+                                                            style="user-select: text;">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br style="user-select: text;">
+                            <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                <div class="sparkline16-hd" style="user-select: text;">
+                                    <div class="main-sparkline16-hd" style="user-select: text;">
+                                        <h1 style="user-select: text;">My Team</h1>
+                                    </div>
+                                </div>
+                                <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                    <div class="sparkline16-graph" style="user-select: text;">
+                                        <div class="datatable-dashv1-list custom-datatable-overright" id="BinaryBothdiv"
+                                            style="user-select: text;">
+                                            <link rel="stylesheet"
+                                                href="/Themes/Vnext/Content/VnextCSS/css/MobileDataTableResponsive.css"
+                                                style="user-select: text;">
+
+                                            <div class="table-wrapper" style="user-select: text;">
+                                                <table id="nestedDataTableTwo"
+                                                    class="table table-striped table-bordered" cellspacing="0"
+                                                    style="user-select: text;">
+                                                    <thead style="user-select: text;">
+                                                        <tr style="user-select: text;">
+
+                                                            <th style="user-select: text;">
+                                                                Total Left Count
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Total Right Count
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Confirm Left Count
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Confirm Right Count
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Total Left BV
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Total Right BV
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Confirm Left BV
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Confirm Right PV
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Own BV
+                                                            </th>
+                                                            <th style="user-select: text;">
+                                                                Confirm Own BV
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="user-select: text;">
+                                                        <tr style="user-select: text;">
+                                                            <td data-label="Total Left Count"
+                                                                style="user-select: text;">
+                                                                {{totalLeftcount}}</td>
+                                                            <td data-label="Total Right Count"
+                                                                style="user-select: text;">
+                                                                {{totalrightcount}} </td>
+                                                            <td data-label="Confirm Left Count"
+                                                                style="user-select: text;">
+                                                                {{totalDataconleft}} </td>
+                                                            <td data-label="Confirm Right Count"
+                                                                style="user-select: text;">
+                                                                {{totalDataconright}} </td>
+                                                            <td data-label="Total Left PV" style="user-select: text;">
+                                                                {{totalleftpv}} </td>
+                                                            <td data-label="Total Right PV" style="user-select: text;">
+                                                                {{totalrightpv}}</td>
+                                                            <td data-label="Confirm Left PV" style="user-select: text;">
+                                                                {{totalconfirmleftpv}} </td>
+                                                            <td data-label="Confirm Right PV"
+                                                                style="user-select: text;">
+                                                                {{totalcomfirmrightpv}} </td>
+                                                            <td data-label="Own PV" style="user-select: text;">
+                                                                {{ownPv}}</td>
+                                                            <td data-label="Confirm Own PV" style="user-select: text;">
+                                                                {{ownPv}}  </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                    <div class="sparkline16-graph" style="user-select: text;">
+                                        <div class="datatable-dashv1-list custom-datatable-overright" id="BinaryBothdiv"
+                                            style="user-select: text;">
+
+
+                                            <link rel="stylesheet"
+                                                href="/Themes/Vnext/Content/VnextCSS/css/MobileDataTableResponsive.css"
+                                                style="user-select: text;">
+
+                                            <div class="table-wrapper" style="user-select: text;">
+                                                <div id="mydirectDataTable_wrapper" class="dataTables_wrapper no-footer"
+                                                    style="user-select: text;">
+                                                    <div class="DTTT_container" style="user-select: text;"><a
+                                                            class="DTTT_button DTTT_button_xls"
+                                                            id="ToolTables_mydirectDataTable_0" title="Export To Excel"
+                                                            tabindex="0" aria-controls="mydirectDataTable"
+                                                            style="user-select: text;"><span id=""
+                                                                style="user-select: text;"><img
+                                                                    src="https://i.postimg.cc/y6S78MBz/export-excel.png"
+                                                                    style="width: 70px; user-select: text;"></span></a>
+                                                    </div>
+                                                    <div class="clear" style="user-select: text;"></div>
+                                                    <form class="form-inline my-2 my-lg-0">
+                                                        <input class="form-control mr-sm-2" type="search"
+                                                            placeholder="Search" aria-label="Search">
+                                                        <button class="btn btn-outline-success my-2 my-sm-0"
+                                                            type="submit">Search</button>
+                                                    </form>
+                                                    <div id="mydirectDataTable_processing" class="dataTables_processing"
+                                                        style="display: none; user-select: text;">
+                                                        <div class="loader" style="user-select: text;"></div>
+                                                    </div>
+                                                    <div class="dataTables_scroll" style="user-select: text;">
+                                                        <div class="dataTables_scrollHead"
+                                                            style="overflow: hidden; position: relative; border: 0px; width: 100%; user-select: text;">
+                                                            <div class="dataTables_scrollHeadInner"
+                                                                style="box-sizing: content-box; width: 1235px; padding-right: 17px; user-select: text;">
+                                                                <table
+                                                                    class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                                                    cellspacing="0" width="100%" role="grid"
+                                                                    style="margin-left: 0px; width: 1235px; user-select: text;">
+                                                                    <thead style="user-select: text;">
+                                                                        <tr role="row" style="user-select: text;">
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 86.4px; user-select: text;"
+                                                                                aria-sort="ascending" aria-label="
+            ID
+        : activate to sort column descending">
+                                                                                ID
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 130.4px; user-select: text;"
+                                                                                aria-label="
+            Name
+        : activate to sort column ascending">
+                                                                                Name
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 141.4px; user-select: text;"
+                                                                                aria-label="
+            Joining Package
+        : activate to sort column ascending">
+                                                                                Joining Package
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 194.4px; user-select: text;"
+                                                                                aria-label="
+            Current Package
+        : activate to sort column ascending">
+                                                                                Current Package
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 52.4px; user-select: text;"
+                                                                                aria-label="
+            Status
+        : activate to sort column ascending">
+                                                                                Status
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 81.4px; user-select: text;"
+                                                                                aria-label="
+            DOJ
+        : activate to sort column ascending">
+                                                                                DOJ
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 86.4px; user-select: text;"
+                                                                                aria-label="
+            Sponsor ID
+        : activate to sort column ascending">
+                                                                                Sponsor ID
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 109.4px; user-select: text;"
+                                                                                aria-label="
+            Adjusted To ID
+        : activate to sort column ascending">
+                                                                                Adjusted To ID
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                rowspan="1" colspan="1"
+                                                                                style="width: 136.4px; user-select: text;"
+                                                                                aria-label="
+            Position W.R.T. Me
+        : activate to sort column ascending">
+                                                                                Position W.R.T. Me
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dataTables_scrollBody"
+                                                            style="position: relative; overflow: auto; width: 100%; max-height: 300px; user-select: text;">
+                                                            <table id="mydirectDataTable"
+                                                                class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                                                cellspacing="0" width="100%" role="grid"
+                                                                aria-describedby="mydirectDataTable_info"
+                                                                style="width: 100%; user-select: text;">
+                                                                <thead style="user-select: text;">
+                                                                    <tr role="row"
+                                                                        style="height: 0px; user-select: text;">
+                                                                        <th class="sorting_asc"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 86.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-sort="ascending" aria-label="
+            ID
+        : activate to sort column descending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                ID
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 130.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Name
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Name
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 141.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Joining Package
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Joining Package
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 194.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Current Package
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Current Package
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 81.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            DOJ
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                DOJ
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 86.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Sponsor ID
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Sponsor ID
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 109.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Adjusted To ID
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Adjusted To ID
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="sorting"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            rowspan="1" colspan="1"
+                                                                            style="width: 136.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
+                                                                            aria-label="
+            Position W.R.T. Me
+        : activate to sort column ascending">
+                                                                            <div class="dataTables_sizing"
+                                                                                style="height: 0px; overflow: hidden; user-select: text;">
+                                                                                Position W.R.T. Me
+                                                                            </div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody style="user-select: text;">
+                                                                    <tr role="row" class="odd"
+                                                                        style="user-select: text;" *ngFor="let userData of leftdata">
+                                                                        <td data-label="
+            ID
+        " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
+                                                                        <td data-label="
+            Name
+        " style="user-select: text;" *ngIf="userData.name !=''">{{userData.name}}</td>
+        <td data-label="
+            Name
+        " style="user-select: text;" *ngIf="userData.name ==''">Null</td>
+                                                                        <td data-label="
+            Joining Package
+        " style="user-select: text;">Free Package ( 0.00 )</td>
+                                                                        <td data-label="
+            Current Package
+        " style="user-select: text;">Free Package ( 0.00 )</td>
+                                                                        <td data-label="
+            Status
+        " style="user-select: text;">Paid</td>
+                                                                        <td data-label="
+            DOJ
+        " style="user-select: text;">{{userData.created_at}}</td>
+                                                                        <td data-label="
+            Sponsor ID
+        " style="user-select: text;">{{userData.owner}}</td>
+                                                                        <td data-label="
+            Adjusted To ID
+        " style="user-select: text;">{{userData.referrer_id
+        }}</td>
+                                                                        <td data-label="
+            Position W.R.T. Me
+        " style="user-select: text;">Left</td>
+                                                                    </tr>
+                                                                    <tr role="row" class="odd"
+                                                                    style="user-select: text;" *ngFor="let userData of rightdata">
+                                                                    <td data-label="
+        ID
+    " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
+    <td data-label="
+    Name
+" style="user-select: text;" *ngIf="userData.name !=''">{{userData.name}}</td>
+<td data-label="
+    Name
+" style="user-select: text;" *ngIf="userData.name ==''">Null</td>
+                                                                    <td data-label="
+        Joining Package
+    " style="user-select: text;">Free Package ( 0.00 )</td>
+                                                                    <td data-label="
+        Current Package
+    " style="user-select: text;">Free Package ( 0.00 )</td>
+                                                                    <td data-label="
+        Status
+    " style="user-select: text;">Paid</td>
+                                                                    <td data-label="
+        DOJ
+    " style="user-select: text;">{{userData.created_at}}</td>
+                                                                    <td data-label="
+        Sponsor ID
+    " style="user-select: text;">{{userData.owner}}</td>
+                                                                    <td data-label="
+        Adjusted To ID
+    " style="user-select: text;">{{userData.referrer_id
+    }}</td>
+                                                                    <td data-label="
+        Position W.R.T. Me
+    " style="user-select: text;">Right</td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dataTables_info" id="mydirectDataTable_info"
+                                                        role="status" aria-live="polite" style="user-select: text;">
+                                                        <div class="dataTables_length" id="mydirectDataTable_length"
+                                                            style="user-select: text;">Showing 1 to 9 of 9 entries <span
+                                                                style="user-select: text;"> , <select
+                                                                    name="mydirectDataTable_length"
+                                                                    aria-controls="mydirectDataTable" class=""
+                                                                    style="user-select: text;">
+                                                                    <option value="10" style="user-select: text;">10
+                                                                    </option>
+                                                                    <option value="25" style="user-select: text;">25
+                                                                    </option>
+                                                                    <option value="50" style="user-select: text;">50
+                                                                    </option>
+                                                                    <option value="100" style="user-select: text;">100
+                                                                    </option>
+                                                                </select> entries per page</span></div>
+                                                    </div>
+                                                    <div class="dataTables_paginate paging_simple_numbers"
+                                                        id="mydirectDataTable_paginate"
+                                                        style="display: none; user-select: text;"><a
+                                                            class="paginate_button previous disabled"
+                                                            aria-controls="mydirectDataTable" data-dt-idx="0"
+                                                            tabindex="0" id="mydirectDataTable_previous"
+                                                            style="user-select: text;">&lt;</a><span
+                                                            style="user-select: text;"><a
+                                                                class="paginate_button current"
+                                                                aria-controls="mydirectDataTable" data-dt-idx="1"
+                                                                tabindex="0" style="user-select: text;">1</a></span><a
+                                                            class="paginate_button next disabled"
+                                                            aria-controls="mydirectDataTable" data-dt-idx="2"
+                                                            tabindex="0" id="mydirectDataTable_next"
+                                                            style="user-select: text;">&gt;</a></div>
+                                                </div>
+                                            </div>
+
+                                            <script style="user-select: text;">
+                                                function getDateWithTime(objdate) {
+
+                                                    var myDate;
+                                                    var myKindoDate;
+                                                    var str;
+                                                    var dashrecord;
+                                                    if (objdate != "") {
+                                                        if (objdate.indexOf('-') != -1) {
+                                                            res = objdate.split("-");
+                                                            var date1 = res[1];
+                                                            var month1 = res[0];
+                                                            var year1 = res[2];
+                                                            dashrecord = date1 + '/' + month1 + '/' + year1
+                                                            var data = {
+                                                                term: dashrecord
+                                                            };
+                                                        }
+                                                        else {
+                                                            var data = {
+                                                                term: objdate
+                                                            };
+                                                        }
+
+                                                        addAntiForgeryToken(data);
+
+                                                        $.ajax({
+                                                            url: "/Common/GetDateTimeInCurrentTimeZone",
+                                                            type: "POST",
+                                                            dataType: "json",
+                                                            data: data,
+                                                            async: false,
+                                                            success: function (result) {
+                                                                str = result.dateTime
+                                                            },
+                                                            error: function (xhr, textStatus, exceptionThrown) {
+                                                                //alert('hi');
+                                                                $("#validationMessages").html("");
+                                                                $("#validationMessages").show();
+                                                                $("#validationMessages").html("Kendo not initialized properly");
+                                                            }
+                                                        });
+
+
+                                                        var res;
+                                                        if (str.indexOf('-') == -1) {
+                                                            res = str.split("/");
+                                                            var date = res[0];
+                                                            var month = res[1];
+                                                            var year = res[2];
+                                                            myKindoDate = date + '/' + month + '/' + year
+                                                        }
+                                                        else {
+                                                            res = str.split("-");
+                                                            var date = res[0];
+                                                            var month = res[1];
+                                                            var year = res[2];
+                                                            myDate = date + '-' + month + '-' + year
+                                                        }
+
+
+                                                        if (str == myDate) {
+                                                            //Check valid 1-1-1900
+                                                            var getAllDate = myDate.split(" ");
+                                                            var comDate = getAllDate[0];
+
+                                                            HmyDate = month + '/' + date + '/' + year
+
+                                                            if (HmyDate == '-')
+                                                                return HmyDate;
+                                                            else if (comDate == '1-1-1900' || comDate == '01-01-1900' || HmyDate == "")
+                                                                return '-';
+                                                            else
+
+                                                                return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                                        }
+
+                                                        else if (str == myKindoDate) {
+                                                            //Check valid 1/1/1900
+                                                            var getAllDate = myKindoDate.split(" ");
+                                                            var comDate = getAllDate[0];
+
+                                                            HmyDate = date + '/' + month + '/' + year
+
+                                                            if (HmyDate == '-')
+                                                                return HmyDate;
+                                                            else if (comDate == '1/1/1900' || comDate == '01/01/1900' || HmyDate == "")
+                                                                return '-';
+                                                            else
+
+                                                                return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                                        }
+
+
+                                                    }
+                                                    else {
+                                                        if (objdate == "")
+                                                            return '-';
+                                                    }
+                                                }
+
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br style="user-select: text;">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

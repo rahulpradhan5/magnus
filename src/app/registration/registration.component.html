@@ -1,0 +1,29 @@
+<div class="banner">
+    <div class="container">
+        <div class="row" style="padding-left: 3%; padding-right: 3%;">
+            <div class="d-flex flex-column f1 col-sm-12 col-lg-6 justify-content-center  align-items-center"
+                style="margin-top: 80px;">
+                <!-- <div class="head">Start your financial journey with us</div> -->
+                <div class="head mx-auto">Start Your Financial Journey with Us</div>
+                <div class="sub-head" style="margin-top: 30px;">Welcome to our website, your one-stop-shop for financial freedom. Explore our expertly designed courses that offer valuable guidance and tools for effectively managing your finances. Take control of your financial future and register now for a valuable learning experience.
+                </div>
+            </div>
+            <!-- routerLink="/courses" -->
+
+            <div class="d-flex flex-column f1 col-xs-12  col-sm-12 col-md-6 col-lg-6 justify-content-center  align-items-center inputboxes mx-auto"
+                style="align-items: flex-end;">
+                <input type="text" class="input-box" style="margin-top: 50px;" name="name" placeholder="Name"
+                    [(ngModel)]="name">
+                <input type="email" class="input-box" style="margin-top: 20px;" name="email" placeholder="Email"
+                    [(ngModel)]="email">
+                <input type="text" class="input-box" style="margin-top: 20px;" name="mobileNo"
+                    placeholder="Mobile Number" [(ngModel)]="mobileNo">
+                <input type="password" class="input-box" style="margin-top: 20px;" name="password"
+                    placeholder="Password" [(ngModel)]="password">
+                <input type="text" class="input-box" style="margin-top: 20px;" name="invitationCode"
+                    placeholder="Invitation Code" [(ngModel)]="invitationCode">
+                <button type="button" class="btn" style="margin-top: 50px;" (click)="register()">Register</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,930 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area" style="user-select: text;">
+            <div class="container-fluid" style="user-select: text;">
+                <div class="row" style="user-select: text;">
+                    <div class="col-lg-12" style="user-select: text;">
+
+
+
+
+                        <br style="user-select: text;">
+
+                        <form action="/MyNetwork/MyDirect" method="post" style="user-select: text;"><input
+                                name="__RequestVerificationToken" type="hidden"
+                                value="D80ohqnRY-nQgY9PDr6SAulH4q4UrVIyLE9IOH7quaupeGCUdV6Z8S3CZxhzi_83nB7yN1Ov6AQcxQuYJDQL-kNeptBfn-MZpRz72UgdpA01"
+                                style="user-select: text;"><input id="HideExportToExcelFunctionality"
+                                name="HideExportToExcelFunctionality" type="hidden" value="False"
+                                style="user-select: text;"><input id="SelectedField" name="SelectedField" type="hidden"
+                                value="" style="user-select: text;"> <input type="hidden" value="0"
+                                id="AllCommitionIncomeFlag" style="user-select: text;">
+                            <div class="page account-page return-request-list-page " style="user-select: text;">
+
+                                <div class="page-title" style="user-select: text;">
+
+                                </div>
+                                <div class="page registration-result-page" id="divMydirect" style="user-select: text;">
+                                    <div class="page-body" style="user-select: text;">
+
+
+
+                                        <div class="message-error error" id="validationMessages"
+                                            style="display: none; user-select: text;"></div>
+
+                                        <div class="sparkline13-list shadow-reset" style="user-select: text;">
+
+
+                                            <div class="sparkline13-graph" style="display: none; user-select: text;">
+                                                <div class="datatable-dashv1-list custom-datatable-overright"
+                                                    style="user-select: text;">
+
+                                                    <div class="row" style="user-select: text;">
+                                                        <div class="col-lg-12" style="user-select: text;">
+                                                            <div class="all-form-element-inner"
+                                                                style="user-select: text;">
+
+                                                                <div class="message-error error" id="validationMessages"
+                                                                    style="user-select: text;"></div>
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="PackageListName"
+                                                                                style="user-select: text;">Package-wise
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <select id="ddlpackageList"
+                                                                                class="form-control"
+                                                                                name="PackageListName"
+                                                                                style="user-select: text;">
+                                                                                <option value=""
+                                                                                    style="user-select: text;">
+                                                                                    Select Package</option>
+                                                                                <option value="3"
+                                                                                    style="user-select: text;">
+                                                                                    Free Package [ ₹ 0.00 ]</option>
+                                                                                <option value="4"
+                                                                                    style="user-select: text;">
+                                                                                    Free Package [ ₹ 0.00 ]</option>
+                                                                                <option value="12"
+                                                                                    style="user-select: text;">
+                                                                                    Luxury Package [ ₹ 61360.00 ]
+                                                                                </option>
+                                                                                <option value="8"
+                                                                                    style="user-select: text;">New
+                                                                                    Package [ ₹ 1.00 ]</option>
+                                                                                <option value="1"
+                                                                                    style="user-select: text;">
+                                                                                    PACKAGE 1 [ ₹ 0.00 ]</option>
+                                                                                <option value="14"
+                                                                                    style="user-select: text;">
+                                                                                    Premium Package [ ₹ 122720.00 ]
+                                                                                </option>
+                                                                                <option value="10"
+                                                                                    style="user-select: text;">
+                                                                                    Renewal Package [ ₹ 2950.00 ]
+                                                                                </option>
+                                                                                <option value="16"
+                                                                                    style="user-select: text;">
+                                                                                    Smart Package [ ₹ 29500.00 ]
+                                                                                </option>
+                                                                                <option value="18"
+                                                                                    style="user-select: text;">
+                                                                                    Smart Package 1 [ ₹ 29501.00 ]
+                                                                                </option>
+                                                                                <option value="6"
+                                                                                    style="user-select: text;">
+                                                                                    Welcome Package [ ₹ 8850.00 ]
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="DatewiseFrom"
+                                                                                style="user-select: text;">Date Wise
+                                                                                From
+                                                                                Date</label>
+                                                                        </div>
+                                                                        <div class="col-md-6 data-custon-pick"
+                                                                            style="user-select: text;">
+                                                                            <div class="input-group date"
+                                                                                style="user-select: text;">
+                                                                                <span class="input-group-addon"
+                                                                                    style="user-select: text;"><i
+                                                                                        class="fa fa-calendar"
+                                                                                        style="user-select: text;"></i></span>
+                                                                                <input class="form-control"
+                                                                                    data-val="true"
+                                                                                    data-val-date="The field Date Wise From Date must be a date."
+                                                                                    id="DatewiseFrom"
+                                                                                    name="DatewiseFrom" type="text"
+                                                                                    value=""
+                                                                                    style="border-color: rgb(229, 230, 231); user-select: text;">
+                                                                                <span class="field-validation-valid"
+                                                                                    data-valmsg-for="DatewiseFrom"
+                                                                                    data-valmsg-replace="true"
+                                                                                    style="user-select: text;"></span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <br style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="DatewiseTo"
+                                                                                style="user-select: text;">Date Wise To
+                                                                                Date</label>
+                                                                        </div>
+                                                                        <div class="col-md-6 data-custon-pick"
+                                                                            style="user-select: text;">
+                                                                            <div class="input-group date"
+                                                                                style="user-select: text;">
+                                                                                <span class="input-group-addon"
+                                                                                    style="user-select: text;"><i
+                                                                                        class="fa fa-calendar"
+                                                                                        style="user-select: text;"></i></span>
+                                                                                <input class="form-control"
+                                                                                    data-val="true"
+                                                                                    data-val-date="The field Date Wise To Date must be a date."
+                                                                                    id="DatewiseTo" name="DatewiseTo"
+                                                                                    type="text" value=""
+                                                                                    style="border-color: rgb(229, 230, 231); user-select: text;">
+                                                                                <span class="field-validation-valid"
+                                                                                    data-valmsg-for="DatewiseTo"
+                                                                                    data-valmsg-replace="true"
+                                                                                    style="user-select: text;"></span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="ddlCountry"
+                                                                                style="user-select: text;">Country</label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <select id="ddlCountry" autocomplete="off"
+                                                                                class="form-control" maxlength="22"
+                                                                                name="ddlCountry"
+                                                                                style="user-select: text;">
+                                                                                <option value=""
+                                                                                    style="user-select: text;">
+                                                                                    Select Country</option>
+                                                                                <option value="41"
+                                                                                    style="user-select: text;">
+                                                                                    India</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="ddlState"
+                                                                                style="user-select: text;">State-wise</label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <select id="ddlState" autocomplete="off"
+                                                                                class="form-control" maxlength="22"
+                                                                                name="ddlState"
+                                                                                style="user-select: text;">
+                                                                                <option value=""
+                                                                                    style="user-select: text;">
+                                                                                    Select State</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="ddlCity"
+                                                                                style="user-select: text;">City-wise</label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <select id="ddlCity" autocomplete="off"
+                                                                                class="form-control" maxlength="22"
+                                                                                name="ddlCity"
+                                                                                style="user-select: text;">
+                                                                                <option value=""
+                                                                                    style="user-select: text;">
+                                                                                    Select City</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner" id="CityText"
+                                                                    style="display: none; user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="ddlCity"
+                                                                                style="user-select: text;">City-wise</label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <input class="form-control" id="ddlCityName"
+                                                                                name="ddlCityName" type="text" value=""
+                                                                                style="user-select: text;">
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group-inner"
+                                                                    style="user-select: text;">
+                                                                    <div class="row" style="user-select: text;">
+                                                                        <div class="col-md-4"
+                                                                            style="user-select: text;">
+                                                                            <label for="PS_ID"
+                                                                                style="user-select: text;">Position-Wise</label>
+                                                                        </div>
+                                                                        <div class="col-md-6"
+                                                                            style="user-select: text;">
+                                                                            <select id="PositionList" autocomplete="off"
+                                                                                class="form-control" maxlength="22"
+                                                                                name="PS_ID" style="user-select: text;">
+                                                                                <option value="All"
+                                                                                    style="user-select: text;">
+                                                                                    All</option>
+                                                                                <option value="Left"
+                                                                                    style="user-select: text;">
+                                                                                    Left</option>
+                                                                                <option value="Right"
+                                                                                    style="user-select: text;">Right
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-offset-3 col-md-offset-2 col-sm-offset-2"
+                                                                    style="user-select: text;">
+                                                                    <div class="form-group-inner"
+                                                                        style="user-select: text;">
+                                                                        <div class="row" style="user-select: text;">
+                                                                            <div class="col-lg-offset-1  col-md-12  col-sm-12"
+                                                                                style="user-select: text;">
+                                                                                <div class="col-lg-3 col-md-3 col-sm-4 leftlistboxalign"
+                                                                                    style="user-select: text;">
+                                                                                    <select class="form-control listbx"
+                                                                                        id="LeftListBox"
+                                                                                        multiple="multiple"
+                                                                                        name="LeftSelectedField"
+                                                                                        style="user-select: text;">
+                                                                                        <option value="332"
+                                                                                            style="user-select: text;">
+                                                                                            PV
+                                                                                        </option>
+                                                                                        <option value="369"
+                                                                                            style="user-select: text;">
+                                                                                            Confirmed
+                                                                                            Left Count</option>
+                                                                                        <option value="370"
+                                                                                            style="user-select: text;">
+                                                                                            Confirm
+                                                                                            Right Count</option>
+                                                                                        <option value="371"
+                                                                                            style="user-select: text;">
+                                                                                            Total
+                                                                                            Confirm Count</option>
+                                                                                        <option value="372"
+                                                                                            style="user-select: text;">
+                                                                                            Confirmed
+                                                                                            Left PV</option>
+                                                                                        <option value="373"
+                                                                                            style="user-select: text;">
+                                                                                            Confirmed
+                                                                                            Right PV</option>
+                                                                                        <option value="374"
+                                                                                            style="user-select: text;">
+                                                                                            Total
+                                                                                            Confirm PV</option>
+                                                                                        <option value="380"
+                                                                                            style="user-select: text;">
+                                                                                            Joining
+                                                                                            Status</option>
+                                                                                        <option value="390"
+                                                                                            style="user-select: text;">
+                                                                                            Confirm
+                                                                                            Date</option>
+                                                                                        <option value="560"
+                                                                                            style="user-select: text;">
+                                                                                            Current
+                                                                                            Package</option>
+                                                                                        <option value="376"
+                                                                                            style="user-select: text;">
+                                                                                            Sponsor
+                                                                                            ID</option>
+                                                                                        <option value="377"
+                                                                                            style="user-select: text;">
+                                                                                            Adjusted
+                                                                                            To ID</option>
+                                                                                        <option value="355"
+                                                                                            style="user-select: text;">
+                                                                                            Adjusted
+                                                                                            To Name</option>
+                                                                                        <option value="378"
+                                                                                            style="user-select: text;">
+                                                                                            Sponsor
+                                                                                            Name</option>
+                                                                                        <option value="392"
+                                                                                            style="user-select: text;">
+                                                                                            Title
+                                                                                        </option>
+                                                                                        <option value="399"
+                                                                                            style="user-select: text;">
+                                                                                            Company
+                                                                                            Type</option>
+                                                                                        <option value="375"
+                                                                                            style="user-select: text;">
+                                                                                            Joining
+                                                                                            Package</option>
+                                                                                        <option value="229"
+                                                                                            style="user-select: text;">
+                                                                                            Date of
+                                                                                            Birth</option>
+                                                                                        <option value="391"
+                                                                                            style="user-select: text;">
+                                                                                            Gender
+                                                                                        </option>
+                                                                                        <option value="385"
+                                                                                            style="user-select: text;">
+                                                                                            Pancard
+                                                                                            No</option>
+                                                                                        <option value="225"
+                                                                                            style="user-select: text;">
+                                                                                            Address
+                                                                                        </option>
+                                                                                        <option value="230"
+                                                                                            style="user-select: text;">
+                                                                                            City
+                                                                                        </option>
+                                                                                        <option value="226"
+                                                                                            style="user-select: text;">
+                                                                                            State
+                                                                                        </option>
+                                                                                        <option value="386"
+                                                                                            style="user-select: text;">
+                                                                                            Country
+                                                                                        </option>
+                                                                                        <option value="232"
+                                                                                            style="user-select: text;">
+                                                                                            Pincode
+                                                                                        </option>
+                                                                                        <option value="231"
+                                                                                            style="user-select: text;">
+                                                                                            Mobile
+                                                                                            No.</option>
+                                                                                        <option value="233"
+                                                                                            style="user-select: text;">
+                                                                                            Email ID
+                                                                                        </option>
+                                                                                        <option value="381"
+                                                                                            style="user-select: text;">
+                                                                                            Nominee
+                                                                                            Name</option>
+                                                                                        <option value="383"
+                                                                                            style="user-select: text;">
+                                                                                            Relation
+                                                                                            with Nominee</option>
+                                                                                        <option value="382"
+                                                                                            style="user-select: text;">
+                                                                                            Nominee's
+                                                                                            DOB</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-lg-1 col-md-2 col-sm-2"
+                                                                                    id="divButton"
+                                                                                    style="user-select: text;">
+                                                                                    <!-- <center style="user-select: text;">
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value=">" id="SingleRight"
+                                                                                                style="font-size: 12px; margin-top: 4px; padding: 5px; margin-bottom: 2%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listItem">
+                                                                                        </div>
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value=">>" id="AllRight"
+                                                                                                style="font-size: 12px; padding: 5px; margin-bottom: 1%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listitem">
+                                                                                        </div>
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value="<" id="SingleLeft"
+                                                                                                style="font-size: 12px; margin-top: 1px; padding: 5px; margin-bottom: 3%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listItem">
+                                                                                        </div>
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value="<<" id="AllLeft"
+                                                                                                style="font-size: 12px; padding: 5px; margin-bottom: 2%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listItem">
+                                                                                        </div>
+                                                                                    </center> -->
+                                                                                </div>
+
+                                                                                <div class="col-lg-3 col-md-3 col-sm-4"
+                                                                                    id="Listbottom"
+                                                                                    style="user-select: text;">
+                                                                                    <select class="form-control listbx"
+                                                                                        id="RightListBox"
+                                                                                        multiple="multiple"
+                                                                                        name="RightSelectedField"
+                                                                                        style="border-color: rgb(229, 230, 231); user-select: text;">
+                                                                                        <option value="222"
+                                                                                            style="user-select: text;">
+                                                                                            ID
+                                                                                        </option>
+                                                                                        <option value="224"
+                                                                                            style="user-select: text;">
+                                                                                            Name
+                                                                                        </option>
+                                                                                        <option value="237"
+                                                                                            style="user-select: text;">
+                                                                                            Position
+                                                                                            w.r.t Me</option>
+                                                                                        <option value="228"
+                                                                                            style="user-select: text;">
+                                                                                            Date Of
+                                                                                            Joining</option>
+                                                                                        <option value="569"
+                                                                                            style="user-select: text;">
+                                                                                            Date Of
+                                                                                            Upgradation</option>
+                                                                                        <option value="567"
+                                                                                            style="user-select: text;">
+                                                                                            CurrentStatus</option>
+                                                                                        <option value="568"
+                                                                                            style="user-select: text;">
+                                                                                            Date of
+                                                                                            latest renewal</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-lg-1 col-md-2 col-sm-2"
+                                                                                    id="divButton"
+                                                                                    style="user-select: text;">
+                                                                                    <!-- <center style="user-select: text;">
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value="↑" id="SingleRight"
+                                                                                                onclick="listbox_move('RightListBox', 'up')"
+                                                                                                style="font-size: 12px; margin-top: 4px; padding: 5px; margin-bottom: 2%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listItem">
+                                                                                        </div>
+                                                                                        <div style="user-select: text;">
+                                                                                            <input type="button"
+                                                                                                class="move-listItembtn  btn-primary"
+                                                                                                value="↓" id="AllRight"
+                                                                                                onclick="listbox_move('RightListBox', 'down')"
+                                                                                                style="font-size: 12px; padding: 5px; margin-bottom: 2%; background-color: rgb(3, 169, 244); color: white; user-select: text;"
+                                                                                                name="move-listitem">
+                                                                                        </div>
+        
+                                                                                    </center> -->
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="login-horizental cancel-wp align-center"
+                                                        style="user-select: text;">
+
+                                                        <button class="btn btn-custon-four btn-primary" id="search"
+                                                            type="button" style="user-select: text;"><i
+                                                                class="fa fa-search" style="user-select: text;"></i>
+                                                            Search</button>
+                                                        <button class="btn btn-custon-four btn-warning" type="button"
+                                                            id="btnreset" style="user-select: text;"><i
+                                                                class="fa fa-refresh" style="user-select: text;"></i>
+                                                            Reset</button>
+
+
+                                                        <input type="hidden" name="hdnReset" id="hdnReset" value=""
+                                                            style="user-select: text;">
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <br style="user-select: text;">
+
+
+
+
+                                        <div class="sparkline16-list shadow-reset" style="user-select: text;">
+                                            <div class="sparkline16-hd" style="user-select: text;">
+                                                <div class="main-sparkline16-hd" style="user-select: text;">
+                                                    <h1 style="user-select: text;">Direct Joinees</h1>
+                                                    <div class="sparkline16-outline-icon" style="user-select: text;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="sparkline16-list" style="user-select: text;">
+                                                <div class="sparkline16-graph" style="user-select: text;">
+                                                    <div id="ScrollableDiv" style="user-select: text;">
+                                                        <link rel="stylesheet"
+                                                            href="/Themes/Vnext/Content/VnextCSS/css/MobileDataTableResponsive.css"
+                                                            style="user-select: text;">
+
+                                                        <div class="table-wrapper" style="user-select: text;">
+                                                            <div id="mydirectDataTable_wrapper"
+                                                                class="dataTables_wrapper no-footer"
+                                                                style="user-select: text;">
+                                                                <div class="DTTT_container" style="user-select: text;">
+                                                                    <a class="DTTT_button DTTT_button_xls"
+                                                                        id="ToolTables_mydirectDataTable_0"
+                                                                        title="Export To Excel" tabindex="0"
+                                                                        aria-controls="mydirectDataTable"
+                                                                        style="user-select: text;"><span id=""
+                                                                            style="user-select: text;"><img
+                                                                                src="../Scripts/DataTables/Excel-icon.png"
+                                                                                style="user-select: text;"></span></a>
+                                                                </div>
+                                                                <div class="clear" style="user-select: text;"></div>
+                                                                <form class="form-inline my-2 my-lg-0">
+                                                                    <input class="form-control mr-sm-2" type="search"
+                                                                        placeholder="Search" aria-label="Search">
+                                                                    <button class="btn btn-outline-success my-2 my-sm-0"
+                                                                        type="submit">Search</button>
+                                                                </form>
+                                                                <div id="mydirectDataTable_processing"
+                                                                    class="dataTables_processing"
+                                                                    style="display: none; user-select: text;">
+                                                                    <div class="loader" style="user-select: text;">
+                                                                    </div>
+                                                                </div>
+                                                                <table id="mydirectDataTable"
+                                                                    class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                                                    cellspacing="0" width="100%" role="grid"
+                                                                    aria-describedby="mydirectDataTable_info"
+                                                                    style="width: 100%; user-select: text;">
+                                                                    <thead style="user-select: text;">
+                                                                        <tr role="row" style="user-select: text;">
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 106.4px; user-select: text;">
+                                                                                ID
+                                                                            </th>
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 157.4px; user-select: text;">
+                                                                                Name
+                                                                            </th>
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 143.4px; user-select: text;">
+                                                                                Position w.r.t Me
+                                                                            </th>
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 199.4px; user-select: text;">
+                                                                                Date Of Joining
+                                                                            </th>
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 200.4px; user-select: text;">
+                                                                                Date Of Upgradation
+                                                                            </th>
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1"
+                                                                                style="width: 200.4px; user-select: text;">
+                                                                                Date of latest renewal
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody style="user-select: text;">
+                                                                        <tr role="row" class="odd"
+                                                                            style="user-select: text;" *ngFor="let data of leftdata">
+                                                                            <td data-label="
+                    ID
+                " style="user-select: text;">{{data.id}}</td>
+                                                                            <td data-label="
+                    Name
+                " style="user-select: text;" *ngIf="data.name != ''">{{data.name}}</td>
+                <td data-label="
+                Name
+            " style="user-select: text;" *ngIf="data.name == ''">Null</td>
+                                                                            <td data-label="
+                    Position w.r.t Me
+                " style="user-select: text;">Left</td>
+                                                                            <td data-label="
+                    Date Of Joining
+                " style="user-select: text;">{{data.start_date}}</td>
+                                                                            <td data-label="
+                    Date Of Upgradation
+                " style="user-select: text;">{{data.end_date}}</td>
+                                                                            <td data-label="
+                    Date of latest renewal
+                " style="user-select: text;">{{data.start_date}}</td>
+                                                                        </tr>
+                                                                        <tr role="row" class="even"
+                                                                            style="user-select: text;" *ngFor="let righdata of rightdata">
+                                                                            <td data-label="
+                    ID
+                " style="user-select: text;">{{righdata.id}}</td>
+                                                                            <td data-label="
+                    Name
+                " style="user-select: text;" *ngIf="righdata.name != ''">{{righdata.name}}</td>
+                <td data-label="
+                    Name
+                " style="user-select: text;" *ngIf="righdata.name == ''">Null</td>
+                                                                            <td data-label="
+                    Position w.r.t Me
+                " style="user-select: text;">right</td>
+                                                                            <td data-label="
+                    Date Of Joining
+                " style="user-select: text;">{{righdata.start_date}}</td>
+                                                                            <td data-label="
+                    Date Of Upgradation
+                " style="user-select: text;">{{righdata.end_date}}</td>
+                                                                            <td data-label="
+                    Date of latest renewal
+                " style="user-select: text;">{{righdata.start_date}}</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <div class="dataTables_info" id="mydirectDataTable_info"
+                                                                    role="status" aria-live="polite"
+                                                                    style="user-select: text;">
+                                                                    <div class="dataTables_length"
+                                                                        id="mydirectDataTable_length"
+                                                                        style="user-select: text;">Showing 1 to 6 of 6
+                                                                        entries
+                                                                        <span style="user-select: text;"> , <select
+                                                                                name="mydirectDataTable_length"
+                                                                                aria-controls="mydirectDataTable"
+                                                                                class="" style="user-select: text;">
+                                                                                <option value="10"
+                                                                                    style="user-select: text;">10
+                                                                                </option>
+                                                                                <option value="25"
+                                                                                    style="user-select: text;">25
+                                                                                </option>
+                                                                                <option value="50"
+                                                                                    style="user-select: text;">50
+                                                                                </option>
+                                                                                <option value="100"
+                                                                                    style="user-select: text;">
+                                                                                    100</option>
+                                                                            </select> entries per page</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dataTables_paginate paging_simple_numbers"
+                                                                    id="mydirectDataTable_paginate"
+                                                                    style="display: none; user-select: text;"><a
+                                                                        class="paginate_button previous disabled"
+                                                                        aria-controls="mydirectDataTable"
+                                                                        data-dt-idx="0" tabindex="0"
+                                                                        id="mydirectDataTable_previous"
+                                                                        style="user-select: text;">&lt;</a><span
+                                                                        style="user-select: text;"><a
+                                                                            class="paginate_button current"
+                                                                            aria-controls="mydirectDataTable"
+                                                                            data-dt-idx="1" tabindex="0"
+                                                                            style="user-select: text;">1</a></span><a
+                                                                        class="paginate_button next disabled"
+                                                                        aria-controls="mydirectDataTable"
+                                                                        data-dt-idx="2" tabindex="0"
+                                                                        id="mydirectDataTable_next"
+                                                                        style="user-select: text;">&gt;</a></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <script style="user-select: text;">
+                                                            function getDateWithTime(objdate) {
+
+                                                                var myDate;
+                                                                var myKindoDate;
+                                                                var str;
+                                                                var dashrecord;
+                                                                if (objdate != "") {
+                                                                    if (objdate.indexOf('-') != -1) {
+                                                                        res = objdate.split("-");
+                                                                        var date1 = res[1];
+                                                                        var month1 = res[0];
+                                                                        var year1 = res[2];
+                                                                        dashrecord = date1 + '/' + month1 + '/' + year1
+                                                                        var data = {
+                                                                            term: dashrecord
+                                                                        };
+                                                                    }
+                                                                    else {
+                                                                        var data = {
+                                                                            term: objdate
+                                                                        };
+                                                                    }
+
+                                                                    addAntiForgeryToken(data);
+
+                                                                    $.ajax({
+                                                                        url: "/Common/GetDateTimeInCurrentTimeZone",
+                                                                        type: "POST",
+                                                                        dataType: "json",
+                                                                        data: data,
+                                                                        async: false,
+                                                                        success: function (result) {
+                                                                            str = result.dateTime
+                                                                        },
+                                                                        error: function (xhr, textStatus, exceptionThrown) {
+                                                                            //alert('hi');
+                                                                            $("#validationMessages").html("");
+                                                                            $("#validationMessages").show();
+                                                                            $("#validationMessages").html("Kendo not initialized properly");
+                                                                        }
+                                                                    });
+
+
+                                                                    var res;
+                                                                    if (str.indexOf('-') == -1) {
+                                                                        res = str.split("/");
+                                                                        var date = res[0];
+                                                                        var month = res[1];
+                                                                        var year = res[2];
+                                                                        myKindoDate = date + '/' + month + '/' + year
+                                                                    }
+                                                                    else {
+                                                                        res = str.split("-");
+                                                                        var date = res[0];
+                                                                        var month = res[1];
+                                                                        var year = res[2];
+                                                                        myDate = date + '-' + month + '-' + year
+                                                                    }
+
+
+                                                                    if (str == myDate) {
+                                                                        //Check valid 1-1-1900
+                                                                        var getAllDate = myDate.split(" ");
+                                                                        var comDate = getAllDate[0];
+
+                                                                        HmyDate = month + '/' + date + '/' + year
+
+                                                                        if (HmyDate == '-')
+                                                                            return HmyDate;
+                                                                        else if (comDate == '1-1-1900' || comDate == '01-01-1900' || HmyDate == "")
+                                                                            return '-';
+                                                                        else
+
+                                                                            return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                                                    }
+
+                                                                    else if (str == myKindoDate) {
+                                                                        //Check valid 1/1/1900
+                                                                        var getAllDate = myKindoDate.split(" ");
+                                                                        var comDate = getAllDate[0];
+
+                                                                        HmyDate = date + '/' + month + '/' + year
+
+                                                                        if (HmyDate == '-')
+                                                                            return HmyDate;
+                                                                        else if (comDate == '1/1/1900' || comDate == '01/01/1900' || HmyDate == "")
+                                                                            return '-';
+                                                                        else
+
+                                                                            return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                                                    }
+
+
+                                                                }
+                                                                else {
+                                                                    if (objdate == "")
+                                                                        return '-';
+                                                                }
+                                                            }
+
+                                                        </script>
+
+                                                        <script style="user-select: text;">
+                                                            var columnsLists;
+                                                            function getGrideData() {
+
+                                                                setData();
+                                                                $('#mydirectDataTable').DataTable({
+                                                                    dom: 'T<"clear">lfrtip',
+                                                                    "oLanguage": {
+                                                                        "sEmptyTable": "No record(s) found"
+                                                                    },
+                                                                    tableTools: {
+                                                                        "sSwfPath": "../content/datatables/images/copy_csv_xls_pdf.swf",
+                                                                        "sRowSelect": "multi",
+                                                                        "aButtons": [
+                                                                            'xls'
+                                                                        ]
+                                                                    },
+                                                                    columns: [{ 'data': 'ID' }, { 'data': 'Name' }, { 'data': 'Position w\\.r\\.t Me' }, { 'data': 'Date Of Joining' }, { 'data': 'Date Of Upgradation' }, { 'data': 'CurrentStatus' }, { 'data': 'Date of latest renewal' },],
+                                                                    bServerSide: true,
+                                                                    destroy: true,
+                                                                    processing: true,
+                                                                    oLanguage: { sProcessing: "<div class='loader'></div>" },
+                                                                    "ordering": false,
+                                                                    "ajax": {
+                                                                        'type': 'POST',
+                                                                        'url': "/MyNetwork/MyDirect",
+                                                                        'data': data,
+                                                                        pagingType: "full_numbers",
+                                                                        iDisplayLength: 10
+                                                                    }
+                                                                });
+
+
+                                                            }
+                                                            $(document).ready(function () {
+                                                                columnsList = [{ 'data': 'ID' }, { 'data': 'Name' }, { 'data': 'Position w\\.r\\.t Me' }, { 'data': 'Date Of Joining' }, { 'data': 'Date Of Upgradation' }, { 'data': 'CurrentStatus' }, { 'data': 'Date of latest renewal' },];
+                                                                getGrideData();
+
+
+                                                                if ('False' == 'True') {
+                                                                    $("#ToolTables_mydirectDataTable_0").css("display", "none")
+                                                                }
+                                                            });
+                                                        </script>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br style="user-select: text;">
+                                        <br style="user-select: text;">
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/mei-kusakabe/git-learn.git
+git push -u origin master -->

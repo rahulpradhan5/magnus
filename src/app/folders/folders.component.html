@@ -1,0 +1,360 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+
+                        <form action="/CommunicationCenter/Folders" method="post"><input
+                                name="__RequestVerificationToken" type="hidden"
+                                value="LhLJl4gjamxpjdaEE4h92wS52K6Rka9UwhDm8TrH_Fg43sbhgdpPk8I09ZLdwThoDxijmdNH0eNidW4nmDVsz0yttn6vG0nJdSNsqIYWf401"><input
+                                id="SelectedFolders" name="SelectedFolders" type="hidden" value=""> <br>
+                            <div class="sparkline16-list shadow-reset">
+
+                                <div class="sparkline16-hd">
+                                    <div class="main-sparkline16-hd">
+                                        <h1 style="visibility:hidden">Inbox</h1>
+                                        <div class="sparkline16-outline-icon">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sparkline16-list shadow-reset">
+                                    <div class="sparkline16-graph">
+                                        <div id="ScrollableDiv">
+                                            <div class="datatable-dashv1-list custom-datatable-overright"
+                                                id="ScrollableDiv111">
+                                                <br>
+
+                                                <style>
+                                                    .ccMenu a {
+                                                        /*padding: 15px;
+        padding: 15px;*/
+                                                        /*display: block;*/
+                                                        /*width: 125%;*/
+                                                        font-size: 1em !important;
+                                                        text-align: left;
+                                                        display: inline-block;
+                                                        max-width: 100%;
+                                                        margin-bottom: 1%;
+                                                    }
+
+                                                    .ccMenu {
+                                                        /*display: inline-block;*/
+                                                        width: 100%;
+                                                    }
+                                                </style>
+
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="text-align: center; user-select: text;">
+                                                    <ul class="ccMenu" style="user-select: text;">
+                                                        <li style="user-select: text;">
+
+                                                            <a href="/Inbox" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+
+                                                                <i class="fa-solid fa-inbox"></i>
+                                                                <!-- <i class="fa fa-inbox" style="user-select: text;"></i> -->
+                                                                Inbox
+                                                            </a>
+                                                            <a href="/ComposeMessage"
+                                                                class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-message"></i>
+                                                                Compose Message
+                                                            </a>
+                                                            <a href="/Sent" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-envelope-circle-check"></i>
+                                                                Sent
+                                                            </a>
+                                                            <a href="/Folders" class="btn btn-custon-four btn-primary"
+                                                                style="user-select: text;">
+                                                                <i class="fa-solid fa-folder-closed"></i>
+                                                                Folders
+                                                            </a>
+
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br id="hideshowbr">
+                            <div class="result" style="text-align:center;">
+
+
+                            </div>
+                            <div class="page account-page return-request-list-page ">
+
+
+                                <div class="page registration-result-page">
+                                    <div class="page-body">
+
+
+                                        <div class="customer-blocks">
+                                            <div class="panel panel-default">
+
+
+                                                <div class="sparkline13-list shadow-reset">
+                                                    <div class="sparkline13-hd">
+                                                        <div class="main-sparkline13-hd">
+                                                            <h1>Create New Folder</h1>
+                                                            <div class="sparkline13-outline-icon">
+                                                                <span class="sparkline13-collapse-link"><i
+                                                                        class="fa fa-chevron-up"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sparkline13-graph">
+                                                        <div class="datatable-dashv1-list custom-datatable-overright">
+                                                            <div class="basic-login-form-ad">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="all-form-element-inner">
+                                                                            <br>
+                                                                            <div class="form-group-inner">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-4">
+                                                                                        <label for="Name">Enter Folder
+                                                                                            Name</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-6">
+
+                                                                                        <input class="form-control"
+                                                                                            data-val="true"
+                                                                                            data-val-length="Folder name should be less than 20 characters"
+                                                                                            data-val-length-max="20"
+                                                                                            id="Name" maxlength="20"
+                                                                                            name="Name" type="text"
+                                                                                            value="">
+                                                                                        <span
+                                                                                            class="field-validation-valid"
+                                                                                            data-valmsg-for="Name"
+                                                                                            data-valmsg-replace="true"></span>
+                                                                                        <span
+                                                                                            class="field-validation-valid"
+                                                                                            data-valmsg-for="DeleteFolder"
+                                                                                            data-valmsg-replace="true"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="inputs commCenterFolderNote"
+                                                                                style="text-align: center;">
+                                                                                <b style="color:red;font-weight:bold"> *
+                                                                                    N.B.:
+                                                                                </b>
+                                                                                Folder Name can be 20 characters long
+                                                                            </div>
+                                                                            <div class="form-group-inner">
+                                                                                <div class="login-btn-inner">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-3"></div>
+                                                                                        <div class="col-lg-6">
+                                                                                            <div
+                                                                                                class="login-horizental cancel-wp align-middle ">
+
+
+                                                                                                <button type="submit"
+                                                                                                    id="CreateFolders"
+                                                                                                    name="CreateFolders"
+                                                                                                    class="btn btn-custon-four btn-primary"><i
+                                                                                                        class="fa fa-folder"></i>
+                                                                                                    Create</button>
+                                                                                                <button type="button"
+                                                                                                    id="btnreset"
+                                                                                                    class="btn btn-custon-four btn-warning"><i
+                                                                                                        class="fa fa-refresh"></i>
+                                                                                                    Reset</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
+
+                                                <div class="sparkline16-list ">
+                                                    <div class="sparkline16-hd">
+                                                        <div class="main-sparkline16-hd">
+                                                            <h1>Folders</h1>
+                                                            <div class="sparkline16-outline-icon">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="sparkline16-list shadow-reset">
+                                                        <div class="sparkline16-graph">
+                                                            <div id="ScrollableDiv">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright"
+                                                                    id="BinaryBothdiv">
+                                                                    <div id="FoldersReport_wrapper"
+                                                                        class="dataTables_wrapper no-footer">
+                                                                        <div class="DTTT_container"></div>
+                                                                        <div class="clear"></div>
+                                                                        <div id="FoldersReport_filter"
+                                                                            class="dataTables_filter">
+                                                                            <label>Search:<input
+                                                                                    id="txtSearchDetailOnDatatable"
+                                                                                    type="search" class=""
+                                                                                    placeholder=""
+                                                                                    aria-controls="FoldersReport"></label>
+                                                                        </div>
+                                                                        <div id="FoldersReport_processing"
+                                                                            class="dataTables_processing"
+                                                                            style="display: none;">
+                                                                            <div class="loader"></div>
+                                                                        </div>
+                                                                        <table id="FoldersReport"
+                                                                            class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                                                            cellspacing="0" width="100%" role="grid"
+                                                                            aria-describedby="FoldersReport_info"
+                                                                            style="width: 100%;">
+                                                                            <thead>
+                                                                                <tr role="row">
+                                                                                    <th class="dt-body-center sorting_asc"
+                                                                                        tabindex="0"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-sort="ascending"
+                                                                                        aria-label=": activate to sort column descending"
+                                                                                        style="width: 140.4px;"><input
+                                                                                            type="checkbox"
+                                                                                            name="select_all" value="1"
+                                                                                            id="example-select-all">
+                                                                                    </th>
+                                                                                    <th class="HideId sorting"
+                                                                                        style="display: none; width: 0px;"
+                                                                                        tabindex="0"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label=": activate to sort column ascending">
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Folder Name : activate to sort column ascending"
+                                                                                        style="width: 464.4px;">Folder
+                                                                                        Name
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Messages : activate to sort column ascending"
+                                                                                        style="width: 369.4px;">Messages
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="New: activate to sort column ascending"
+                                                                                        style="width: 209.4px;">New</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr class="odd">
+                                                                                    <td valign="top" colspan="4"
+                                                                                        class="dataTables_empty">No
+                                                                                        record(s)
+                                                                                        found</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <div class="dataTables_info"
+                                                                            id="FoldersReport_info" role="status"
+                                                                            aria-live="polite">
+                                                                            <div class="dataTables_length"
+                                                                                id="FoldersReport_length"
+                                                                                style="display: none;">Showing 0 to 0 of
+                                                                                0
+                                                                                entries<span> , <select
+                                                                                        name="FoldersReport_length"
+                                                                                        aria-controls="FoldersReport"
+                                                                                        class="">
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="25">25</option>
+                                                                                        <option value="50">50</option>
+                                                                                        <option value="100">100</option>
+                                                                                    </select> entries per page</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dataTables_paginate paging_full_numbers"
+                                                                            id="FoldersReport_paginate"
+                                                                            style="display: none;">
+                                                                            <a class="paginate_button previous disabled"
+                                                                                aria-controls="FoldersReport"
+                                                                                data-dt-idx="0" tabindex="0"
+                                                                                id="FoldersReport_previous">&lt;</a><span></span><a
+                                                                                class="paginate_button next disabled"
+                                                                                aria-controls="FoldersReport"
+                                                                                data-dt-idx="1" tabindex="0"
+                                                                                id="FoldersReport_next">&gt;</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+
+
+                                                <!-- <div class="inputs">
+                                                    <div class="buttons" id="deletebtncomm">
+                                                        <button type="submit" id="DeleteFolders" name="DeleteFolders"
+                                                            class="btn btn-sm btn-danger login-submit-cs"><i
+                                                                class="fa fa-trash"></i> Delete</button>
+                                                    </div>
+                                                </div> -->
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

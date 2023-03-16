@@ -1,0 +1,551 @@
+<div class="wrapper-pro">
+  <div class="left-sidebar-pro">
+    <app-side-menu></app-side-menu>
+  </div>
+
+  <div class="content-inner-all">
+    <div class="admin-dashone-data-table-area">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+
+
+
+
+
+            <style>
+              .table-wrapper {
+                overflow-x: auto !important;
+              }
+            </style>
+
+            <br>
+            <div class="inbox-mailbox-area mg-b-15">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-3">
+
+
+
+                        <style>
+                          #onManualView {
+                            display: block;
+                          }
+
+                          #onMObileView {
+                            display: none;
+                          }
+
+                          @media (min-width: 1026px) {
+                            #MemPanelPosition {
+                              display: block;
+                            }
+                          }
+
+
+                          @media (min-width: 320px) and (max-width: 1025px) {
+                            #onMObileView {
+                              display: block;
+                            }
+
+                            #onManualView {
+                              display: none;
+                            }
+                          }
+                        </style>
+
+                        <div class="block block-account-navigation  mobile.account-navigation-wrapper">
+                          <div class="inbox-email-menu-list compose-b-mg-30 shadow-reset">
+                            <div class="compose-email" id="onManualView">
+                              <strong>My Account</strong>
+                            </div>
+                            <div class="compose-email" id="onMObileView" data-toggle="collapse"
+                              data-target="#MemPanelPosition" style="cursor:pointer">
+                              <strong>My Account</strong>
+                            </div>
+                            <div id="MemPanelPosition" class="collapse">
+                              <ul class="nav nav-tabs">
+
+
+                                <li>
+                                  <a href="/Customerinfo" class="inactive"><span class="inbox-icon"> <i
+                                        class="fa-solid fa-info fa-7x"></i></span>Student
+                                    Info</a>
+                                </li>
+
+                                <li>
+                                  <a href="/OrderHistory" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-brands fa-first-order fa-7x"></i></span>Order
+                                    Details</a>
+                                </li>
+                                <li>
+                                  <a href="/CustomerInvoices" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
+                                </li>
+
+                                <li>
+                                  <a href="/CustomerKYCDocument" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-solid fa-id-card fa-7x"></i></span>KYC
+                                    Document</a>
+                                </li>
+                                <!-- <li>
+                                      <a href="/download" class="inactive"><span
+                                              class="inbox-icon"><i
+                                                  class="fa fa-cloud-download fa-7x"></i></span>Download
+                                          Document</a>
+                                  </li> -->
+
+                                <li>
+                                  <a href="/customerChangepassword" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-solid fa-lock-open fa-7x"></i></span>Change
+                                    Password</a>
+                                </li>
+
+
+                                <li>
+                                  <a href="/WelcomeLetterDetails" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-regular fa-handshake fa-7x"></i></span>Welcome
+                                    Letter</a>
+                                </li>
+
+
+                                <li>
+                                  <a href="/UpgradeDetails" class="active"><span class="inbox-icon"><i
+                                        class="fa-solid fa-gears fa-7x"></i></span>Upgrade
+                                    Details</a>
+                                </li>
+                                <li>
+                                  <a href="/RenewalDetails" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-solid fa-recycle fa-7x"></i></span>
+                                    Renewal Details</a>
+                                </li>
+
+
+                                <li>
+                                  <a href="/ShowIdCardDetails" class="inactive"><span class="inbox-icon"><i
+                                        class="fa-solid fa-id-card-clip fa-7x"></i></span>Id
+                                    Card</a>
+                                </li>
+
+
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-9">
+                        <div class="tab-pane fade in animated zoomInDown shadow-reset custom-inbox-message">
+                          <form action="/UpgradeDetails" method="post"><input name="__RequestVerificationToken"
+                              type="hidden"
+                              value="C9Gc_M8FPy-1GOhDfeq37NK1YKZypLt0r6JV858xEPKNTaStM_tpyysaU43r_3XQxLrJp9X0V54d_ix0PAX_fEJZebzOi6fVThIi391VEo81"><input
+                              data-val="true" data-val-number="The field Id must be a number." id="Id" name="Id"
+                              type="hidden" value="904660">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
+                              <div class="result" style="text-align:center;">
+                              </div>
+
+                              <h4> <a href="/UpgradeRequest/904660"> <b style="color: cornflowerblue"> Click Here
+                                  </b></a> to Request for Course Upgrade </h4>
+                              <br>
+                            </div>
+
+                            <link rel="stylesheet"
+                              href="/Themes/Vnext/Content/VnextCSS/css/MobileDataTableResponsive.css">
+
+                            <div class="table-wrapper">
+                              <div id="mydirectDataTable_wrapper" class="dataTables_wrapper no-footer"
+                                style="width: 1260px;">
+                                <div class="DTTT_container"></div>
+                                <div class="clear"></div>
+                                <div id="mydirectDataTable_filter" class="dataTables_filter"><label>Search:<input
+                                      id="txtSearchDetailOnDatatable" type="search" class="" placeholder=""
+                                      aria-controls="mydirectDataTable"></label></div>
+                                <div id="mydirectDataTable_processing" class="dataTables_processing"
+                                  style="display: none;">
+                                  <div class="loader"></div>
+                                </div>
+                                <table id="mydirectDataTable"
+                                  class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                  cellspacing="0" width="100%" role="grid" aria-describedby="mydirectDataTable_info">
+                                  <thead>
+                                    <tr role="row">
+                                      <th class="sorting_asc" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-sort="ascending" aria-label="
+              Sr. No.
+          : activate to sort column descending">
+                                        Sr. No.
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Old Package
+          : activate to sort column ascending">
+                                        Existing Course
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              New Package
+          : activate to sort column ascending">
+                                        New Course
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Request Date
+          : activate to sort column ascending">
+                                        Request Date
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Confirm Date
+          : activate to sort column ascending">
+                                        Confirm Date
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Status
+          : activate to sort column ascending">
+                                        Status
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="Receipt: activate to sort column ascending">Receipt</th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Upgrade TO
+          : activate to sort column ascending">
+                                        Upgrade TO
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Upgrade By
+          : activate to sort column ascending">
+                                        Upgrade By
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Order Return Request Date
+          : activate to sort column ascending">
+                                        Order Return Request Date
+                                      </th>
+                                      <th class="sorting" tabindex="0" aria-controls="mydirectDataTable" rowspan="1"
+                                        colspan="1" aria-label="
+              Order Return Confirm Date
+          : activate to sort column ascending">
+                                        Order Return Confirm Date
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr role="row" class="odd">
+                                      <td data-label="
+              Sr. No.
+          " class="sorting_1">1</td>
+                                      <td data-label="
+              Old Package
+          ">Free Package ( ₹ 0.00 )</td>
+                                      <td data-label="
+              New Package
+          ">Welcome Package ( ₹ 8850.00 )</td>
+                                      <td data-label="
+              Request Date
+          ">27/04/2021 03:53:00 PM</td>
+                                      <td data-label="
+              Confirm Date
+          ">02/05/2021 12:00:00 AM</td>
+                                      <td data-label="
+              Status
+          ">Confirm</td>
+                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(3824)"
+                                          style="color: cornflowerblue">Receipt</a></td>
+                                      <td data-label="
+              Upgrade TO
+          ">WG1342131</td>
+                                      <td data-label="
+              Upgrade By
+          ">WG1881881</td>
+                                      <td data-label="
+              Order Return Request Date
+          ">-</td>
+                                      <td data-label="
+              Order Return Confirm Date
+          ">-</td>
+                                    </tr>
+                                    <tr role="row" class="even">
+                                      <td data-label="
+              Sr. No.
+          " class="sorting_1">2</td>
+                                      <td data-label="
+              Old Package
+          ">Free Package ( ₹ 0.00 )</td>
+                                      <td data-label="
+              New Package
+          ">Welcome Package ( ₹ 8850.00 )</td>
+                                      <td data-label="
+              Request Date
+          ">01/04/2021 10:49:40 AM</td>
+                                      <td data-label="
+              Confirm Date
+          ">06/04/2021 12:00:00 AM</td>
+                                      <td data-label="
+              Status
+          ">Confirm</td>
+                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(3544)"
+                                          style="color: cornflowerblue">Receipt</a></td>
+                                      <td data-label="
+              Upgrade TO
+          ">WG3002594</td>
+                                      <td data-label="
+              Upgrade By
+          ">WG1881881</td>
+                                      <td data-label="
+              Order Return Request Date
+          ">-</td>
+                                      <td data-label="
+              Order Return Confirm Date
+          ">-</td>
+                                    </tr>
+                                    <tr role="row" class="odd">
+                                      <td data-label="
+              Sr. No.
+          " class="sorting_1">3</td>
+                                      <td data-label="
+              Old Package
+          ">Free Package ( ₹ 0.00 )</td>
+                                      <td data-label="
+              New Package
+          ">Welcome Package ( ₹ 8850.00 )</td>
+                                      <td data-label="
+              Request Date
+          ">18/02/2021 02:35:56 PM</td>
+                                      <td data-label="
+              Confirm Date
+          ">23/02/2021 12:00:00 AM</td>
+                                      <td data-label="
+              Status
+          ">Confirm</td>
+                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2877)"
+                                          style="color: cornflowerblue">Receipt</a></td>
+                                      <td data-label="
+              Upgrade TO
+          ">WG6281180</td>
+                                      <td data-label="
+              Upgrade By
+          ">WG1881881</td>
+                                      <td data-label="
+              Order Return Request Date
+          ">-</td>
+                                      <td data-label="
+              Order Return Confirm Date
+          ">-</td>
+                                    </tr>
+                                    <tr role="row" class="even">
+                                      <td data-label="
+              Sr. No.
+          " class="sorting_1">4</td>
+                                      <td data-label="
+              Old Package
+          ">Free Package ( ₹ 0.00 )</td>
+                                      <td data-label="
+              New Package
+          ">Welcome Package ( ₹ 8850.00 )</td>
+                                      <td data-label="
+              Request Date
+          ">01/02/2021 03:47:01 PM</td>
+                                      <td data-label="
+              Confirm Date
+          ">06/02/2021 12:00:00 AM</td>
+                                      <td data-label="
+              Status
+          ">Confirm</td>
+                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2669)"
+                                          style="color: cornflowerblue">Receipt</a></td>
+                                      <td data-label="
+              Upgrade TO
+          ">WG3219222</td>
+                                      <td data-label="
+              Upgrade By
+          ">WG1881881</td>
+                                      <td data-label="
+              Order Return Request Date
+          ">-</td>
+                                      <td data-label="
+              Order Return Confirm Date
+          ">-</td>
+                                    </tr>
+                                    <tr role="row" class="odd">
+                                      <td data-label="
+              Sr. No.
+          " class="sorting_1">5</td>
+                                      <td data-label="
+              Old Package
+          ">Free Package ( ₹ 0.00 )</td>
+                                      <td data-label="
+              New Package
+          ">Welcome Package ( ₹ 8850.00 )</td>
+                                      <td data-label="
+              Request Date
+          ">21/12/2020 04:03:52 PM</td>
+                                      <td data-label="
+              Confirm Date
+          ">26/12/2020 12:00:00 AM</td>
+                                      <td data-label="
+              Status
+          ">Confirm</td>
+                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2200)"
+                                          style="color: cornflowerblue">Receipt</a></td>
+                                      <td data-label="
+              Upgrade TO
+          ">WG1881881</td>
+                                      <td data-label="
+              Upgrade By
+          ">WG4393674</td>
+                                      <td data-label="
+              Order Return Request Date
+          ">-</td>
+                                      <td data-label="
+              Order Return Confirm Date
+          ">-</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="dataTables_info" id="mydirectDataTable_info" role="status"
+                                  aria-live="polite">
+                                  <div class="dataTables_length" id="mydirectDataTable_length">Showing 1 to 5 of 5
+                                    entries <span> , <select name="mydirectDataTable_length"
+                                        aria-controls="mydirectDataTable" class="">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                      </select> entries per page</span></div>
+                                </div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="mydirectDataTable_paginate"
+                                  style="display: none;"><a class="paginate_button previous disabled"
+                                    aria-controls="mydirectDataTable" data-dt-idx="0" tabindex="0"
+                                    id="mydirectDataTable_previous">&lt;</a><span><a class="paginate_button current"
+                                      aria-controls="mydirectDataTable" data-dt-idx="1" tabindex="0">1</a></span><a
+                                    class="paginate_button next disabled" aria-controls="mydirectDataTable"
+                                    data-dt-idx="2" tabindex="0" id="mydirectDataTable_next">&gt;</a></div>
+                              </div>
+                            </div>
+
+                            <script>
+                              function getDateWithTime(objdate) {
+
+                                var myDate;
+                                var myKindoDate;
+                                var str;
+                                var dashrecord;
+                                if (objdate != "") {
+                                  if (objdate.indexOf('-') != -1) {
+                                    res = objdate.split("-");
+                                    var date1 = res[1];
+                                    var month1 = res[0];
+                                    var year1 = res[2];
+                                    dashrecord = date1 + '/' + month1 + '/' + year1
+                                    var data = {
+                                      term: dashrecord
+                                    };
+                                  }
+                                  else {
+                                    var data = {
+                                      term: objdate
+                                    };
+                                  }
+
+                                  addAntiForgeryToken(data);
+
+                                  $.ajax({
+                                    url: "/Common/GetDateTimeInCurrentTimeZone",
+                                    type: "POST",
+                                    dataType: "json",
+                                    data: data,
+                                    async: false,
+                                    success: function (result) {
+                                      str = result.dateTime
+                                    },
+                                    error: function (xhr, textStatus, exceptionThrown) {
+                                      //alert('hi');
+                                      $("#validationMessages").html("");
+                                      $("#validationMessages").show();
+                                      $("#validationMessages").html("Kendo not initialized properly");
+                                    }
+                                  });
+
+
+                                  var res;
+                                  if (str.indexOf('-') == -1) {
+                                    res = str.split("/");
+                                    var date = res[0];
+                                    var month = res[1];
+                                    var year = res[2];
+                                    myKindoDate = date + '/' + month + '/' + year
+                                  }
+                                  else {
+                                    res = str.split("-");
+                                    var date = res[0];
+                                    var month = res[1];
+                                    var year = res[2];
+                                    myDate = date + '-' + month + '-' + year
+                                  }
+
+
+                                  if (str == myDate) {
+                                    //Check valid 1-1-1900
+                                    var getAllDate = myDate.split(" ");
+                                    var comDate = getAllDate[0];
+
+                                    HmyDate = month + '/' + date + '/' + year
+
+                                    if (HmyDate == '-')
+                                      return HmyDate;
+                                    else if (comDate == '1-1-1900' || comDate == '01-01-1900' || HmyDate == "")
+                                      return '-';
+                                    else
+
+                                      return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                  }
+
+                                  else if (str == myKindoDate) {
+                                    //Check valid 1/1/1900
+                                    var getAllDate = myKindoDate.split(" ");
+                                    var comDate = getAllDate[0];
+
+                                    HmyDate = date + '/' + month + '/' + year
+
+                                    if (HmyDate == '-')
+                                      return HmyDate;
+                                    else if (comDate == '1/1/1900' || comDate == '01/01/1900' || HmyDate == "")
+                                      return '-';
+                                    else
+
+                                      return getDateFromString(HmyDate, "dd/MM/yyyy");
+                                  }
+
+
+                                }
+                                else {
+                                  if (objdate == "")
+                                    return '-';
+                                }
+                              }
+
+                            </script> <br>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

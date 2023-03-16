@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="banner">
+        <div class="row" style="padding-left: 3%;padding-right: 3%;">
+            <div class="d-flex flex-column f1" style="margin-top: 80px;">
+                <div class="head">Welcome back member!</div>
+                <div class="sub-head" style="margin-top: 30px;">Welcome to our website, your one-stop-shop for financial freedom. Explore our expertly designed courses that offer valuable guidance and tools for effectively managing your finances. Take control of your financial future and register now for a valuable learning experience.
+                    </div>
+            </div>
+            
+            <div class="d-flex flex-column f1" style="align-items: flex-end;margin-top: 200px;">
+                <input type="email" class="input-box" style="padding:12px 20px;"placeholder="Email" [(ngModel)] = "email">
+                <input type="password" class="input-box" style="margin-top: 20px;padding:12px 20px;" placeholder="Password" [(ngModel)] = "password">
+                <button type="button" class="btn" style="margin-top: 50px;" routerLink="/dashboard" (click)="login()">Login</button>
+                <!-- <button type="button" class="btn" style="margin-top: 50px;"  (click)="logout()">Logout</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+echo "# magnus-3-3" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Vaibhavnanne18/magnus-3-3.git
+git push -u origin main -->

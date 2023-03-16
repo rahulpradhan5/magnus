@@ -1,0 +1,295 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+
+    <div class="content-inner-all">
+        <div class="admin-dashone-data-table-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+
+
+                        <form action="/MyCommission/RenewalIncomeReconciliationReport" method="post"><input
+                                name="__RequestVerificationToken" type="hidden"
+                                value="Q1gzA-y86oLTw55pNesFFTUJZpL90e_eGmou0c8E6RBjCDkTdizAe-YI0btJTFWl77jJ9DZRfxOkYwD_liVUjgFeE2Cq8EdwOgVC76FChGE1">
+                            <div class="page account-page return-request-list-page ">
+                                <br>
+                                <div class="page registration-result-page">
+
+
+
+                                    <div class="message-error error" id="validationMessages" style="display: none;">
+                                    </div>
+
+                                    <div class="sparkline13-list shadow-reset">
+
+                                        
+
+                                        <div class="sparkline13-graph">
+                                            <div class="datatable-dashv1-list custom-datatable-overright">
+
+                                                <div class="basic-login-form-ad">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="all-form-element-inner">
+                                                                <br>
+
+
+                                                                <div class="form-group-inner">
+                                                                    <div class="row">
+
+                                                                        <div class="col-md-4">
+                                                                            <label for="SelectedPlanType">Select Plan
+                                                                                Type</label>
+                                                                        </div>
+
+                                                                        <div class="col-md-6">
+                                                                            <select id="ddlPlanType"
+                                                                                class="form-control" maxlength="22"
+                                                                                name="SelectedPlanType">
+                                                                                <option value="">Select Plan Type
+                                                                                </option>
+                                                                                <option value="6">Direct &amp; Renewal
+                                                                                    Income
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner">
+                                                                    <div class="row" id="trPayoutNoList"
+                                                                        style="display: none;">
+                                                                        <div class="col-md-4">
+                                                                            <label for="SelectedPayoutNo">Select Payout
+                                                                                No</label>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <select id="ddlPayoutFrom"
+                                                                                autocomplete="off" class="form-control"
+                                                                                data-val="true"
+                                                                                data-val-number="The field Select Payout No must be a number."
+                                                                                maxlength="22" name="SelectedPayoutNo">
+                                                                                <option value="">Select Payout Number
+                                                                                </option>
+                                                                            </select>
+                                                                            <input id="SelectedPayoutNo"
+                                                                                name="SelectedPayoutNo" type="hidden"
+                                                                                value="0">
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner">
+
+                                                                    <div class="row" id="trPayoutStartDate"
+                                                                        style="display: none;">
+                                                                        <div class="col-md-4">
+                                                                            <label for="PayoutStartDate">Payout Start
+                                                                                Date</label>
+
+                                                                        </div>
+                                                                        <div style="margin-top:4px" class="col-md-6"
+                                                                            id="divPayoutDate">
+                                                                            <div class="span" id="PayoutStartDate">
+                                                                            </div>
+                                                                            <input class="form-control"
+                                                                                id="payoutStartDate"
+                                                                                name="PayoutStartDate" type="hidden"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group-inner">
+                                                                    <div class="row" id="trPayoutEndDate"
+                                                                        style="display: none;">
+                                                                        <div class="col-md-4">
+                                                                            <label for="PayoutEndDate">Payout End
+                                                                                Date</label>
+
+                                                                        </div>
+                                                                        <div style="margin-top:2px" class="col-md-6"
+                                                                            id="divPayoutDate">
+                                                                            <div class="span" id="PayoutEndDate"></div>
+                                                                            <input class="form-control"
+                                                                                id="payoutEndDate" name="PayoutEndDate"
+                                                                                type="hidden" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="searchbtns"
+                                                        class="login-horizental cancel-wp align-middle">
+
+                                                        <button type="submit" id="search"
+                                                            class="btn btn-custon-four btn-primary" value="Search"><i
+                                                                class="fa fa-search"></i> Search</button>
+                                                        <button type="button" id="btnreset"
+                                                            class="btn btn-custon-four btn-warning"><i
+                                                                class="fa fa-refresh"></i> Reset</button>
+                                                        <input type="hidden" name="hdnReset" id="hdnReset" value="">
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+                                    <br>
+                                    <div class="sparkline16-list shadow-reset">
+                                        <div class="sparkline16-hd">
+                                            <div class="main-sparkline16-hd">
+                                                <h1>Renewal Income Detail Report</h1>
+                                                <div class="sparkline16-outline-icon">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="sparkline16-list shadow-reset">
+                                            <div class="sparkline16-graph">
+                                                <div id="ScrollableDiv">
+                                                    <div class="datatable-dashv1-list custom-datatable-overright"
+                                                        id="ScrollableDiv1">
+                                                        <div id="MatchingIncomeReconsulationReport_wrapper"
+                                                            class="dataTables_wrapper no-footer">
+                                                            <div class="DTTT_container"><a
+                                                                    class="DTTT_button DTTT_button_xls"
+                                                                    id="ToolTables_MatchingIncomeReconsulationReport_0"
+                                                                    title="Export To Excel" tabindex="0"
+                                                                    aria-controls="MatchingIncomeReconsulationReport"><span
+                                                                        id=""><img _ngcontent-ome-c52="" src="https://i.postimg.cc/y6S78MBz/export-excel.png" style="user-select: text;height: 35px;"></span></a>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <form class="form-inline my-2 my-lg-0">
+                                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                                              </form>
+                                                            <div id="MatchingIncomeReconsulationReport_processing"
+                                                                class="dataTables_processing" style="display: none;">
+                                                                <div class="loader"></div>
+                                                            </div>
+                                                            <table id="MatchingIncomeReconsulationReport"
+                                                                class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
+                                                                cellspacing="0" width="100%" role="grid"
+                                                                aria-describedby="MatchingIncomeReconsulationReport_info"
+                                                                style="width: 100%;">
+                                                                <thead>
+                                                                    <tr role="row">
+                                                                        <th class="sorting_disabled" rowspan="1"
+                                                                            colspan="1" style="width: 153.4px;">ID</th>
+                                                                        <th class="sorting_disabled" rowspan="1"
+                                                                            colspan="1" style="width: 280.4px;">Name
+                                                                        </th>
+                                                                        <th class="sorting_disabled" rowspan="1"
+                                                                            colspan="1" style="width: 422.4px;">
+                                                                            Mobile No
+                                                                        </th>
+                                                                        <th class="sorting_disabled" rowspan="1"
+                                                                            colspan="1" style="width: 327.4px;">Income
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                        <tbody>
+                                                                            <tr class="odd" *ngIf="renew.length == 0">
+                                                                                <td valign="top" colspan="4"
+                                                                                    class="dataTables_empty">No
+                                                                                    data available in table</td>
+                                                                            </tr>
+                                                                            <tr class="odd" *ngFor="let data of renew">
+                                                                                <td data-label="Start Date"
+                                                                        style="user-select: text;">{{data.id}}</td>
+                                                                                    <td data-label="Start Date"
+                                                                        style="user-select: text;">{{data.revenue}}</td>
+                                                                                    <td data-label="Start Date"
+                                                                        style="user-select: text;">{{data.percent}}%</td>
+                                                                                    <td data-label="Start Date"
+                                                                        style="user-select: text;">{{data.created_at}}</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                   
+                                                            </table>
+                                                            <div class="dataTables_info"
+                                                                id="MatchingIncomeReconsulationReport_info"
+                                                                role="status" aria-live="polite">
+                                                                <div class="dataTables_length"
+                                                                    id="MatchingIncomeReconsulationReport_length"
+                                                                    style="display: none;">Showing 0 to 0 of 0
+                                                                    entries<span> ,
+                                                                        <select
+                                                                            name="MatchingIncomeReconsulationReport_length"
+                                                                            aria-controls="MatchingIncomeReconsulationReport"
+                                                                            class="">
+                                                                            <option value="10">10</option>
+                                                                            <option value="25">25</option>
+                                                                            <option value="50">50</option>
+                                                                            <option value="100">100</option>
+                                                                        </select> entries per page</span></div>
+                                                            </div>
+                                                            <div class="dataTables_paginate paging_full_numbers"
+                                                                id="MatchingIncomeReconsulationReport_paginate"
+                                                                style="display: none;"><a
+                                                                    class="paginate_button previous disabled"
+                                                                    aria-controls="MatchingIncomeReconsulationReport"
+                                                                    data-dt-idx="0" tabindex="0"
+                                                                    id="MatchingIncomeReconsulationReport_previous">&lt;</a><span></span><a
+                                                                    class="paginate_button next disabled"
+                                                                    aria-controls="MatchingIncomeReconsulationReport"
+                                                                    data-dt-idx="1" tabindex="0"
+                                                                    id="MatchingIncomeReconsulationReport_next">&gt;</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <br>
+                        </form>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
