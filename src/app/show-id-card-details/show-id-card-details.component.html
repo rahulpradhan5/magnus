@@ -286,12 +286,10 @@
                                                             </div>
 
                                                             <div class="ReciptDetailbox">
-                                                                <img src="http://cdn.onlinewebfonts.com/svg/img_452489.png"
+                                                               
+                                                                    <img [src]="profileurl"
                                                                     width="100" height="100" alt=""
-                                                                    style="border-radius: 50%;background-color: #fff;" *ngIf="image == null">
-                                                                    <img src="{{image}}"
-                                                                    width="100" height="100" alt=""
-                                                                    style="border-radius: 50%;background-color: #fff;" *ngIf="image != null">
+                                                                    style="border-radius: 50%;background-color: #fff;">
 
                                                                 <h4 align="center" style="margin-top: 15px;">Identity
                                                                     Card</h4><br>

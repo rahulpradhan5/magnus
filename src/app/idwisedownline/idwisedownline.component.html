@@ -281,7 +281,7 @@
                                                                         </thead>
                                                                         <tbody style="user-select: text;">
                                                                             <tr role="row" class="odd"
-                                                                                style="user-select: text;" *ngFor="let userData of data">
+                                                                                style="user-select: text;" *ngFor="let userData of alluserdata">
                                                                                 <td data-label="
                     ID
                 " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
@@ -293,34 +293,41 @@
                 " style="user-select: text;" *ngIf="userData.name == ''">Null</td>
                                                                                 <td data-label="
                     Left Count
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.leftcount}}</td>
                                                                                 <td data-label="
                     Right Count
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.rightcount}}</td>
                                                                                 <td data-label="
                     Confirm Left Count
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.confirmleft}}</td>
                                                                                 <td data-label="
                     Confirm Right Count
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.confirmright
+                }}</td>
                                                                                 <td data-label="
                     Left PV
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.leftpv
+                }}</td>
                                                                                 <td data-label="
                     Right PV
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.rightpv
+                }}</td>
                                                                                 <td data-label="
                     Confirm Left PV
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.confirmleftpv
+                }}</td>
                                                                                 <td data-label="
                     Confirm Right PV
-                " style="user-select: text;">0</td>
+                " style="user-select: text;">{{userData.confirmrightpv
+                }}</td>
                                                                                 <td data-label="
                     Own PV
-                " style="user-select: text;">100</td>
+                " style="user-select: text;">{{userData.pv
+                }}</td>
                                                                                 <td data-label="
                     Confirm Own PV
-                " style="user-select: text;">100</td>
+                " style="user-select: text;">{{userData.conpv
+                }}</td>
                                                                             </tr>
                                                                             
                                                                         </tbody>

@@ -96,12 +96,12 @@ export class DashboardComponent implements OnInit {
         }else{
           this.remainingTime = 'Life Time'
         }
-        if (data.total_details['leftdata'] != 'undefined') {
+        if (data.total_details['leftdata'] ) {
           this.totalLeftcount = data.total_details.leftdata.length;
         }else{
           this.totalLeftcount = 0;
         }
-        if( data?.total_details['rightdata'] != 'undefined'){
+        if( data?.total_details['rightdata']){
           this.totalrightcount = data.total_details.rightdata.length;
         } else {
           this.totalrightcount = 0;

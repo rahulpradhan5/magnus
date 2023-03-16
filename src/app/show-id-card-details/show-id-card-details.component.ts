@@ -16,6 +16,7 @@ name:any;
 mobile:any;
 image:any;
 doj:any;
+profileurl: string = 'http://cdn.onlinewebfonts.com/svg/img_452489.png';
   constructor(public afa: AngularFireAuth, private fdb: AngularFirestore) {
     afa.user.subscribe(data => {
       // console.log('data-->');
@@ -27,6 +28,14 @@ doj:any;
       this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
       console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.fdb.collection<any>('users').doc(this.uid).collection('kyc').doc('details').valueChanges().subscribe((doc: any) => { 
+        if (doc!=undefined) {
+          if (doc.profile!=undefined) {
+            this.profileurl = doc.profile;
+          }
+        
+        }
+      });
       this.items = this.fdb.collection('users').doc(this.uid).valueChanges();
     this.items.subscribe((data:any) =>{
       console.log(data);
