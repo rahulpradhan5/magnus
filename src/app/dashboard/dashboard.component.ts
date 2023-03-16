@@ -85,8 +85,8 @@ export class DashboardComponent implements OnInit {
         this.todayRightcountPv = data?.today_right_count_pv;
         this.ownPv = data.ownPv;
         this.todayownPv = data.TodayownPv;
-        this.startDate = data.subcription.start_date;
-        this.endDate = data.subcription.end_date;
+        this.startDate = data?.subcription[0]?.start_date||'0000-00-00';
+        this.endDate = data?.subcription[0]?.end_date||'0000-00-00';
         this.rank = data.rank;
         this.ladate = data.ldate;
         if(this.endDate != '' && this.endDate !='0000-00-00'){
