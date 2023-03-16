@@ -84,11 +84,7 @@
                                                                                 class="fa-brands fa-first-order fa-7x"></i></span>Order
                                                                         Details</a>
                                                                 </li>
-                                                                <li>
-                                                                    <a href="/CustomerInvoices" class="inactive"><span
-                                                                            class="inbox-icon"><i
-                                                                                class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
-                                                                </li>
+                                                               
 
                                                                 <li>
                                                                     <a href="/CustomerKYCDocument"
@@ -224,62 +220,21 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr role="row" class="odd">
+                                                                        <tr role="row" class="odd" *ngFor="let datas of data">
                                                                             <td data-label="
                     Sr. No.
-                " class="sorting_1">1</td>
+                " class="sorting_1">{{datas.id}}</td>
                                                                             <td data-label="
                     New Package
-                ">Renewal Package ( ₹ 2950.00 )</td>
+                ">{{datas.package_name}}</td>
                                                                             <td data-label="
                     Renewal Date
-                ">21/08/2021 02:49:48 PM</td>
+                ">{{datas.created_at}}</td>
                                                                             <td data-label="
                     Renewal Month
-                ">4</td>
+                ">{{datas.package_period}}</td>
                                                                         </tr>
-                                                                        <tr role="row" class="even">
-                                                                            <td data-label="
-                    Sr. No.
-                " class="sorting_1">2</td>
-                                                                            <td data-label="
-                    New Package
-                ">Renewal Package ( ₹ 2950.00 )</td>
-                                                                            <td data-label="
-                    Renewal Date
-                ">22/04/2021 03:15:09 PM</td>
-                                                                            <td data-label="
-                    Renewal Month
-                ">3</td>
-                                                                        </tr>
-                                                                        <tr role="row" class="odd">
-                                                                            <td data-label="
-                    Sr. No.
-                " class="sorting_1">3</td>
-                                                                            <td data-label="
-                    New Package
-                ">Renewal Package ( ₹ 2950.00 )</td>
-                                                                            <td data-label="
-                    Renewal Date
-                ">17/03/2021 04:21:43 PM</td>
-                                                                            <td data-label="
-                    Renewal Month
-                ">2</td>
-                                                                        </tr>
-                                                                        <tr role="row" class="even">
-                                                                            <td data-label="
-                    Sr. No.
-                " class="sorting_1">4</td>
-                                                                            <td data-label="
-                    New Package
-                ">Renewal Package ( ₹ 2950.00 )</td>
-                                                                            <td data-label="
-                    Renewal Date
-                ">09/02/2021 08:37:01 PM</td>
-                                                                            <td data-label="
-                    Renewal Month
-                ">1</td>
-                                                                        </tr>
+                                                                        
                                                                     </tbody>
                                                                 </table>
                                                                 <div class="dataTables_info" id="mydirectDataTable_info"

@@ -80,10 +80,7 @@
                                         class="fa-brands fa-first-order fa-7x"></i></span>Order
                                     Details</a>
                                 </li>
-                                <li>
-                                  <a href="/CustomerInvoices" class="inactive"><span class="inbox-icon"><i
-                                        class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
-                                </li>
+                               
 
                                 <li>
                                   <a href="/CustomerKYCDocument" class="inactive"><span class="inbox-icon"><i
@@ -237,33 +234,33 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr role="row" class="odd">
+                                    <tr role="row" class="odd" *ngFor="let data of datas">
                                       <td data-label="
               Sr. No.
           " class="sorting_1">1</td>
                                       <td data-label="
               Old Package
-          ">Free Package ( ₹ 0.00 )</td>
+          ">{{data.existing_package}}</td>
                                       <td data-label="
               New Package
-          ">Welcome Package ( ₹ 8850.00 )</td>
+          ">{{data.package_name}}</td>
                                       <td data-label="
               Request Date
-          ">27/04/2021 03:53:00 PM</td>
+          ">{{data.created_at}}</td>
                                       <td data-label="
               Confirm Date
-          ">02/05/2021 12:00:00 AM</td>
+          ">{{data.updated_at}}</td>
                                       <td data-label="
               Status
-          ">Confirm</td>
+          ">{{data.status}}</td>
                                       <td data-label="Receipt"><a onclick="UpgradeReceipt(3824)"
                                           style="color: cornflowerblue">Receipt</a></td>
                                       <td data-label="
               Upgrade TO
-          ">WG1342131</td>
+          ">{{data.user_id}}</td>
                                       <td data-label="
               Upgrade By
-          ">WG1881881</td>
+          ">{{data.requested_user_id	}}</td>
                                       <td data-label="
               Order Return Request Date
           ">-</td>
@@ -271,142 +268,7 @@
               Order Return Confirm Date
           ">-</td>
                                     </tr>
-                                    <tr role="row" class="even">
-                                      <td data-label="
-              Sr. No.
-          " class="sorting_1">2</td>
-                                      <td data-label="
-              Old Package
-          ">Free Package ( ₹ 0.00 )</td>
-                                      <td data-label="
-              New Package
-          ">Welcome Package ( ₹ 8850.00 )</td>
-                                      <td data-label="
-              Request Date
-          ">01/04/2021 10:49:40 AM</td>
-                                      <td data-label="
-              Confirm Date
-          ">06/04/2021 12:00:00 AM</td>
-                                      <td data-label="
-              Status
-          ">Confirm</td>
-                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(3544)"
-                                          style="color: cornflowerblue">Receipt</a></td>
-                                      <td data-label="
-              Upgrade TO
-          ">WG3002594</td>
-                                      <td data-label="
-              Upgrade By
-          ">WG1881881</td>
-                                      <td data-label="
-              Order Return Request Date
-          ">-</td>
-                                      <td data-label="
-              Order Return Confirm Date
-          ">-</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                      <td data-label="
-              Sr. No.
-          " class="sorting_1">3</td>
-                                      <td data-label="
-              Old Package
-          ">Free Package ( ₹ 0.00 )</td>
-                                      <td data-label="
-              New Package
-          ">Welcome Package ( ₹ 8850.00 )</td>
-                                      <td data-label="
-              Request Date
-          ">18/02/2021 02:35:56 PM</td>
-                                      <td data-label="
-              Confirm Date
-          ">23/02/2021 12:00:00 AM</td>
-                                      <td data-label="
-              Status
-          ">Confirm</td>
-                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2877)"
-                                          style="color: cornflowerblue">Receipt</a></td>
-                                      <td data-label="
-              Upgrade TO
-          ">WG6281180</td>
-                                      <td data-label="
-              Upgrade By
-          ">WG1881881</td>
-                                      <td data-label="
-              Order Return Request Date
-          ">-</td>
-                                      <td data-label="
-              Order Return Confirm Date
-          ">-</td>
-                                    </tr>
-                                    <tr role="row" class="even">
-                                      <td data-label="
-              Sr. No.
-          " class="sorting_1">4</td>
-                                      <td data-label="
-              Old Package
-          ">Free Package ( ₹ 0.00 )</td>
-                                      <td data-label="
-              New Package
-          ">Welcome Package ( ₹ 8850.00 )</td>
-                                      <td data-label="
-              Request Date
-          ">01/02/2021 03:47:01 PM</td>
-                                      <td data-label="
-              Confirm Date
-          ">06/02/2021 12:00:00 AM</td>
-                                      <td data-label="
-              Status
-          ">Confirm</td>
-                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2669)"
-                                          style="color: cornflowerblue">Receipt</a></td>
-                                      <td data-label="
-              Upgrade TO
-          ">WG3219222</td>
-                                      <td data-label="
-              Upgrade By
-          ">WG1881881</td>
-                                      <td data-label="
-              Order Return Request Date
-          ">-</td>
-                                      <td data-label="
-              Order Return Confirm Date
-          ">-</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                      <td data-label="
-              Sr. No.
-          " class="sorting_1">5</td>
-                                      <td data-label="
-              Old Package
-          ">Free Package ( ₹ 0.00 )</td>
-                                      <td data-label="
-              New Package
-          ">Welcome Package ( ₹ 8850.00 )</td>
-                                      <td data-label="
-              Request Date
-          ">21/12/2020 04:03:52 PM</td>
-                                      <td data-label="
-              Confirm Date
-          ">26/12/2020 12:00:00 AM</td>
-                                      <td data-label="
-              Status
-          ">Confirm</td>
-                                      <td data-label="Receipt"><a onclick="UpgradeReceipt(2200)"
-                                          style="color: cornflowerblue">Receipt</a></td>
-                                      <td data-label="
-              Upgrade TO
-          ">WG1881881</td>
-                                      <td data-label="
-              Upgrade By
-          ">WG4393674</td>
-                                      <td data-label="
-              Order Return Request Date
-          ">-</td>
-                                      <td data-label="
-              Order Return Confirm Date
-          ">-</td>
-                                    </tr>
+                                  
                                   </tbody>
                                 </table>
                                 <div class="dataTables_info" id="mydirectDataTable_info" role="status"

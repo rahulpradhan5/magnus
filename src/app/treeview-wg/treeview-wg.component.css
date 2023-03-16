@@ -27617,6 +27617,13 @@ th {
     content: "\e260";
 }
 
+.show_div{
+    z-index: 1 !important;
+    background-color: #bd8427 !important;
+    width: auto !important;
+
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

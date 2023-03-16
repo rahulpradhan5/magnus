@@ -213,11 +213,7 @@
                                                                                 class="fa-brands fa-first-order fa-7x"></i></span>Order
                                                                         Details</a>
                                                                 </li>
-                                                                <li>
-                                                                    <a href="/CustomerInvoices" class="inactive"><span
-                                                                            class="inbox-icon"><i
-                                                                                class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
-                                                                </li>
+                                                               
 
                                                                 <li>
                                                                     <a href="/CustomerKYCDocument"
@@ -292,7 +288,10 @@
                                                             <div class="ReciptDetailbox">
                                                                 <img src="http://cdn.onlinewebfonts.com/svg/img_452489.png"
                                                                     width="100" height="100" alt=""
-                                                                    style="border-radius: 50%;background-color: #fff;">
+                                                                    style="border-radius: 50%;background-color: #fff;" *ngIf="image == null">
+                                                                    <img src="{{image}}"
+                                                                    width="100" height="100" alt=""
+                                                                    style="border-radius: 50%;background-color: #fff;" *ngIf="image != null">
 
                                                                 <h4 align="center" style="margin-top: 15px;">Identity
                                                                     Card</h4><br>
@@ -300,11 +299,11 @@
                                                             </div>
                                                             <br>
                                                             <div id="TableSet">
-                                                                <p><strong>Name </strong> : Abhinandan Sugga</p>
-                                                                <p><strong>Distributor Id </strong>: MCS000018</p>
-                                                                <p><strong>Mobile No</strong> : +919765580841</p>
-                                                                <p><strong>Address </strong> : H no 204 Vaidya Nagar</p>
-                                                                <p><strong>City</strong> : Ponda</p>
+                                                                <p><strong>Name </strong> : {{name}}</p>
+                                                                <p><strong>Distributor Id </strong>: {{uid}}</p>
+                                                                <p><strong>Mobile No</strong> : {{mobile}}</p>
+                                                                <p><strong>Email </strong> : {{email}}</p>
+                                                                <p><strong>Date of joinig</strong> : {{doj}}</p>
                                                                 <br>
                                                             </div>
 

@@ -79,11 +79,7 @@
                                                                                 class="fa-brands fa-first-order fa-7x"></i></span>Order
                                                                         Details</a>
                                                                 </li>
-                                                                <li>
-                                                                    <a href="/CustomerInvoices" class="inactive"><span
-                                                                            class="inbox-icon"><i
-                                                                                class="fa-solid fa-receipt fa-7x"></i></span>Invoices</a>
-                                                                </li>
+                                                               
 
                                                                 <li>
                                                                     <a href="/CustomerKYCDocument"
@@ -151,13 +147,36 @@
                                                         <div class="pie-bar-line-area">
                                                             <div class="container-fluid">
                                                                 <div class="row">
-                                                                    <div class="col-lg-4">
+                                                                    <div class="col-lg-4" *ngIf="data.length == 0">
                                                                         <div
                                                                             class="sparkline7-list shadow-reset mg-b-15">
                                                                             <div class="sparkline7-hd">
                                                                                 <div class="main-spark7-hd">
                                                                                     <h1><strong>Order Number:
-                                                                                            9747</strong></h1>
+                                                                                            0</strong></h1>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="sparkline7-graph">
+                                                                                <ul class="profile-contact-menu">
+                                                                                    <li>Order status: <span
+                                                                                            class="order-status complete">No any order</span>
+                                                                                    </li>
+                                                                                    
+                                                                                    
+
+
+                                                                                </ul>
+                        
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4" *ngFor="let datas of data">
+                                                                        <div
+                                                                            class="sparkline7-list shadow-reset mg-b-15">
+                                                                            <div class="sparkline7-hd">
+                                                                                <div class="main-spark7-hd">
+                                                                                    <h1><strong>Order Number:
+                                                                                            {{datas.id}}</strong></h1>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="sparkline7-graph">
@@ -166,182 +185,21 @@
                                                                                             class="order-status complete">Complete</span>
                                                                                     </li>
                                                                                     <li>Order Date: <span
-                                                                                            class="order-date">21/08/2021</span>
+                                                                                            class="order-date">{{datas.created_at}}</span>
                                                                                     </li>
                                                                                     <li>Order Total: <span
                                                                                             class="order-total">₹
-                                                                                            2950.00</span></li>
-                                                                                    <li>Total PV: <span
-                                                                                            class="order-total">0.00</span>
-                                                                                    </li>
+                                                                                            {{datas.amount}}</span></li>
+                                                                                    
 
 
                                                                                 </ul>
-                                                                                <br>
-                                                                                <div class="customerOrderbutton">
-
-                                                                                    <button type="button"
-                                                                                        class="btn btn-custon-four btn-primary"
-                                                                                        onclick="setLocation('/orderdetails/9747')"><i
-                                                                                            class="fa fa-edit"></i>
-                                                                                        Details</button>
-                                                                                </div>
+                        
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div
-                                                                            class="sparkline7-list shadow-reset mg-b-15">
-                                                                            <div class="sparkline7-hd">
-                                                                                <div class="main-spark7-hd">
-                                                                                    <h1><strong>Order Number:
-                                                                                            7033</strong></h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="sparkline7-graph">
-                                                                                <ul class="profile-contact-menu">
-                                                                                    <li>Order status: <span
-                                                                                            class="order-status complete">Complete</span>
-                                                                                    </li>
-                                                                                    <li>Order Date: <span
-                                                                                            class="order-date">22/04/2021</span>
-                                                                                    </li>
-                                                                                    <li>Order Total: <span
-                                                                                            class="order-total">₹
-                                                                                            2950.00</span></li>
-                                                                                    <li>Total PV: <span
-                                                                                            class="order-total">0.00</span>
-                                                                                    </li>
-
-
-                                                                                </ul>
-                                                                                <br>
-                                                                                <div class="customerOrderbutton">
-
-                                                                                    <button type="button"
-                                                                                        class="btn btn-custon-four btn-primary"
-                                                                                        onclick="setLocation('/orderdetails/7033')"><i
-                                                                                            class="fa fa-edit"></i>
-                                                                                        Details</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div
-                                                                            class="sparkline7-list shadow-reset mg-b-15">
-                                                                            <div class="sparkline7-hd">
-                                                                                <div class="main-spark7-hd">
-                                                                                    <h1><strong>Order Number:
-                                                                                            6086</strong></h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="sparkline7-graph">
-                                                                                <ul class="profile-contact-menu">
-                                                                                    <li>Order status: <span
-                                                                                            class="order-status complete">Complete</span>
-                                                                                    </li>
-                                                                                    <li>Order Date: <span
-                                                                                            class="order-date">17/03/2021</span>
-                                                                                    </li>
-                                                                                    <li>Order Total: <span
-                                                                                            class="order-total">₹
-                                                                                            2950.00</span></li>
-                                                                                    <li>Total PV: <span
-                                                                                            class="order-total">0.00</span>
-                                                                                    </li>
-
-
-                                                                                </ul>
-                                                                                <br>
-                                                                                <div class="customerOrderbutton">
-
-                                                                                    <button type="button"
-                                                                                        class="btn btn-custon-four btn-primary"
-                                                                                        onclick="setLocation('/orderdetails/6086')"><i
-                                                                                            class="fa fa-edit"></i>
-                                                                                        Details</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div
-                                                                            class="sparkline7-list shadow-reset mg-b-15">
-                                                                            <div class="sparkline7-hd">
-                                                                                <div class="main-spark7-hd">
-                                                                                    <h1><strong>Order Number:
-                                                                                            5218</strong></h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="sparkline7-graph">
-                                                                                <ul class="profile-contact-menu">
-                                                                                    <li>Order status: <span
-                                                                                            class="order-status complete">Complete</span>
-                                                                                    </li>
-                                                                                    <li>Order Date: <span
-                                                                                            class="order-date">09/02/2021</span>
-                                                                                    </li>
-                                                                                    <li>Order Total: <span
-                                                                                            class="order-total">₹
-                                                                                            2950.00</span></li>
-                                                                                    <li>Total PV: <span
-                                                                                            class="order-total">0.00</span>
-                                                                                    </li>
-
-
-                                                                                </ul>
-                                                                                <br>
-                                                                                <div class="customerOrderbutton">
-
-                                                                                    <button type="button"
-                                                                                        class="btn btn-custon-four btn-primary"
-                                                                                        onclick="setLocation('/orderdetails/5218')"><i
-                                                                                            class="fa fa-edit"></i>
-                                                                                        Details</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div
-                                                                            class="sparkline7-list shadow-reset mg-b-15">
-                                                                            <div class="sparkline7-hd">
-                                                                                <div class="main-spark7-hd">
-                                                                                    <h1><strong>Order Number:
-                                                                                            4193</strong></h1>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="sparkline7-graph">
-                                                                                <ul class="profile-contact-menu">
-                                                                                    <li>Order status: <span
-                                                                                            class="order-status complete">Complete</span>
-                                                                                    </li>
-                                                                                    <li>Order Date: <span
-                                                                                            class="order-date">21/12/2020</span>
-                                                                                    </li>
-                                                                                    <li>Order Total: <span
-                                                                                            class="order-total">₹
-                                                                                            8850.00</span></li>
-                                                                                    <li>Total PV: <span
-                                                                                            class="order-total">100.00</span>
-                                                                                    </li>
-
-
-                                                                                </ul>
-                                                                                <br>
-                                                                                <div class="customerOrderbutton">
-
-                                                                                    <button type="button"
-                                                                                        class="btn btn-custon-four btn-primary"
-                                                                                        onclick="setLocation('/orderdetails/4193')"><i
-                                                                                            class="fa fa-edit"></i>
-                                                                                        Details</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
+                                                                    
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>
