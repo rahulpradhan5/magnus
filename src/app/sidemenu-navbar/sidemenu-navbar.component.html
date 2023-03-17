@@ -11,18 +11,41 @@
   </div>
 
   <ul
-    class="text-start hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex  lg:flex lg:items-center lg:w-auto lg:space-x-6 pc-view">
-    <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="home">Home</a></li>
-    <li class="text-gray-300"></li>
+  class="text-start hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex  lg:flex lg:items-center lg:w-auto lg:space-x-6 pc-view">
+  <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="home">Home</a></li>
+  <li class="text-gray-300"></li>
+
+  <li><a class="text-sm text-blue-600 font-bold menus" href="#" routerLink="about-us">About</a></li>
+  <li class="text-gray-300" id="about-us"></li>
+
+  <li *ngIf="isLogedin"><a class="text-sm text-blue-600 font-bold menus" href="#" routerLink="dashboard">Dashboard</a>
+  </li>
+  <li class="text-gray-300">
+
+  </li>
+  <li *ngIf="isLogedin"><a class="text-sm text-blue-600 font-bold menus" href="#" routerLink="invite">Invite</a>
+  </li>
+  <li class="text-gray-300">
+
+  </li>
 
 
-    <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="bank-details">Bank Details</a>
-    </li>
-    <li class="text-gray-300">
+  <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="pricing">Pricing</a></li>
+  <li class="text-gray-300">
 
-    </li>
-    <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="contact">Contact</a></li>
-  </ul>
+  </li>
+  <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="awarenes-campaign">Awareness
+       </a></li>
+  <li class="text-gray-300">
+
+  </li>
+  <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="bank-details">Bank Details</a>
+  </li>
+  <li class="text-gray-300">
+
+  </li>
+  <li><a class="text-sm text-gray-400 hover:text-gray-500 menus" href="#" routerLink="contact">Contact</a></li>
+</ul>
 
   <!-- <a   class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200 menus" href="#" style="background: #CE992F;border-radius: 0px 30px 30px 20px;" routerLink="registration">Register</a> -->
   <div class="mt-auto">

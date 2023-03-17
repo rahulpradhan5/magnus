@@ -122,7 +122,7 @@
                                     <div class="panel-footer  ">
                                         <a class="" href="/Customerinfo" target="_blank" title="Pancard">
                                             <span class="pull-left"> </span>
-                                            <span class="pull-right">{{revenue}}
+                                            <span class="pull-right">{{revenue | number}}
                                                 <!-- <i class="fa fa-arrow-circle-right"></i> -->
                                             </span>
                                             <div class="clearfix"></div>
@@ -228,7 +228,7 @@
                                     <div class="sparkline11-list shadow-reset mg-b-30">
                                         <div class="sparkline11-hd">
                                             <div class="main-sparkline11-hd">
-                                                <h1 class="text-align-center">Select Plan</h1>
+                                                <h1 class="text-align-center">Select Package</h1>
                                                 <div class="sparkline11-outline-icon">
                                                     <span class="sparkline11-collapse-link">
                                                         <!-- <i
@@ -263,7 +263,7 @@
                                                                         id="txtSecretCode"
                                                                         name="SecretCode" type="text" value="" [(ngModel)] = "packages" *ngIf="packag.length != 0"  >
                                                                         <ng-container *ngFor="let datas of packag">
-                                                                            <option   [value]="[datas.id, datas.package_amount]" *ngIf="datas.package_amount != 0">{{datas.package_name}}</option>
+                                                                            <option   [value]="[datas.id, datas.package_amount]" *ngIf="datas.package_amount != 0">{{datas.package_name}} (₹ {{datas.package_amount | number}})</option>
                                                                             </ng-container>
                                                                         </select>
                                                                         <select class="form-control"
@@ -349,7 +349,7 @@
                                                                     <tr  *ngIf="dats.revenue != '0'">
 
                                                                         <td data-label="Required Left">{{dats.id}}</td>
-                                                                        <td data-label="Required Right">{{dats.amount}}</td>
+                                                                        <td data-label="Required Right">₹ {{dats.amount | number}}</td>
                                                                         <td data-label="Actual Right">{{dats.created_at}}</td>
 
                                                                         <!-- <td data-label="Remaining Left">0.00</td>

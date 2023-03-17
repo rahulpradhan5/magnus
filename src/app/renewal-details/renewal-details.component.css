@@ -1,3 +1,5 @@
+
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -269,7 +271,7 @@ th {
 
     thead {
         display: table-header-group;
-        background-color: #d3e4f4;
+        background-color: #ecbe28;
     }
 
     img,
@@ -14640,7 +14642,7 @@ table.dataTable {
 table.dataTable thead th,
 table.dataTable tfoot th {
     font-weight: bold;
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
     border: 1px solid #B8C9D9;
 }
 
@@ -14700,7 +14702,7 @@ table.dataTable thead .sorting_desc_disabled {
 } */
 
 table.dataTable tbody tr {
-    background-color: #ffffff;
+    background-color: #e4e3b6;
 }
 
 table.dataTable tbody tr.selected {
@@ -25576,7 +25578,7 @@ text-align: right !important;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #e9ebea !important;
+    background-color: #ffc93b8f !important;
 }
 
 .loader {
@@ -25844,7 +25846,7 @@ select.input-validation-error {
 table.dataTable thead th,
 table.dataTable tfoot th,
 #footerResponsive {
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
 }
 
 
@@ -25934,14 +25936,14 @@ table.dataTable tfoot th,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .cart th {
@@ -26128,7 +26130,7 @@ table.dataTable tfoot th,
 table.dataTable thead th,
 table.dataTable tfoot th,
 #footerResponsive {
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
 }
 
 
@@ -26218,14 +26220,14 @@ table.dataTable tfoot th,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .cart th {
@@ -26503,7 +26505,7 @@ th {
 
     thead {
         display: table-header-group;
-        background-color: #d3e4f4;
+        background-color: #ecbe28;
     }
 
     img,
@@ -37311,3 +37313,10 @@ button.close {
 .fa-percent:before {
     content: "\f295"
 }
+
+@media screen and (max-width:991px) {
+    .content-inner-all{
+        margin-left: 0;
+        transition: all 0.3s;
+    }
+  }

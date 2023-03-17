@@ -37314,3 +37314,16 @@ button.close {
 {.content-inner-all {
     margin-top: -21vh !important;
 }}
+
+/* table {
+  border: 1px solid #666;
+  table-layout: fixed;
+  width: 180px;
+}
+
+th,
+td {
+  border: 1px solid #666;
+  width: 90px;
+  overflow: hidden;
+} */

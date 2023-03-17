@@ -241,7 +241,6 @@
                                                     style="user-select: text;">
                                                     <thead style="user-select: text;">
                                                         <tr style="user-select: text;">
-
                                                             <th style="user-select: text;">
                                                                 Total Left Count
                                                             </th>
@@ -276,36 +275,26 @@
                                                     </thead>
                                                     <tbody style="user-select: text;">
                                                         <tr style="user-select: text;">
-                                                            <td data-label="Start Date"
-                                                            style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalLeftcount}}</td>
-                                                         <td data-label="Start Date"
-                                                            style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalrightcount}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalDataconleft}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalDataconright}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalleftpv}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalrightpv}}</td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalconfirmleftpv}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{totalcomfirmrightpv}} </td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
+                                                            <td data-label="Start Date" style="user-select: text;">
                                                                 {{ownPv}}</td>
-                                                                <td data-label="Start Date"
-                                                                style="user-select: text;">
-                                                                {{ownPv}}  </td>
+                                                            <td data-label="Start Date" style="user-select: text;">
+                                                                {{ownPv}} </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -364,9 +353,8 @@
                                                                                 aria-controls="mydirectDataTable"
                                                                                 rowspan="1" colspan="1"
                                                                                 style="width: 86.4px; user-select: text;"
-                                                                                aria-sort="ascending" aria-label="
-            ID
-        : activate to sort column descending">
+                                                                                aria-sort="ascending"
+                                                                                aria-label="  ID : activate to sort column descending">
                                                                                 ID
                                                                             </th>
                                                                             <th class="sorting" tabindex="0"
@@ -392,7 +380,7 @@
                                                                                 rowspan="1" colspan="1"
                                                                                 style="width: 194.4px; user-select: text;"
                                                                                 aria-label="
-            Current Package
+                                                                                Current Package
         : activate to sort column ascending">
                                                                                 Current Package
                                                                             </th>
@@ -400,27 +388,21 @@
                                                                                 aria-controls="mydirectDataTable"
                                                                                 rowspan="1" colspan="1"
                                                                                 style="width: 52.4px; user-select: text;"
-                                                                                aria-label="
-            Status
-        : activate to sort column ascending">
+                                                                                aria-label=" Status : activate to sort column ascending">
                                                                                 Status
                                                                             </th>
                                                                             <th class="sorting" tabindex="0"
                                                                                 aria-controls="mydirectDataTable"
                                                                                 rowspan="1" colspan="1"
                                                                                 style="width: 81.4px; user-select: text;"
-                                                                                aria-label="
-            DOJ
-        : activate to sort column ascending">
+                                                                                aria-label="  DOJ : activate to sort column ascending">
                                                                                 DOJ
                                                                             </th>
                                                                             <th class="sorting" tabindex="0"
                                                                                 aria-controls="mydirectDataTable"
                                                                                 rowspan="1" colspan="1"
                                                                                 style="width: 86.4px; user-select: text;"
-                                                                                aria-label="
-            Sponsor ID
-        : activate to sort column ascending">
+                                                                                aria-label=" Sponsor ID : activate to sort column ascending">
                                                                                 Sponsor ID
                                                                             </th>
                                                                             <th class="sorting" tabindex="0"
@@ -443,190 +425,79 @@
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
+                                                                    <tbody style="user-select: text;">
+                                                                        <tr role="row" class="odd"
+                                                                            style="user-select: text;"
+                                                                            *ngFor="let userData of leftdata">
+                                                                            <td data-label=" ID " class="sorting_1"
+                                                                                style="user-select: text;">{{userData.id}}
+                                                                            </td>
+                                                                            <td data-label="  Name "
+                                                                                style="user-select: text;"
+                                                                                *ngIf="userData.name !=''">{{userData.name}}
+                                                                            </td>
+                                                                            <td data-label=" Name  "
+                                                                                style="user-select: text;"
+                                                                                *ngIf="userData.name ==''">Null</td>
+                                                                            <td data-label=" Joining Package  "
+                                                                                style="user-select: text;">Free Package (
+                                                                                0.00 )</td>
+                                                                            <td data-label="  Current Package   "
+                                                                                style="user-select: text;">Free Package (
+                                                                                0.00 )</td>
+                                                                            <td data-label="  Status   "
+                                                                                style="user-select: text;">Paid</td>
+                                                                            <td data-label=" DOJ "
+                                                                                style="user-select: text;">
+                                                                                {{userData.created_at}}</td>
+                                                                            <td data-label=" Sponsor ID "
+                                                                                style="user-select: text;">
+                                                                                {{userData.owner}}</td>
+                                                                            <td data-label=" Adjusted To ID "
+                                                                                style="user-select: text;">
+                                                                                {{userData.referrer_id}}</td>
+                                                                            <td data-label=" Position W.R.T. Me" style="user-select: text;">Left</td>
+                                                                        </tr>
+                                                                        <tr role="row" class="odd"
+                                                                            style="user-select: text;"
+                                                                            *ngFor="let userData of rightdata">
+                                                                            <td data-label="
+            ID
+        " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
+                                                                            <td data-label="
+        Name
+    " style="user-select: text;" *ngIf="userData.name !=''">{{userData.name}}</td>
+                                                                            <td data-label="
+        Name
+    " style="user-select: text;" *ngIf="userData.name ==''">Null</td>
+                                                                            <td data-label="
+            Joining Package
+        " style="user-select: text;">Free Package ( 0.00 )</td>
+                                                                            <td data-label="
+            Current Package
+        " style="user-select: text;">{{userData.package_name}}</td>
+                                                                            <td data-label="
+            Status
+        " style="user-select: text;">Paid</td>
+                                                                            <td data-label="
+            DOJ
+        " style="user-select: text;">{{userData.created_at}}</td>
+                                                                            <td data-label="
+            Sponsor ID
+        " style="user-select: text;">{{userData.owner}}</td>
+                                                                            <td data-label="
+            Adjusted To ID
+        " style="user-select: text;">{{userData.referrer_id
+                                                                                }}</td>
+                                                                            <td data-label="
+            Position W.R.T. Me
+        " style="user-select: text;">Right</td>
+                                                                        </tr>
+                                                                    </tbody>
                                                                 </table>
                                                             </div>
                                                         </div>
-                                                        <div class="dataTables_scrollBody"
-                                                            style="position: relative; overflow: auto; width: 100%; max-height: 300px; user-select: text;">
-                                                            <table id="mydirectDataTable"
-                                                                class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
-                                                                cellspacing="0" width="100%" role="grid"
-                                                                aria-describedby="mydirectDataTable_info"
-                                                                style="width: 100%; user-select: text;">
-                                                                <thead style="user-select: text;">
-                                                                    <tr role="row"
-                                                                        style="height: 0px; user-select: text;">
-                                                                        <th class="sorting_asc"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 86.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-sort="ascending" aria-label="
-            ID
-        : activate to sort column descending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                ID
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 130.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Name
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Name
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 141.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Joining Package
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Joining Package
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 194.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Current Package
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Current Package
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 81.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            DOJ
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                DOJ
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 86.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Sponsor ID
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Sponsor ID
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 109.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Adjusted To ID
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Adjusted To ID
-                                                                            </div>
-                                                                        </th>
-                                                                        <th class="sorting"
-                                                                            aria-controls="mydirectDataTable"
-                                                                            rowspan="1" colspan="1"
-                                                                            style="width: 136.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; user-select: text;"
-                                                                            aria-label="
-            Position W.R.T. Me
-        : activate to sort column ascending">
-                                                                            <div class="dataTables_sizing"
-                                                                                style="height: 0px; overflow: hidden; user-select: text;">
-                                                                                Position W.R.T. Me
-                                                                            </div>
-                                                                        </th>
-                                                                    </tr>
-                                                                </thead>
-
-                                                                <tbody style="user-select: text;">
-                                                                    <tr role="row" class="odd"
-                                                                        style="user-select: text;" *ngFor="let userData of leftdata">
-                                                                        <td data-label="
-            ID
-        " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
-                                                                        <td data-label="
-            Name
-        " style="user-select: text;" *ngIf="userData.name !=''">{{userData.name}}</td>
-        <td data-label="
-            Name
-        " style="user-select: text;" *ngIf="userData.name ==''">Null</td>
-                                                                        <td data-label="
-            Joining Package
-        " style="user-select: text;">Free Package ( 0.00 )</td>
-                                                                        <td data-label="
-            Current Package
-        " style="user-select: text;">Free Package ( 0.00 )</td>
-                                                                        <td data-label="
-            Status
-        " style="user-select: text;">Paid</td>
-                                                                        <td data-label="
-            DOJ
-        " style="user-select: text;">{{userData.created_at}}</td>
-                                                                        <td data-label="
-            Sponsor ID
-        " style="user-select: text;">{{userData.owner}}</td>
-                                                                        <td data-label="
-            Adjusted To ID
-        " style="user-select: text;">{{userData.referrer_id
-        }}</td>
-                                                                        <td data-label="
-            Position W.R.T. Me
-        " style="user-select: text;">Left</td>
-                                                                    </tr>
-                                                                    <tr role="row" class="odd"
-                                                                    style="user-select: text;" *ngFor="let userData of rightdata">
-                                                                    <td data-label="
-        ID
-    " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
-    <td data-label="
-    Name
-" style="user-select: text;" *ngIf="userData.name !=''">{{userData.name}}</td>
-<td data-label="
-    Name
-" style="user-select: text;" *ngIf="userData.name ==''">Null</td>
-                                                                    <td data-label="
-        Joining Package
-    " style="user-select: text;">Free Package ( 0.00 )</td>
-                                                                    <td data-label="
-        Current Package
-    " style="user-select: text;">Free Package ( 0.00 )</td>
-                                                                    <td data-label="
-        Status
-    " style="user-select: text;">Paid</td>
-                                                                    <td data-label="
-        DOJ
-    " style="user-select: text;">{{userData.created_at}}</td>
-                                                                    <td data-label="
-        Sponsor ID
-    " style="user-select: text;">{{userData.owner}}</td>
-                                                                    <td data-label="
-        Adjusted To ID
-    " style="user-select: text;">{{userData.referrer_id
-    }}</td>
-                                                                    <td data-label="
-        Position W.R.T. Me
-    " style="user-select: text;">Right</td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
+                                                         
                                                     </div>
                                                     <div class="dataTables_info" id="mydirectDataTable_info"
                                                         role="status" aria-live="polite" style="user-select: text;">

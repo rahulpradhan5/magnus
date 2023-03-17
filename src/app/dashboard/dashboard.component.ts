@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   userData: any[] = [];
   todayData: any[] = [];
   totalData: any[] = [];
-  downlineCount: any;
+  downlineCount: any=0;
   totalDataconleft: any;
   totalDataconright: any;
   totalleftpv: any;
@@ -34,9 +34,9 @@ export class DashboardComponent implements OnInit {
   todayownPv: any;
   totalLeftcount: any;
   totalrightcount: any;
-  startDate: any;
-  endDate: any;
-  rank: any;
+  startDate: any=new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear();
+  endDate: any=new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear();
+  rank: any=0;
   days:any;
   hours:any;
   minutes:any;

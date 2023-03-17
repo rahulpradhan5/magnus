@@ -328,7 +328,7 @@
                                                                     <td data-label="End Date"
                                                                         style="user-select: text;">{{user.dt}}</td>
                                                                     <td data-label="Total Income"
-                                                                        style="user-select: text;">₹ {{user.amount}}</td>
+                                                                        style="user-select: text;">₹ {{user.amount | number}}</td>
                                                                     
                                                                     
                                                                 </tr>
@@ -343,7 +343,7 @@
                                                                     <td id="showTD" style="user-select: text;"></td>
                                                                     <td style="padding-bottom: 16px; user-select: text;"
                                                                         data-label="Total Income" id="SetTDStyle"> ₹
-                                                                        {{getSumOfAmount()}}</td>
+                                                                        {{getSumOfAmount() | number}}</td>
                                                                   
                                                                 </tr>
                                                             </tbody>
