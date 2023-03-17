@@ -313,7 +313,13 @@
                                                                         colspan="1"
                                                                         aria-label="Total Deduction: activate to sort column ascending"
                                                                         style="width: 109.4px; user-select: text;">Total
-                                                                        Deduction</th>
+                                                                        Deduction (10%)</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                        aria-controls="tblCommissionLegder" rowspan="1"
+                                                                        colspan="1"
+                                                                        aria-label="Total Deduction: activate to sort column ascending"
+                                                                        style="width: 109.4px; user-select: text;">Income
+                                                                        Get</th>
                                                                     
                                                                   
                                                                 </tr>
@@ -333,10 +339,11 @@
                                                                     <td data-label="End Date"
                                                                         style="user-select: text;">{{user.dt}}</td>
                                                                     <td data-label="Total Income"
-                                                                        style="user-select: text;">₹ {{user.amount}}</td>
+                                                                        style="user-select: text;">₹ {{user.revenue| number}}</td>
                                                                     <td data-label="Total Deduction"
-                                                                        style="user-select: text;">₹ {{user.amount*10/100}}</td>
-                                                                  
+                                                                        style="user-select: text;">₹ {{user.revenue*10/100 | number}}</td>
+                                                                        <td data-label="Total Income"
+                                                                        style="user-select: text;">₹ {{user.amount | number}}</td>
                                                                 </tr>
                                                             </tbody>
                                                             <tbody style="user-select: text;">
@@ -348,11 +355,15 @@
                                                                     <td id="showTD" style="user-select: text;"></td>
                                                                     <td id="showTD" style="user-select: text;"></td>
                                                                     <td style="padding-bottom: 16px; user-select: text;"
-                                                                        data-label="Total Income" id="SetTDStyle"> ₹
-                                                                        {{getSumOfAmount()}}</td>
+                                                                    data-label="Total Income" id="SetTDStyle"> ₹
+                                                                    {{getsum() | number}}</td>
                                                                     <td style="padding-bottom: 16px; user-select: text;"
-                                                                        data-label="Total Deduction" id="SetTDStyle"> ₹
-                                                                        {{getSumOfDiuduction()}}</td>
+                                                                    data-label="Total Deduction" id="SetTDStyle"> ₹
+                                                                    {{getSumOfDiuduction() | number}}</td>
+                                                                    <td style="padding-bottom: 16px; user-select: text;"
+                                                                        data-label="Total Income" id="SetTDStyle"> ₹
+                                                                        {{getSumOfAmount() | number}}</td>
+                                                                    
 
                                                                    
                                                                     

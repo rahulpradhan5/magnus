@@ -37344,6 +37344,12 @@ button.close {
         overflow: hidden;
 
     }
+    .show_div p{
+        color: white;
+    }
+    .con{
+        color: #3e1717;
+    }
     .user_div:hover + .show_div{
         display: block;
     }

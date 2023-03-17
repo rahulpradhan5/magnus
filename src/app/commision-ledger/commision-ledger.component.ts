@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class CommisionLedgerComponent implements OnInit {
   commisiondata:any[]=[];
   date:any
+parseFloat: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -26,7 +27,10 @@ export class CommisionLedgerComponent implements OnInit {
     return this.commisiondata.reduce((total, current) => total + parseInt(current.amount), 0);
   }
   getSumOfDiuduction() {
-    return this.commisiondata.reduce((acc, commisiondata) => acc + commisiondata.amount*10/100, 0);
+    return this.commisiondata.reduce((acc, commisiondata) => acc + commisiondata.revenue*10/100, 0);
+  }
+  getsum() {
+    return this.commisiondata.reduce((total, current) => total + parseInt(current.revenue), 0);
   }
   getDateBefore(dateString: string): string {
     // Convert the date string to a Date object
@@ -40,4 +44,7 @@ export class CommisionLedgerComponent implements OnInit {
   
     return formattedDate;
   }
+
+ 
+
 }
