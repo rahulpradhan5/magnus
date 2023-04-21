@@ -154,9 +154,9 @@
                                                             Asterisk(*) denotes My Direct(s)
                                                         </div>
                                                         <div id="upPosstion">
-                                                            <button type="button" id="searchUpTree"
-                                                                class="btn btn-custon-four btn-primary" tabindex="1"><i
-                                                                    class="fa fa-arrow-circle-up"></i> Move Up</button>
+                                                           <a href="/tree/{{apiResponse.referrer_id}}/view"><button type="button" id="searchUpTree"
+                                                            class="btn btn-custon-four btn-primary" tabindex="1"><i
+                                                                class="fa fa-arrow-circle-up"></i> Move Up</button></a> 
                                                         </div>
                                                         <form class="form-inline my-2 my-lg-0">
                                                             <input class="form-control mr-sm-2" type="search"
@@ -164,6 +164,15 @@
                                                             <button class="btn btn-outline-success my-2 my-sm-0"
                                                                 type="submit">Search</button>
                                                         </form>
+                                                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                                                            <div style="padding: 50px 20px;">
+                                                                <button style="background-color: darkgreen;color: #fff;padding: 5px 10px; border-radius: 10px;">Left</button>
+                                                            </div>
+                                                            
+                                                            <div style="padding: 50px 20px;">
+                                                                <button style="background-color: darkgreen;color: #fff;padding: 5px 10px; border-radius: 10px;">Right</button>
+                                                            </div>
+                                                        </div>
                                                         <div id="ScrollableDiv" style="margin-top:2%">
                                                             <div class="col-md-12 col-sm-12">
                                                                 <div id="pnltree">

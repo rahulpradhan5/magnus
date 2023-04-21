@@ -27,27 +27,38 @@ export class MemberEpinLoginComponent implements OnInit {
 
   ngOnInit(): void {
     // const uid = 'ab00003';
-      const uid = sessionStorage.getItem('firebaseUserId');
-    this.myId = uid;
-    this.http.get('http://moneysagaconsultancy.com/api/api/Package?user_id='+uid)
-    .subscribe((data:any) => {
-      console.log(data);
-     if(data.epin == ''){
-      this.mpin = 'not generated';
-     }else{
-      this.mpin = data.epin[0]['epin'];
-     }
-     if(data.revenue == ''){
-      this.revenue = 0;
-     }else{
-      this.revenue = data.revenue[0]['revenue'];
-     }
-     this.payments = data.payments;
-     console.log(this.payments);
+    this.auths.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      // this.email = data?.email;
 
-     this.packag = data.package ;
-     this.usdata = data.users;
+      this.myId = data?.displayName;
+      // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      // let NewTime = hour + ":" + minuts + ":" + seconds
+      // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.http.get('http://moneysagaconsultancy.com/api/api/Package?user_id='+this.myId)
+      .subscribe((data:any) => {
+        console.log(data);
+       if(data.epin == ''){
+        this.mpin = 'not generated';
+       }else{
+        this.mpin = data.epin[0]['epin'];
+       }
+       if(data.revenue == ''){
+        this.revenue = 0;
+       }else{
+        this.revenue = data.revenue[0]['revenue'];
+       }
+       this.payments = data.payments;
+       console.log(this.payments);
+  
+       this.packag = data.package ;
+       this.usdata = data.users;
+      })
     })
+      // const uid = sessionStorage.getItem('firebaseUserId');
+    // this.myId = uid;
+   
   }
   givepackage(event: Event){
     event.preventDefault();

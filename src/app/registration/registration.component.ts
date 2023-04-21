@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
   invitationCode: string = '';
   id: string = '';
   branch: string = '';
-  myid?: string = '';
+  myid?: any = '';
   apiResponse: any;
   signInMethods: any;
   names?: any;
@@ -34,13 +34,14 @@ export class RegistrationComponent implements OnInit {
 
 
   cid?: ID;
-
+uid:any;
   constructor(private http: HttpClient, public rout: ActivatedRoute, private auth: AuthService, private fauth: AngularFireAuth, private fdb: AngularFirestore) {
     this.id = rout.snapshot.params['id'];
     this.branch = rout.snapshot.params['branch'];
     auth.logout();
     fauth.user.subscribe(user => {
       this.myid = user?.uid;
+      this.uid = user?.displayName;
       if(this.myid != 'undefined'){
        this. apicall(this.myid);
     }}
@@ -55,7 +56,7 @@ export class RegistrationComponent implements OnInit {
   apicall(uid:any){
     this.items = this.fdb.collection('users').doc(uid).valueChanges();
     this.items.subscribe((data:any) =>{
-    this.http.get<any>('http://moneysagaconsultancy.com/api/api/insert?user_id='+this.myid+'&name='+data.fullName+'&referal_id='+this.id+'&position='+this.branch).subscribe(response => {
+    this.http.get<any>('http://moneysagaconsultancy.com/api/api/insert?user_id='+data.displayName+'&name='+data.fullName+'&referal_id='+this.id+'&position='+this.branch).subscribe(response => {
 console.log(response);
     })
     })
@@ -88,7 +89,7 @@ console.log(response);
       return;
     }
 
-    this.auth.register(this.email, this.password, this.name, this.mobileNo, this.id);
+    this.auth.register(this.email, this.password, this.name, this.mobileNo, this.id,this.branch);
    
     this.email = '';
     this.password = '';

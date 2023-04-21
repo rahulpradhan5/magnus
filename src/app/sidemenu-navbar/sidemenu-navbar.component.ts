@@ -18,7 +18,13 @@ export class SidemenuNavbarComponent implements OnInit {
   isLogedin = false;
   currentRoute: string;
   set: boolean = false;
+  myId:any;
   constructor(private auth: AuthService, public fire: AngularFireAuth, public store: AngularFirestore, private router: Router, public route: ActivatedRoute) {
+    fire.user.subscribe(user => {
+      this.myId = user?.displayName;
+      console.log(user?.uid);
+      
+    })
 
 
     this.currentRoute = "Demo";

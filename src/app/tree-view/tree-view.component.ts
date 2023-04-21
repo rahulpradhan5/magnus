@@ -11,7 +11,7 @@ import { User } from '../models/User';
   styleUrls: ['./tree-view.component.css']
 })
 export class TreeViewComponent implements OnInit {
-   myid?:string='';
+   myid?:any='';
    parent?:string;
   static bool:boolean ;
    isPremium:boolean = false;
@@ -72,7 +72,7 @@ export class TreeViewComponent implements OnInit {
 
     fauth.user.subscribe(user=>{
       if(!TreeViewComponent.bool)
-      this.myid = user?.uid
+      this.myid = user?.displayName
      this.addDataToTree_i(user?.uid!);
     })
    

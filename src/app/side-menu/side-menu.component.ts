@@ -26,6 +26,8 @@ export class SideMenuComponent implements OnInit {
   constructor(public auth: AuthService, public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore) {
 
     firebaseAuth.user.subscribe(user => {
+      this.myId = user?.displayName;
+      console.log(user?.uid);
       if (user) {
         this.isLogedin = true;
       } else {
@@ -34,6 +36,7 @@ export class SideMenuComponent implements OnInit {
 
       this.firestore.collection<any>('users').doc(user?.uid).valueChanges().subscribe((doc: any) => { 
       this.fullName = doc?.fullName;
+      console.log(this.fullName);
       })
 
       this.firestore.collection<any>('users').doc(user?.uid).collection('kyc').doc('details').valueChanges().subscribe((doc: any) => { 
@@ -50,7 +53,7 @@ export class SideMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myId = sessionStorage.getItem('firebaseUserId');
+    // this.myId = sessionStorage.getItem('firebaseUserId');
     // console.log(this.myId);
     const id = localStorage.getItem('sideMenu')
     console.log(id)

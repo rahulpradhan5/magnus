@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
   seconds:any;
   remainingTime:any;
   ladate:any;
-  uid?: string;
+  uid?: any;
   email?: any;
   date?: string;
   userService: any;
@@ -73,16 +73,7 @@ export class DashboardComponent implements OnInit {
   profile_status?: string='Pending';
   cancelled_check_status?: string='Pending' ;
   constructor(private fauth: AngularFireAuth, rout: Router, public fas: AngularFirestore, private http: HttpClient, public ActiveRoute: ActivatedRoute, public afa: AngularFireAuth) {
-    afa.user.subscribe(data => {
-      // console.log('data-->');
-      // console.log(data);
-      this.email = data?.email;
-
-      this.uid = data?.uid;
-      this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
-      // let NewTime = hour + ":" + minuts + ":" + seconds
-      console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-    })
+   
   }
 
   ngOnInit(): void {
@@ -140,9 +131,16 @@ export class DashboardComponent implements OnInit {
     if( this.back_adhar_exist && this.front_adhar_exist &&this.cancelled_check_exist && this.profile_exist && this.pancard_exist  ){
       this.doExist = true;
     }
-    // const uid = 'ab00003';
-    const uid = sessionStorage.getItem('firebaseUserId');
-    this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id=' + uid)
+    this.afa.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      this.email = data?.email;
+
+      this.uid = data?.displayName;
+      this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      // let NewTime = hour + ":" + minuts + ":" + seconds
+      console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id=' + this.uid)
       .subscribe((data: any) => {
         console.log(data
           );
@@ -192,6 +190,8 @@ export class DashboardComponent implements OnInit {
        
         
       });
+    })
+   
   }
   updateRemainingTime() {
     const timeDiff = new Date(this.endDate).getTime() - new Date().getTime();

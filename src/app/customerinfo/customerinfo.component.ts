@@ -60,7 +60,7 @@ export class CustomerinfoComponent implements OnInit {
   ngOnInit(): void {
     this.auths.user.subscribe(user => {
       //   
-      this.uid = user?.uid;
+      this.uid = user?.displayName;
       // this.fullName=user?.fullName;
       console.log(user)
       this.firestore.collection<any>('users').doc(user?.uid).valueChanges().subscribe((doc) => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-renewal-income-reconciliation-report',
@@ -8,14 +9,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RenewalIncomeReconciliationReportComponent implements OnInit {
 renew:any;
-  constructor(private http: HttpClient,) { }
+myId:any;
+  constructor(private auths:AngularFireAuth,private http: HttpClient,) {
+    
+   }
   
   ngOnInit(): void {
-    const uid = sessionStorage.getItem('firebaseUserId');
-    this.http.get<any>('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+uid).subscribe(response => {
+    this.auths.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      // this.email = data?.email;
 
-this.renew = response.renewalincome
-      })
+      this.myId = data?.displayName;
+      // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      // let NewTime = hour + ":" + minuts + ":" + seconds
+      // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.http.get<any>('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.myId).subscribe(response => {
+
+      this.renew = response.renewalincome
+            })
+    })
+   
   }
 
 }

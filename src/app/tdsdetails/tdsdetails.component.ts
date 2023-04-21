@@ -1,23 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 @Component({
   selector: 'app-tdsdetails',
   templateUrl: './tdsdetails.component.html',
   styleUrls: ['./tdsdetails.component.css']
 })
 export class TDSDetailsComponent implements OnInit {
-
+  uid:any;
+  email:any;
+  date:any;
   commisiondata:any[]=[];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private afa : AngularFireAuth) { 
+   
+  }
 
   ngOnInit() {
-    // const uid = 'ab00003';
-     const uid = sessionStorage.getItem('firebaseUserId');
-    this.http.get('https://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+uid)
+    this.afa.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      this.email = data?.email;
+
+      this.uid = data?.displayName;
+      this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      // let NewTime = hour + ":" + minuts + ":" + seconds
+      console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.http.get('https://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
       .subscribe((datas:any) => {
         this.commisiondata=datas.tds;
         
       });
+    })
+    // const uid = 'ab00003';
+    //  const uid = sessionStorage.getItem('firebaseUserId');
+   
   }
   getSumOfAmount() {
     return this.commisiondata.reduce((total, current) => total + parseInt(current.amount), 0);
