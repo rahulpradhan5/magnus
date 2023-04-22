@@ -12,8 +12,9 @@
 
             <div class="col-sm-6">
                 <div class="d-flex justify-content-between f1">
-                    <small class="subs" style="margin-top: 10px; font-size: x-small; padding: 12px;"  >{{url}}/{{reffer}}</small>
-                    <button class="btn" style="margin-top: 2.5px;" data-toggle="modal" data-target="#myModal">Generate Link</button>
+                    <small class="subs" style="margin-top: 10px; font-size: x-small; padding: 12px;"  >{{reffer}}</small>
+                    <button class="btn" style="margin-top: 2.5px;" data-toggle="modal" data-target="#myModal" *ngIf="status == false" >Generate Link</button>
+                    <button class="btn" style="margin-top: 2.5px;" *ngIf="status == true" (click)="copyText()">Copy Link</button>
                 </div>
                 <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
@@ -29,8 +30,8 @@
                         </div>
                         <div class="modal-footer">
                         
-                          <button type="button" (click)="onclick('left')" class="btn btn-default" data-dismiss="modal">Create for Left</button>
-                          <button type="button" (click)="onclick('right')" class="btn btn-default" data-dismiss="modal">Create for Right</button>
+                          <button type="button" (click)="onclick('left')" class="btn btn-default" data-dismiss="modal" (click)="copyTextEnable()">Create for Left</button>
+                          <button type="button" (click)="onclick('right')" class="btn btn-default" data-dismiss="modal" (click)="copyTextEnable()">Create for Right</button>
                         </div>
                       </div>
                   

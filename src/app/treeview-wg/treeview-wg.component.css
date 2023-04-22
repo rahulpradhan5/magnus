@@ -15226,13 +15226,14 @@ table.dataTable td {
 
 
 #ScrollableDiv {
-    overflow: auto;
-    /*padding-bottom: 10%;*/
+    /* overflow: auto; */
+    /* padding-bottom: 10%; */
+    height: 100vh;
 }
 
 @media screen and (max-width: 767px) {
     #ScrollableDiv {
-        overflow: auto;
+         overflow: auto; 
     }
 }
 
@@ -15244,7 +15245,8 @@ table.dataTable td {
 }
 
 #pnltree {
-    overflow: auto;
+    z-index: 0;
+    /* overflow: auto; */
 }
 
 @media screen and (max-width: 767px) {
@@ -27617,12 +27619,7 @@ th {
     content: "\e260";
 }
 
-.show_div{
-    z-index: 1 !important;
-    background-color: #bd8427 !important;
-    width: auto !important;
 
-}
 
 * {
     -webkit-box-sizing: border-box;
@@ -37331,7 +37328,7 @@ button.close {
     }
     .show_div{
         position: absolute;
-        background-color: #bd842787;
+        background-color: #fff;
         border-radius: 5px;
         width: 200px;
         height: auto;
@@ -37342,13 +37339,19 @@ button.close {
         text-align: start;
         align-items: center;
         overflow: hidden;
-
+        border: 1px solid #00000026;
+    }
+    .show_div{
+        z-index: 100 !important;
+        /* background-color: #bd8427 !important; */
+        width: auto !important;
+    
     }
     .show_div p{
-        color: white;
+        color: blue;
     }
     .con{
-        color: #3e1717;
+        color: red;
     }
     .user_div:hover + .show_div{
         display: block;
