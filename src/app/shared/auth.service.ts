@@ -12,6 +12,7 @@ import { data } from 'jquery';
   providedIn: 'root'
 })
 export class AuthService {
+  cuid:any;
 
   constructor(private http: HttpClient,private fireauth: AngularFireAuth, private router: Router, private afs: AngularFirestore) { }
 
@@ -68,38 +69,36 @@ export class AuthService {
 
 
   // register method
-  register(email: string, password: string, name: string, mobileNo: string, invitationCode: string,branch:string) {
-    this.afs.collection<Udata>('users', ref => ref.orderBy('id', 'desc').limit(1)).get().toPromise()
+  register(email: string, password: string, name: string, mobileNo: string, invitationCode: string, branch: string) {
+    this.afs.collection<Udata>('users', ref => ref.orderBy('displayName', 'desc').limit(1)).get().toPromise()
       .then((snapshot: any) => {
-        let count = 1;
-        if (snapshot && snapshot.size > 0) {
-          const lastUid = snapshot.docs[0].data().id;
-          count = parseInt(lastUid.substring(3)) + 1;
-        }
-        const serial = this.padNumber(count);
-        const id = `MCS${serial}`;
-
+        const lastUid = snapshot?.docs[0]?.data()?.displayName;
+        const count = parseInt(lastUid?.slice(3), 10) || 0;
+        const serial = this.padNumber(count + 1);
+        this.cuid = `MCS${serial}`;
         this.fireauth.createUserWithEmailAndPassword(email, password)
           .then((res: any) => {
+            console.log(res);
             const user = res.user;
             user.updateProfile({
-              displayName: id
+              displayName: this.cuid
             }).then(() => {
-              this.http.get<any>('http://moneysagaconsultancy.com/api/api/insert?user_id=' + id + '&name=' + name + '&referal_id=' + invitationCode + '&position=' + branch).subscribe(response => {
-                console.log(response);
-              })
-                this.afs.collection<Udata>('users').doc(user.uid).set({
-                  id,
-                  email,
-                  fullName: name,
-                  mobNum: mobileNo,
-                  invitationid: invitationCode,
-                  joiningDate: user.metadata.creationTime,
-                }, { merge: true });
+              this.afs.collection<Udata>('users').doc(user.uid).set({
+                id: this.cuid,
+                displayName:this.cuid,
+                email,
+                fullName: name,
+                mobNum: mobileNo,
+                invitationid: invitationCode,
+                joiningDate: user.metadata.creationTime,
+              }, { merge: true }).then(() => {
+                this.cuid = '';
                 alert('Registration Successful');
                 this.router.navigate(['/login']);
-             
-
+              }).catch((err: any) => {
+                console.error(err);
+                alert(err.message);
+              });
             }).catch((err: any) => {
               console.error(err);
               alert(err.message);
@@ -118,12 +117,11 @@ export class AuthService {
         this.router.navigate(['/registration']);
       });
   }
-
-
-
+  
   padNumber(number: number): string {
     return number.toString().padStart(9, '0');
   }
+  
 
 
 
@@ -155,4 +153,5 @@ interface Udata {
   invitationid: string;
   joiningDate?: string;
   id?: string;
+  displayName?: string;
 }

@@ -28,13 +28,13 @@ export class RegistrationComponent implements OnInit {
   apiResponse: any;
   signInMethods: any;
   names?: any;
-  items:any;
+  items: any;
   tree?: Tree = {
   };
 
 
   cid?: ID;
-uid:any;
+  uid: any;
   constructor(private http: HttpClient, public rout: ActivatedRoute, private auth: AuthService, private fauth: AngularFireAuth, private fdb: AngularFirestore) {
     this.id = rout.snapshot.params['id'];
     this.branch = rout.snapshot.params['branch'];
@@ -42,9 +42,10 @@ uid:any;
     fauth.user.subscribe(user => {
       this.myid = user?.uid;
       this.uid = user?.displayName;
-      if(this.myid != 'undefined'){
-       this. apicall(this.myid);
-    }}
+      if (this.myid != 'undefined') {
+        this.apicall(this.myid);
+      }
+    }
     )
 
 
@@ -53,16 +54,16 @@ uid:any;
   ngOnInit(): void {
   }
 
-  apicall(uid:any){
+  apicall(uid: any) {
     this.items = this.fdb.collection('users').doc(uid).valueChanges();
-    this.items.subscribe((data:any) =>{
-    this.http.get<any>('http://moneysagaconsultancy.com/api/api/insert?user_id='+data.displayName+'&name='+data.fullName+'&referal_id='+this.id+'&position='+this.branch).subscribe(response => {
-console.log(response);
-    })
+    this.items.subscribe((data: any) => {
+      this.http.get<any>('http://moneysagaconsultancy.com/api/api/insert?user_id=' + data.displayName + '&name=' + data.fullName + '&referal_id=' + this.id + '&position=' + this.branch).subscribe(response => {
+        console.log(response);
+      })
     })
   }
 
-   register() {
+  register() {
 
     if (this.email == '') {
       alert('Please enter email');
@@ -89,50 +90,50 @@ console.log(response);
       return;
     }
 
-    this.auth.register(this.email, this.password, this.name, this.mobileNo, this.id,this.branch);
-   
+    this.auth.register(this.email, this.password, this.name, this.mobileNo, this.id, this.branch);
+
     this.email = '';
     this.password = '';
     this.name = '';
     this.invitationCode = '';
     this.mobileNo = '';
     this.names = this.name;
-    this.setLocationInTree(this.id);
+    // this.setLocationInTree(this.id);
 
 
   }
 
 
-    setLocationInTree(id: string) {
+  setLocationInTree(id: string) {
 
-      if (this.branch == 'left') {
-        this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').valueChanges().subscribe(data => {
-          if (data?.left == undefined) {
-            this.tree!.left = this.myid;
-            console.log('inserted')
-            this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').set(this.tree!, { merge: true })
-            // this.fdb.collection('users').doc(id).collection<ID>('team').doc(this.myid).set({cId:this.myid})
-            this.auth.logout()
-          } else {
-            console.log(data.left)
-            this.setLocationInTree(data.left)
-          }
-        })
-      } else {
-        this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').valueChanges().subscribe(data => {
-          if (data?.right == undefined) {
-            this.tree!.right = this.myid;
-            this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').set(this.tree!, { merge: true })
-            // this.fdb.collection('users').doc(id).collection<ID>('team').doc(this.myid).set({cId:this.myid})
-            this.auth.logout()
-          } else {
-            this.setLocationInTree(data.right)
+    if (this.branch == 'left') {
+      this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').valueChanges().subscribe(data => {
+        if (data?.left == undefined) {
+          this.tree!.left = this.myid;
+          console.log('inserted')
+          this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').set(this.tree!, { merge: true })
+          // this.fdb.collection('users').doc(id).collection<ID>('team').doc(this.myid).set({cId:this.myid})
+          this.auth.logout()
+        } else {
+          console.log(data.left)
+          this.setLocationInTree(data.left)
+        }
+      })
+    } else {
+      this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').valueChanges().subscribe(data => {
+        if (data?.right == undefined) {
+          this.tree!.right = this.myid;
+          this.fdb.collection('users').doc(id).collection<Tree>('tree').doc('childs').set(this.tree!, { merge: true })
+          // this.fdb.collection('users').doc(id).collection<ID>('team').doc(this.myid).set({cId:this.myid})
+          this.auth.logout()
+        } else {
+          this.setLocationInTree(data.right)
 
-          }
-        })
-      }
+        }
+      })
     }
   }
+}
 
 interface ID {
   cId?: string;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-tdsdetails',
@@ -12,6 +13,8 @@ export class TDSDetailsComponent implements OnInit {
   email:any;
   date:any;
   commisiondata:any[]=[];
+  searchTerm:any='';
+  filtereduserdata:any;
   constructor(private http: HttpClient,private afa : AngularFireAuth) { 
    
   }
@@ -29,7 +32,7 @@ export class TDSDetailsComponent implements OnInit {
       this.http.get('https://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
       .subscribe((datas:any) => {
         this.commisiondata=datas.tds;
-        
+        this.filtereduserdata = this.commisiondata
       });
     })
     // const uid = 'ab00003';
@@ -50,5 +53,31 @@ export class TDSDetailsComponent implements OnInit {
     const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
   
     return formattedDate;
+  }
+  filterData() {
+    if (this.searchTerm == '') {
+      this.filtereduserdata = this.commisiondata;
+      
+    } else {
+      this.filtereduserdata = this.commisiondata.filter((user: any) => {
+        let nameMatch = false;
+        let idMatch = false;
+        if (user.name && user.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
+          nameMatch = true;
+        }
+        if (user.id && user.id.toString && user.id.toString().toLowerCase().includes(this.searchTerm.toLowerCase())) {
+          idMatch = true;
+        }
+        return nameMatch || idMatch;
+      });
+    }
+  }
+
+  exportTableToExcel(tableId: string, fileName: string): void {
+    const table = document.getElementById(tableId);
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(table);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, fileName + '.xlsx');
   }
 }

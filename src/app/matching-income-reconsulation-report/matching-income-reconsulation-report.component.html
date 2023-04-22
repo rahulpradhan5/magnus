@@ -179,12 +179,12 @@
                                                                     id="ToolTables_MatchingIncomeReconsulationReport_0"
                                                                     title="Export To Excel" tabindex="0"
                                                                     aria-controls="MatchingIncomeReconsulationReport"><span
-                                                                        id=""><img _ngcontent-ome-c52="" src="https://i.postimg.cc/y6S78MBz/export-excel.png" style="user-select: text;height: 35px;"></span></a>
+                                                                        id=""><img _ngcontent-ome-c52="" (click)="exportTableToExcel('MatchingIncomeReconsulationReport','matching')" src="https://i.postimg.cc/y6S78MBz/export-excel.png" style="user-select: text;height: 35px;"></span></a>
                                                             </div>
                                                             <div class="clear"></div>
                                                             <form class="form-inline my-2 my-lg-0">
-                                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                                                <input class="form-control mr-sm-2" [(ngModel)]="searchTerm" name="searchTerm" type="search" placeholder="Search" aria-label="Search">
+                                                                <button class="btn btn-outline-success my-2 my-sm-0" (click)="filterData()" type="submit">Search</button>
                                                               </form>
                                                             <div id="MatchingIncomeReconsulationReport_processing"
                                                                 class="dataTables_processing" style="display: none;">

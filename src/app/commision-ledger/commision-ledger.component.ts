@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-commision-ledger',
@@ -13,6 +14,8 @@ export class CommisionLedgerComponent implements OnInit {
 parseFloat: any;
 email:any;
 uid:any;
+filtereduserdata:any;
+searchTerm:any='';
   constructor(private http: HttpClient,private afa : AngularFireAuth) { 
    
   }
@@ -33,7 +36,7 @@ uid:any;
       .subscribe((datas:any) => {
         console.log(datas);
         this.commisiondata=datas.payout;
-        
+        this.filtereduserdata = this.commisiondata;
       });
     })
    
@@ -60,6 +63,29 @@ uid:any;
     return formattedDate;
   }
 
- 
+  exportTableToExcel(tableId: string, fileName: string): void {
+    const table = document.getElementById(tableId);
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(table);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, fileName + '.xlsx');
+  }
+
+  filterData() {
+    if (this.searchTerm == '') {
+      this.filtereduserdata = this.commisiondata;
+      
+    } else {
+      this.filtereduserdata = this.commisiondata.filter((user: any) => {
+        let nameMatch = false;
+        let idMatch = false;
+        
+        if (user.id && user.id.toString && user.id.toString().toLowerCase().includes(this.searchTerm.toLowerCase())) {
+          idMatch = true;
+        }
+        return  idMatch;
+      });
+    }
+  }
 
 }

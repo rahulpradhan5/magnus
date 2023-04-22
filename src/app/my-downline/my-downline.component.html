@@ -323,17 +323,17 @@
                                                             id="ToolTables_mydirectDataTable_0" title="Export To Excel"
                                                             tabindex="0" aria-controls="mydirectDataTable"
                                                             style="user-select: text;"><span id=""
-                                                                style="user-select: text;"><img
+                                                                style="user-select: text;"><img (click)="exportTableToExcel('mydownline', 'myFile')"
                                                                     src="https://i.postimg.cc/y6S78MBz/export-excel.png"
                                                                     style="width: 70px; user-select: text;"></span></a>
                                                     </div>
                                                     <div class="clear" style="user-select: text;"></div>
-                                                    <form class="form-inline my-2 my-lg-0">
+                                                    <!-- <form class="form-inline my-2 my-lg-0">
                                                         <input class="form-control mr-sm-2" type="search"
                                                             placeholder="Search" aria-label="Search">
                                                         <button class="btn btn-outline-success my-2 my-sm-0"
                                                             type="submit">Search</button>
-                                                    </form>
+                                                    </form> -->
                                                     <div id="mydirectDataTable_processing" class="dataTables_processing"
                                                         style="display: none; user-select: text;">
                                                         <div class="loader" style="user-select: text;"></div>
@@ -343,7 +343,7 @@
                                                             style="overflow: hidden; position: relative; border: 0px; width: 100%; user-select: text;">
                                                             <div class="dataTables_scrollHeadInner"
                                                                 style="box-sizing: content-box; width: 1235px; padding-right: 17px; user-select: text;">
-                                                                <table
+                                                                <table id="mydownline"
                                                                     class="table table-striped table-bordered dataTable no-footer DTTT_selectable"
                                                                     cellspacing="0" width="100%" role="grid"
                                                                     style="margin-left: 0px; width: 1235px; user-select: text;">

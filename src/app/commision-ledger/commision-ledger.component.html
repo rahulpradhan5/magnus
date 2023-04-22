@@ -257,12 +257,12 @@
                                                                     style="user-select: text;"><img
                                                                         _ngcontent-ome-c52=""
                                                                         src="https://i.postimg.cc/y6S78MBz/export-excel.png"
-                                                                        style="user-select: text;height: 35px;"></span></a>
+                                                                        style="user-select: text;height: 35px;"  (click)="exportTableToExcel('tblCommissionLegder', 'myFile')"></span></a>
                                                         </div>
                                                         <div class="clear" style="user-select: text;"></div>
                                                         <form class="form-inline my-2 my-lg-0">
                                                             <input class="form-control mr-sm-2" type="search"
-                                                                placeholder="Search" aria-label="Search">
+                                                                placeholder="Search" aria-label="Search" [(ngModel)] = 'searchTerm' name="search">
                                                             <button class="btn btn-outline-success my-2 my-sm-0"
                                                                 type="submit">Search</button>
                                                         </form>

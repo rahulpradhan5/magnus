@@ -79,6 +79,7 @@ import { AwarenessCampaignComponent } from './awareness-campaign/awareness-campa
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { SponsorRegisterComponent } from './sponsor-register/sponsor-register.component';
 import { SidemenuNavbarComponent } from './sidemenu-navbar/sidemenu-navbar.component';
+import { PackageGiveComponent } from './package-give/package-give.component';
 
  @NgModule({
   declarations: [
@@ -151,7 +152,8 @@ import { SidemenuNavbarComponent } from './sidemenu-navbar/sidemenu-navbar.compo
     AwarenessCampaignComponent,
     BankDetailsComponent,
     SponsorRegisterComponent,
-    SidemenuNavbarComponent
+    SidemenuNavbarComponent,
+    PackageGiveComponent
    ],
   imports: [
     BrowserModule,
