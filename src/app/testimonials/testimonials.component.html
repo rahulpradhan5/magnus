@@ -1,0 +1,46 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+    </div>
+    <div class="div"
+        style="margin-left: 15%;height: auto;width: 100%;padding: 10%;background-color: #fff;display: flex;justify-content: center;">
+        <form class="form mx-3" (submit)="onSubmit()" style="width: 100%; display: flex;flex-direction: column; gap: 30px;">
+            <input name="__RequestVerificationToken" type="hidden"
+                value="v_zvF5Aj1btuvZXIonAp-PknqKNm5V8PkGHhFGVpSCX5yQbRvezYyr5yDqKd_hHt-Z6M2rle-BAWs7LOUuZRBhv8P7UcCist6tMBnMWgPpo1">
+           
+            <div style="display: flex;flex-direction: column;gap: 10px;">
+                <label for="">Name</label>
+                <input type="text" name="name" [(ngModel)]="name" id=""  style="max-width: 50%;width: auto;border: 1px solid rgba(39, 39, 39, 0.363);border-radius: 10px;padding: 10px;box-shadow: 0px 4px 40px rgba(39, 39, 39, 0.144);">
+            </div>
+            <div style="display: flex;flex-direction: column;gap: 10px;">
+                <label for="">Position</label>
+                <input type="text" name="position" [(ngModel)]="position" id=""  style="max-width: 50%;width: auto;border: 1px solid rgba(39, 39, 39, 0.363);border-radius: 10px;padding: 10px;box-shadow: 0px 4px 40px rgba(39, 39, 39, 0.144);">
+            </div>
+            <div style="display: flex;flex-direction: column;gap: 10px;">
+                <label for="">Select Image</label>
+                <input type="file" id="imageInput" (change)="onFileSelected($event)" accept="image/*" style="max-width: 50%;width: auto;border: 1px solid rgba(39, 39, 39, 0.363);border-radius: 10px;padding: 10px;box-shadow: 0px 4px 40px rgba(39, 39, 39, 0.144);">
+            </div>
+            <div style="display: flex;flex-direction: column;gap: 10px;" *ngIf="preview == true">
+                <label for="">Preview</label>
+                <img src="{{img}}" alt="" style="height: 150px;width: 150px;border-radius: 10px;">
+            </div>
+            <div style="display: flex;flex-direction: column;gap: 10px;">
+                <label for="">description</label>
+                <textarea id="my-textarea" name="desc" [(ngModel)]="desc" rows="4" cols="40"  style="max-width: 50%;width: auto;border: 1px solid rgba(39, 39, 39, 0.363);border-radius: 10px;padding: 10px;box-shadow: 0px 4px 40px rgba(39, 39, 39, 0.144);" placeholder="Enter your text here"   placeholder="Enter Your Feedback"></textarea>
+            </div>
+            <!-- <div style="display: flex;flex-direction: column;gap: 10px;">
+                <label for="">Select Package</label>
+                <select name="package" id="user_id" [(ngModel)]="pacakage"
+                    style="max-width: 50%;width: auto;border: 1px solid rgba(39, 39, 39, 0.363);border-radius: 10px;padding: 10px;box-shadow: 0px 4px 40px rgba(39, 39, 39, 0.144);">
+                    <option value="2">Course-combo  (₹ 25,000)</option>
+                    <option value="3">Course-A/B (₹ 15,000)</option>
+                </select>
+            </div> -->
+
+            <button *ngIf="uploading == false"
+                style="max-width: 50%;border-radius: 10px; padding: 10px;width: auto;background-color: #CE992F;">Submit</button>
+                <button *ngIf="uploading == true"
+                style="max-width: 50%;border-radius: 10px; padding: 10px;width: auto;background-color: #CE992F;" disabled="disabled">Sending....</button>
+        </form>
+    </div>
+</div>

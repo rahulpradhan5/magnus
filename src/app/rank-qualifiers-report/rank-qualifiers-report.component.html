@@ -84,9 +84,7 @@
                                                                         <th class="sorting_disabled" rowspan="1"
                                                                             colspan="1" style="width: 112.4px;">
                                                                             Status</th>
-                                                                        <th class="sorting_disabled" rowspan="1"
-                                                                            colspan="1" style="width: 172.4px;">
-                                                                            Qualification Date</th>
+                                                                       
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -103,194 +101,28 @@
 
 
 
-                                                                    <tr role="row" class="odd">
+                                                                    
+                                                                    <tr role="row" class="even" *ngFor="let data of filtereduserdata">
 
-                                                                        <td data-label="Rank Name">Junior Affiliate
+                                                                        <td data-label="Rank Name">{{data.name}}
                                                                         </td>
-                                                                        <td data-label="Required Left PV">2500.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">2500.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
+                                                                        <td data-label="Required Left PV">{{data.rank_value}}.00
                                                                         </td>
 
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
+                                                                        <td data-label="Required Right PV">{{data.rank_value}}.00
+                                                                        </td>
+                                                                        <td data-label="Current Left PV">{{current.left_pv * 12/100}}</td>
 
+
+                                                                        <td data-label="Current Right PV">{{current.right_pv * 12/100 }}
+
+                                                                        </td>
+
+                                                                        <td data-label="Status" *ngIf="current.right_pv * 12/100 >= data.rank_value && current.left_pv * 12/100 >= data.rank_value  ">Achived</td>
+                                                                        <td data-label="Status" *ngIf="current.right_pv * 12/100 < data.rank_value && current.left_pv * 12/100 < data.rank_value  ">In Progress</td>
+                                                                        
                                                                     </tr>
-                                                                    <tr role="row" class="even">
-
-                                                                        <td data-label="Rank Name">Junior Promotor
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">5000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">5000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="odd">
-
-                                                                        <td data-label="Rank Name">Team Promotor
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">10000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">10000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="even">
-
-                                                                        <td data-label="Rank Name">Regional Promotor
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">25000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">25000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="odd">
-
-                                                                        <td data-label="Rank Name">National Promotor
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">50000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">50000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="even">
-
-                                                                        <td data-label="Rank Name">Global Promotor
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">100000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">100000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="odd">
-
-                                                                        <td data-label="Rank Name">Diplomat</td>
-                                                                        <td data-label="Required Left PV">250000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">250000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="even">
-
-                                                                        <td data-label="Rank Name">National Diplomat
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">500000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">500000.00
-                                                                        </td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="odd">
-
-                                                                        <td data-label="Rank Name">Global Diplomat
-                                                                        </td>
-                                                                        <td data-label="Required Left PV">1000000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">
-                                                                            1000000.00</td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
-                                                                    <tr role="row" class="even">
-
-                                                                        <td data-label="Rank Name">Ambassador</td>
-                                                                        <td data-label="Required Left PV">2000000.00
-                                                                        </td>
-
-                                                                        <td data-label="Required Right PV">
-                                                                            2000000.00</td>
-                                                                        <td data-label="Current Left PV">400.00</td>
-
-
-                                                                        <td data-label="Current Right PV">200.00
-                                                                        </td>
-
-                                                                        <td data-label="Status">In Progress</td>
-                                                                        <td data-label="Qualification Date">-</td>
-
-                                                                    </tr>
+                                                                    
                                                                 </tbody>
                                                             </table>
                                                             <div class="dataTables_info" id="AwardDetails_info"

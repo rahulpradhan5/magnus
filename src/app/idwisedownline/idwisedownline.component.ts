@@ -18,6 +18,7 @@ export class IdwisedownlineComponent implements OnInit {
   uid: any;
   searchTerm: any='';
   filtereduserdata: any;
+  pv:any;
   ngOnInit(): void {
 
     // const uid = 'ab00003';
@@ -32,7 +33,7 @@ export class IdwisedownlineComponent implements OnInit {
       // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
       this.http.get<any>('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id=' + this.uid).subscribe(response => {
         this.apiResponse = response.allusersdata;
-
+        this.pv=response.ownpv;
         this.data = this.apiResponse;
         for (let i = 0; i <= this.data.length - 1; i++) {
           const leftData = this.data[i]?.alldata['leftdata'];
@@ -41,8 +42,10 @@ export class IdwisedownlineComponent implements OnInit {
           const rightdata = this.data[i]?.alldata['rightdata'];
           const rightdataWithNonZeroPurchases = rightdata ? rightdata.filter((item: any) => item.purchase !== 0) : [];
           const rightdataWithNonZeroPurchasesCount = rightdataWithNonZeroPurchases.length;
-          this.alluserdata.push({ 'id': this.data[i].id, 'name': this.data[i].name, 'leftcount': this.data[i]?.alldata['leftdata'] ? this.data[i].alldata['leftdata'].length : 0, 'rightcount': this.data[i]?.alldata['rightdata'] ? this.data[i].alldata['rightdata'].length : 0, 'confirmleft': leftDataWithNonZeroPurchasesCount, 'confirmright': rightdataWithNonZeroPurchasesCount, 'pv': this.data[i]?.pv['revenue'] ? this.data[i].pv['revenue'] : 0, 'leftpv': this.data[i]?.pv['requiredleft_pv'] ? this.data[i].pv['requiredleft_pv'] : 0, 'rightpv': this.data[i]?.pv['	requiredright_pv'] ? this.data[i].pv['	requiredright_pv'] : 0, 'confirmrightpv': this.data[i]?.pv['right_pv'] ? this.data[i].pv['right_pv'] : 0, 'confirmleftpv': this.data[i]?.pv['left_pv'] ? this.data[i].pv['left_pv'] : 0, 'conpv': this.data[i]?.pv['deducted'] ? this.data[i].pv['deducted'] : 0 });
+          this.alluserdata.push({ 'id': this.data[i].id, 'name': this.data[i].name, 'leftcount': this.data[i]?.alldata['leftdata'] ? this.data[i].alldata['leftdata'].length : 0, 'rightcount': this.data[i]?.alldata['rightdata'] ? this.data[i].alldata['rightdata'].length : 0, 'confirmleft': leftDataWithNonZeroPurchasesCount, 'confirmright': rightdataWithNonZeroPurchasesCount, 'pv': this.data[i]?.pv[0] ? this.data[i].pv[0]['revenue'] : 0, 'leftpv': this.data[i]?.pv[0] ? this.data[i].pv[0]['left_pv'] : 0, 'rightpv': this.data[i]?.pv[0] ? this.data[i].pv[0]['right_pv'] : 0, 'confirmrightpv': this.data[i]?.pv[0] ? this.data[i].pv[0]['right_pv'] : 0, 'confirmleftpv': this.data[i]?.pv[0] ? this.data[i].pv[0]['left_pv'] : 0, 'conpv': this.data[i]?.pv[0] ? this.data[i].pv[0]['deducted'] : 0 });
         }
+        console.log(this.pv);
+        
         this.filtereduserdata = this.alluserdata;
       });
     })

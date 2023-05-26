@@ -9,14 +9,18 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./tdsdetails.component.css']
 })
 export class TDSDetailsComponent implements OnInit {
-  uid:any;
-  email:any;
-  date:any;
-  commisiondata:any[]=[];
-  searchTerm:any='';
-  filtereduserdata:any;
-  constructor(private http: HttpClient,private afa : AngularFireAuth) { 
-   
+  uid: any;
+  email: any;
+  date: any;
+  commisiondata: any[] = [];
+  searchTerm: any = '';
+  filtereduserdata: any[] = [];
+  Package: any = "";
+  startDate: any = "";
+  endDate: any = "";
+  position: any = "";
+  constructor(private http: HttpClient, private afa: AngularFireAuth) {
+
   }
 
   ngOnInit() {
@@ -26,49 +30,65 @@ export class TDSDetailsComponent implements OnInit {
       this.email = data?.email;
 
       this.uid = data?.displayName;
-      this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      this.date = new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear() + "  " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
       console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-      this.http.get('https://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
-      .subscribe((datas:any) => {
-        this.commisiondata=datas.tds;
-        this.filtereduserdata = this.commisiondata
-      });
+      this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id=' + this.uid)
+        .subscribe((datas: any) => {
+          this.commisiondata = datas.tds;
+          this.filtereduserdata = this.commisiondata
+        });
     })
     // const uid = 'ab00003';
     //  const uid = sessionStorage.getItem('firebaseUserId');
-   
+
   }
   getSumOfAmount() {
-    return this.commisiondata.reduce((total, current) => total + parseInt(current.amount), 0);
+    return this.filtereduserdata.reduce((total, current) => total + parseInt(current.amount), 0);
   }
   getDateBefore(dateString: string): string {
     // Convert the date string to a Date object
     const date = new Date(dateString);
-  
+
     // Subtract 7 days from the date
     date.setDate(date.getDate() - 7);
-  
+
     // Format the date as a string in the format of "YYYY-MM-DD"
     const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
-  
+
     return formattedDate;
   }
-  filterData() {
-    if (this.searchTerm == '') {
+  filters() {
+    if (this.Package === '' && this.startDate === '' && this.endDate === '' && this.position === '') {
       this.filtereduserdata = this.commisiondata;
-      
     } else {
       this.filtereduserdata = this.commisiondata.filter((user: any) => {
-        let nameMatch = false;
-        let idMatch = false;
-        if (user.name && user.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          nameMatch = true;
+        let positionMatch = true;
+        let dateMatch = true;
+        let packageMatch = true;
+
+        // Filter by position
+        if (this.position !== '' && user.position !== this.position) {
+          positionMatch = false;
         }
-        if (user.id && user.id.toString && user.id.toString().toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          idMatch = true;
+
+        // Filter by date range
+        if (this.startDate !== '' && this.endDate !== '') {
+          const startDate = new Date(this.startDate);
+          const endDate = new Date(this.endDate);
+          const createdAt = new Date(user.dt);
+          if (createdAt < startDate || createdAt > endDate) {
+            dateMatch = false;
+          }
         }
-        return nameMatch || idMatch;
+
+        // Filter by package
+        if (this.Package !== '' && user.type !== this.Package) {
+         
+            packageMatch = false;
+          
+        }
+        return positionMatch && dateMatch && packageMatch;
       });
     }
   }

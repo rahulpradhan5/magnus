@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-show-id-card-details',
@@ -16,6 +17,7 @@ name:any;
 mobile:any;
 image:any;
 doj:any;
+fuid:any;
 profileurl: string = 'http://cdn.onlinewebfonts.com/svg/img_452489.png';
   constructor(public afa: AngularFireAuth, private fdb: AngularFirestore) {
     afa.user.subscribe(data => {
@@ -24,6 +26,7 @@ profileurl: string = 'http://cdn.onlinewebfonts.com/svg/img_452489.png';
       this.email = data?.email;
 
       this.uid = data?.uid;
+      this.fuid = data?.displayName;
       this.image = data?.photoURL;
       this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
@@ -41,7 +44,8 @@ profileurl: string = 'http://cdn.onlinewebfonts.com/svg/img_452489.png';
       console.log(data);
       this.name = data.fullName;
       this.mobile = data.mobNum;
-      this.doj = data.joiningDate;
+      
+      this.doj = new Date(data.joiningDate).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });;
     })
     })
    }

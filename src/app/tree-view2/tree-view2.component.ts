@@ -9,13 +9,17 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./tree-view2.component.css']
 })
 export class TreeView2Component implements OnInit {
-uid:any;
-  constructor(private afa:AngularFireAuth,private http: HttpClient) {
-    
-   }
+  uid: any;
+  constructor(private afa: AngularFireAuth, private http: HttpClient) {
+
+  }
   apiResponse: any;
-  data:any;
-  uiid :any;
+  data: any;
+  uiid: any;
+  id:any;
+  searchTerm:any;
+  leftdata:any;
+  rightdata:any;
   ngOnInit(): void {
     // const uid = 'ab00003';
     //  const uid = sessionStorage.getItem('firebaseUserId');
@@ -26,26 +30,52 @@ uid:any;
       $('.genealogy-tree2>ul').show();
       $('.genealogy-tree2 ul.active').show();
       $('.genealogy-tree2 li').on('click', function (e) {
-          var children = $(this).find('> ul');
-          if (children.is(":visible")) children.hide('fast').removeClass('active');
-          else children.show('fast').addClass('active');
-          e.stopPropagation();
+        var children = $(this).find('> ul');
+        if (children.is(":visible")) children.hide('fast').removeClass('active');
+        else children.show('fast').addClass('active');
+        e.stopPropagation();
       });
-  });
-  this.afa.user.subscribe(data => {
-    // console.log('data-->');
-    // console.log(data);
-    // this.email = data?.email;
+    });
+    this.afa.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      // this.email = data?.email;
 
-    this.uid = data?.displayName;
-    // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
-    // let NewTime = hour + ":" + minuts + ":" + seconds
-    // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-    this.http.get<any>('https://moneysagaconsultancy.com/api/api/generationtree?user_id='+this.uid).subscribe(response => {
-      this.apiResponse = response.data;
+      this.uid = data?.displayName;
+      this.id = this.uid;
+      // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+      // let NewTime = hour + ":" + minuts + ":" + seconds
+      // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
+      this.http.get<any>('http://moneysagaconsultancy.com/api/api/generationtree?user_id=' + this.id).subscribe(response => {
+        this.apiResponse = response.data;
+        console.log(this.apiResponse);
+      });
+      this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
+      .subscribe((data:any) => {
+        console.log(data);
+
+        this.leftdata = data.total_details.leftdata;
+        this.rightdata = data.total_details.rightdata;
+   
+        console.log(this.leftdata);
+      })
   });
-  })
- 
+   
+
   }
+filterData(){
+  this.id  = this.searchTerm;
+  this.http.get<any>('http://moneysagaconsultancy.com/api/api/generationtree?user_id=' + this.id).subscribe(response => {
+    this.apiResponse = response.data;
+    console.log(this.apiResponse);
+  });
+}
 
+clickdata(id:any){
+  this.id  = id;
+  this.http.get<any>('http://moneysagaconsultancy.com/api/api/generationtree?user_id=' + this.id).subscribe(response => {
+    this.apiResponse = response.data;
+    console.log(this.apiResponse);
+  });
+}
 }

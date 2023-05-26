@@ -8,7 +8,7 @@
         <div class="admin-dashone-data-table-area" style="user-select: text;">
             <div class="container-fluid" style="user-select: text;">
                 <div class="row" style="user-select: text;">
-                    <div class="col-lg-12" style="user-select: text;">
+                    <div class="col-lg-12" style="user-select: text;margin-top: 60px;">
 
 
 
@@ -143,18 +143,21 @@
                                                                             title="Export To Excel" tabindex="0"
                                                                             aria-controls="mydirectDataTable"
                                                                             style="user-select: text;"><span id=""
-                                                                                style="user-select: text;"><img  (click)="exportTableToExcel('mydirectDataTable', 'myFile')"
+                                                                                style="user-select: text;"><img
+                                                                                    (click)="exportTableToExcel('mydirectDataTable', 'myFile')"
                                                                                     src="https://i.postimg.cc/y6S78MBz/export-excel.png"
                                                                                     style="user-select: text;width:100px;height:60px;"></span></a>
                                                                     </div>
                                                                     <div class="clear" style="user-select: text;"></div>
                                                                     <form class="form-inline my-2 my-lg-0">
                                                                         <input class="form-control mr-sm-2"
-                                                                            type="search"  [(ngModel)]="searchTerm" name="search" placeholder="Search"
+                                                                            type="search" [(ngModel)]="searchTerm"
+                                                                            name="search" placeholder="Search"
                                                                             aria-label="Search">
                                                                         <button
                                                                             class="btn btn-outline-success my-2 my-sm-0"
-                                                                            type="submit" (click)="filterData()">Search</button>
+                                                                            type="submit"
+                                                                            (click)="filterData()">Search</button>
                                                                     </form>
                                                                     <div id="mydirectDataTable_processing"
                                                                         class="dataTables_processing"
@@ -230,7 +233,7 @@
                                                                                     aria-label="
                     Left PV
                 : activate to sort column ascending">
-                                                                                    Left PV
+                                                                                    Left BV
                                                                                 </th>
                                                                                 <th class="sorting" tabindex="0"
                                                                                     aria-controls="mydirectDataTable"
@@ -239,7 +242,7 @@
                                                                                     aria-label="
                     Right PV
                 : activate to sort column ascending">
-                                                                                    Right PV
+                                                                                    Right BV
                                                                                 </th>
                                                                                 <th class="sorting" tabindex="0"
                                                                                     aria-controls="mydirectDataTable"
@@ -248,7 +251,7 @@
                                                                                     aria-label="
                     Confirm Left PV
                 : activate to sort column ascending">
-                                                                                    Confirm Left PV
+                                                                                    Confirm Left BV
                                                                                 </th>
                                                                                 <th class="sorting" tabindex="0"
                                                                                     aria-controls="mydirectDataTable"
@@ -257,7 +260,7 @@
                                                                                     aria-label="
                     Confirm Right PV
                 : activate to sort column ascending">
-                                                                                    Confirm Right PV
+                                                                                    Confirm Right BV
                                                                                 </th>
                                                                                 <th class="sorting" tabindex="0"
                                                                                     aria-controls="mydirectDataTable"
@@ -266,7 +269,7 @@
                                                                                     aria-label="
                     Own PV
                 : activate to sort column ascending">
-                                                                                    Own PV
+                                                                                    Own BV
                                                                                 </th>
                                                                                 <th class="sorting" tabindex="0"
                                                                                     aria-controls="mydirectDataTable"
@@ -275,20 +278,21 @@
                                                                                     aria-label="
                     Confirm Own PV
                 : activate to sort column ascending">
-                                                                                    Confirm Own PV
+                                                                                    Confirm Own BV
                                                                                 </th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody style="user-select: text;">
                                                                             <tr role="row" class="odd"
-                                                                                style="user-select: text;" *ngFor="let userData of filtereduserdata">
+                                                                                style="user-select: text;"
+                                                                                *ngFor="let userData of filtereduserdata">
                                                                                 <td data-label="
                     ID
                 " class="sorting_1" style="user-select: text;">{{userData.id}}</td>
                                                                                 <td data-label="
                     Name
                 " style="user-select: text;" *ngIf="userData.name != ''">{{userData.name}}</td>
-                <td data-label="
+                                                                                <td data-label="
                     Name
                 " style="user-select: text;" *ngIf="userData.name == ''">Null</td>
                                                                                 <td data-label="
@@ -303,33 +307,33 @@
                                                                                 <td data-label="
                     Confirm Right Count
                 " style="user-select: text;">{{userData.confirmright
-                }}</td>
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Left PV
-                " style="user-select: text;">{{userData.leftpv
-                }}</td>
+                " style="user-select: text;">{{userData.leftpv * 12/100
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Right PV
-                " style="user-select: text;">{{userData.rightpv
-                }}</td>
+                " style="user-select: text;">{{userData.rightpv * 12/100
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Confirm Left PV
-                " style="user-select: text;">{{userData.confirmleftpv
-                }}</td>
+                " style="user-select: text;">{{userData.confirmleftpv * 12/100
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Confirm Right PV
-                " style="user-select: text;">{{userData.confirmrightpv
-                }}</td>
+                " style="user-select: text;">{{userData.confirmrightpv * 12/100
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Own PV
-                " style="user-select: text;">{{userData.pv
-                }}</td>
+                " style="user-select: text;">{{pv[0].package_amount * 12/100
+                                                                                    }}</td>
                                                                                 <td data-label="
                     Confirm Own PV
-                " style="user-select: text;">{{userData.conpv
-                }}</td>
+                " style="user-select: text;">{{pv[0].package_amount * 12/100
+                                                                                    }}</td>
                                                                             </tr>
-                                                                            
+
                                                                         </tbody>
                                                                     </table>
                                                                     <div class="dataTables_info"

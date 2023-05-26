@@ -13,6 +13,12 @@ generation:any[] = [];
 uid:any;
 searchTerm:any='';
 filtereduserdata:any;
+Package: any = "";
+startDate: any = "";
+endDate: any = "";
+position: any = "";
+filterData: any;
+actualData:any;
   constructor(private http: HttpClient,private afa : AngularFireAuth) { }
 
   ngOnInit(): void {
@@ -28,34 +34,54 @@ filtereduserdata:any;
       this.http.get('http://moneysagaconsultancy.com/api/api/generationtree?user_id='+this.uid)
       .subscribe((data:any) => {
         data.data.forEach((datas:any) => {
-          this.generation.push({ ['created_at']: datas.created_at,['owner']: datas.owner,['points']: datas.points,['position']: datas.position,['referrer_id']: datas.referrer_id,['user_id']: datas.user_id,['level']: '1' ,['name']: datas.name});
+          this.generation.push({ ['created_at']: datas.created_at,['owner']: datas.owner,['points']: datas.points,['position']: datas.position,['referrer_id']: datas.referrer_id,['user_id']: datas.user_id,['level']: '1' ,['name']: datas.name,['package_name']: datas.package_name });
           datas.subdata.forEach((daatas:any)=>{
-            this.generation.push({ ['created_at']: daatas.created_at,['owner']: daatas.owner,['points']: daatas.points,['position']: daatas.position,['referrer_id']: daatas.referrer_id,['user_id']: daatas.user_id,['level']: '2',['name']: daatas.name });
+            this.generation.push({ ['created_at']: daatas.created_at,['owner']: daatas.owner,['points']: daatas.points,['position']: daatas.position,['referrer_id']: daatas.referrer_id,['user_id']: daatas.user_id,['level']: '2',['name']: daatas.name,['package_name']: daatas.package_name });
           })
         });
         this.filtereduserdata = this.generation;
+        console.log(this.filtereduserdata);
       })
     })
     // const uid = sessionStorage.getItem('firebaseUserId');
    
   }
-  filterData() {
-    if (this.searchTerm == '') {
+  filters() {
+    if (this.Package === '' && this.startDate === '' && this.endDate === '' && this.position === '') {
       this.filtereduserdata = this.generation;
-      
     } else {
       this.filtereduserdata = this.generation.filter((user: any) => {
-        let nameMatch = false;
-        let idMatch = false;
-        if (user.name && user.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          nameMatch = true;
+        let positionMatch = true;
+        let dateMatch = true;
+        let packageMatch = true;
+
+        // Filter by position
+        if (this.position !== '' && user.position !== this.position) {
+          positionMatch = false;
         }
-        if (user.user_id && user.user_id.toString && user.user_id.toString().toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          idMatch = true;
+
+        // Filter by date range
+        if (this.startDate !== '' && this.endDate !== '') {
+          const startDate = new Date(this.startDate);
+          const endDate = new Date(this.endDate);
+          const createdAt = new Date(user.created_at);
+          if (createdAt < startDate || createdAt > endDate) {
+            dateMatch = false;
+          }
         }
-        return nameMatch || idMatch;
+
+        // Filter by package
+        if (this.Package !== '' && user.package_name !== this.Package) {
+         
+            packageMatch = false;
+          
+        }
+
+        return positionMatch && dateMatch && packageMatch;
       });
     }
+
+    console.log(this.filtereduserdata);
   }
 
   exportTableToExcel(tableId: string, fileName: string): void {

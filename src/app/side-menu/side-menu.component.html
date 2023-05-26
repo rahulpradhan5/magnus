@@ -1,6 +1,15 @@
+<style>
+  .side {
+    overflow-y: auto;
+  }
+
+  .side::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 <nav class="side-menu">
 
-  <ul class="">
+  <ul class="side">
 
     <div _ngcontent-krk-c54="" class="logoh" style="user-select: text;">
 
@@ -12,13 +21,13 @@
 
     <div _ngcontent-krk-c54="" class="sidebar-header d-flex justify-content-center align-items-center mx-auto"
       style="user-select: text;"><a _ngcontent-krk-c54="" href="dashboard"
-        style="user-select: text;border-radius: 52px;"><img _ngcontent-krk-c54=""
-          [src]="profileurl" alt=""
+        style="user-select: text;border-radius: 52px;"><img _ngcontent-krk-c54="" [src]="profileurl" alt=""
           style="width: 61px;height: 70px;background: white;user-select: text;"></a>
-          <div style="display: flex;flex-direction: column;gap:0">
-            <h3 _ngcontent-krk-c54="" style="user-select: text;">{{fullName}}</h3>
-          </div>
-     
+      <div style="display: flex;flex-direction: column;gap:0">
+        <h3 _ngcontent-krk-c54="" style="user-select: text;">{{fullName}}</h3>
+        <span _ngcontent-krk-c54="" style="user-select: text;">₹ {{revenue | number}}</span>
+      </div>
+
 
     </div>
 
@@ -72,7 +81,7 @@
 
       <a _ngcontent-krk-c54="" href="dashboard" title="My Network" style="user-select: text;"><i _ngcontent-krk-c54=""
           id="faIconStyle" class="fas fa-network-wired" style="user-select: text;"></i><span _ngcontent-krk-c54=""
-          class="mini-dn" style="user-select: text;">  Network</span><span _ngcontent-krk-c54=""
+          class="mini-dn" style="user-select: text;"> Network</span><span _ngcontent-krk-c54=""
           class="indicator-right-menu mini-dn" style="user-select: text;"></span></a>
       <ul class="dropdown-menu w-100">
         <li><a href="tree/{{myId}}/view" class="text-white">Tree Structure</a></li>
@@ -99,15 +108,18 @@
         <li><a href="CommisionLedger" class="text-white">Earning Details</a></li>
         <li><a href="TDSDetails" class="text-white">TDS Details</a></li>
         <!-- <li><a href="SchemeOfferDetailsReport" class="text-white">New Offers</a></li> -->
-        <li><a href="MatchingIncomeReconsulationReport" class="text-white">Matching Income Detail
+        <li><a href="MatchingIncomeReconsulationReport" class="text-white">Pair Income Detail
+            Report</a></li>
+        <li><a href="direcrincome" class="text-white">Direct Income Detail
             Report</a></li>
         <li><a href="RenewalIncomeReconciliationReport" class="text-white">Renewal Income Detail
-            Report</a></li>
+            Report</a>
+            <li><a href="RankQualifiersReport" class="text-white">Rank Qualifiers Report</a></li>
         <!-- <li><a href="LevelReconcilationReport" class="text-white">Level Income Detail Report</a></li>
         <li><a href="RankQualifiersReport" class="text-white">Rank Qualifiers Report</a></li> -->
       </ul>
     </li>
-    
+
 
 
     <li class="dropdown">
@@ -119,8 +131,9 @@
           class="indicator-right-menu mini-dn" style="user-select: text;"></span></a>
 
       <ul class="dropdown-menu w-100">
-        <li><a href="CheckEpin" class="text-white">Check E-Pin</a></li>
+        <li><a href="CheckEpin" class="text-white">Genrate E-Pin</a></li>
         <li><a href="MemberEpinLogin" class="text-white">E-Pin Place Order</a></li>
+        <li><a style="cursor: pointer;" (click)="resetPassword()" class="text-white">Change Password</a></li>
         <!-- <li><a href="MemberEpinLogin" class="text-white">E-Pin Order Details</a></li>
         <li><a href="MemberEpinLogin" class="text-white">Epin Transfer
           </a></li>
@@ -132,12 +145,27 @@
     <li _ngcontent-krk-c54="" style="user-select: text;"><a _ngcontent-krk-c54="" href="/upgrade"
         title="Upgrade Details" style="user-select: text;"><i _ngcontent-krk-c54="" id="faIconStyle"
           class="fas fa-arrow-up" style="user-select: text;"></i><span _ngcontent-krk-c54="" class="mini-dn"
-          style="user-select: text;">Upgrade Details</span><span _ngcontent-krk-c54=""
+          style="user-select: text;">My Details</span><span _ngcontent-krk-c54=""
           class="indicator-right-menu mini-dn" style="user-select: text;"></span></a>
       <div _ngcontent-krk-c54="" role="menu" class="dropdown-menu left-menu-dropdown animated flipInX"
         style="user-select: text;"></div>
     </li>
-
+    <li *ngIf="myId == 'MCS000000001'" _ngcontent-krk-c54="" style="user-select: text;"><a _ngcontent-krk-c54=""
+        href="/give-package" title="Give Package" style="user-select: text;"><i _ngcontent-krk-c54="" id="faIconStyle"
+          class="fas fa-arrow-up" style="user-select: text;"></i><span _ngcontent-krk-c54="" class="mini-dn"
+          style="user-select: text;">Give Package</span><span _ngcontent-krk-c54="" class="indicator-right-menu mini-dn"
+          style="user-select: text;"></span></a>
+      <div _ngcontent-krk-c54="" role="menu" class="dropdown-menu left-menu-dropdown animated flipInX"
+        style="user-select: text;"></div>
+    </li>
+    <li *ngIf="myId == 'MCS000000001'" _ngcontent-krk-c54="" style="user-select: text;"><a _ngcontent-krk-c54=""
+        href="/testimonials" title="Give Package" style="user-select: text;"><i _ngcontent-krk-c54="" id="faIconStyle"
+          class="fas fa-arrow-up" style="user-select: text;"></i><span _ngcontent-krk-c54="" class="mini-dn"
+          style="user-select: text;">Testimonials</span><span _ngcontent-krk-c54="" class="indicator-right-menu mini-dn"
+          style="user-select: text;"></span></a>
+      <div _ngcontent-krk-c54="" role="menu" class="dropdown-menu left-menu-dropdown animated flipInX"
+        style="user-select: text;"></div>
+    </li>
     <li class="dropdown">
 
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery'
 import { AuthService } from '../shared/auth.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-side-menu',
@@ -19,14 +20,17 @@ export class SideMenuComponent implements OnInit {
   set: boolean = true;
   myId: any;
   fullName: any;
+  email:any;
+  revenue:any;
   logourl: string = '../../assets/img/logonew.png';
   profileurl: string = 'http://cdn.onlinewebfonts.com/svg/img_452489.png';
   profile_exist: boolean = false;
   profile_exist_String: string = '';
-  constructor(public auth: AuthService, public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore) {
+  constructor(private http: HttpClient,public auth: AuthService, public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore) {
 
     firebaseAuth.user.subscribe(user => {
       this.myId = user?.displayName;
+      this.email = user?.email;
       console.log(user?.uid);
       if (user) {
         this.isLogedin = true;
@@ -53,6 +57,20 @@ export class SideMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.firebaseAuth.user.subscribe(user => {
+      this.myId = user?.displayName;
+    this.http.get('http://moneysagaconsultancy.com/api/api/Package?user_id=' + this.myId)
+    .subscribe((data: any) => {
+      console.log(data);
+      
+      if (data.revenue == '') {
+        this.revenue = 0;
+      } else {
+        this.revenue = data.revenue[0]['revenue'];
+      }
+      
+    })
+  });
     // this.myId = sessionStorage.getItem('firebaseUserId');
     // console.log(this.myId);
     const id = localStorage.getItem('sideMenu')
@@ -226,5 +244,15 @@ export class SideMenuComponent implements OnInit {
     // document.getElementById("mySidenav1")!.style.marginLeft = "-1000";
     document.getElementById("mySidenav1")!.style.display = "block";
   }
-
+  resetPassword() {
+    if(this.email == ''){
+      alert("please enter email");
+      return
+    }
+   this.firebaseAuth.sendPasswordResetEmail(this.email).then(() => {
+   alert("Please check your email for change your password")
+  }, err => {
+    alert('Something went wrong');
+  })
+  }
 }

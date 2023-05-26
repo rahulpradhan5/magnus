@@ -63,7 +63,10 @@ import { CustomerinfoComponent } from './customerinfo/customerinfo.component';
 import { AwarenessCampaignComponent } from './awareness-campaign/awareness-campaign.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { SponsorRegisterComponent } from './sponsor-register/sponsor-register.component';
-
+import { GivePackageComponent } from './give-package/give-package.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { DirectimcomeComponent } from './directimcome/directimcome.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -155,9 +158,13 @@ const routes: Routes = [
   { path: 'awarenes-campaign', component: AwarenessCampaignComponent },
   { path: 'bank-details', component: BankDetailsComponent },
   { path: 'SponsorRegister', component: SponsorRegisterComponent },
+  { path: 'give-package', component: GivePackageComponent },
+  { path: 'testimonials', component: TestimonialsComponent },
+  { path: 'direcrincome', component: DirectimcomeComponent },
+  { path: 'invoice/:id/view', component: InvoiceComponent },
 
 
-
+  
 
 
 

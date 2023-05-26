@@ -269,7 +269,7 @@ th {
 
     thead {
         display: table-header-group;
-        background-color: #d3e4f4;
+        background-color: #ecbe28;
     }
 
     img,
@@ -4575,7 +4575,7 @@ tbody.collapse.in {
     border-top: 0;
     border-bottom: 4px dashed;
     border-bottom: 4px solid;
-
+    
 }
 
 .dropup .dropdown-menu,
@@ -8346,7 +8346,7 @@ button.close {
 .adminpro-icon {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'adminpro-icon' !important;
-
+    
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -14621,7 +14621,7 @@ Copyright (c) 2015 Daniel Eden
 /*
  * Table styles
  */
-table.dataTable {
+ table.dataTable {
     width: 100%;
     margin: 0 auto;
     clear: both;
@@ -14640,7 +14640,7 @@ table.dataTable {
 table.dataTable thead th,
 table.dataTable tfoot th {
     font-weight: bold;
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
     border: 1px solid #B8C9D9;
 }
 
@@ -14700,7 +14700,7 @@ table.dataTable thead .sorting_desc_disabled {
 } */
 
 table.dataTable tbody tr {
-    background-color: #ffffff;
+    background-color: #e4e3b6;
 }
 
 table.dataTable tbody tr.selected {
@@ -15287,7 +15287,7 @@ table.dataTable td {
  * CONTAINER
  * TableTools container element and styles applying to all components
  */
-div.DTTT_container {
+ div.DTTT_container {
     position: relative;
     float: right;
     margin-bottom: 1em;
@@ -15656,7 +15656,7 @@ div.DTTT_collection a.DTTT_button {
  *    without disabling user zoom.
  */
 
-html {
+ html {
     font-family: sans-serif;
     /* 1 */
     -ms-text-size-adjust: 100%;
@@ -25238,7 +25238,7 @@ jconfirm-holder {
     text-align: center;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+ .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: white !important;
     border: 1px solid #111;
     /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #467fc8), color-stop(100%, #9aade5)); */
@@ -25247,7 +25247,7 @@ jconfirm-holder {
     background: -ms-linear-gradient(top, #467fc8 0%, #9aade5 100%);
     background: -o-linear-gradient(top, #467fc8 0%, #9aade5 100%);
     background: linear-gradient(top, #467fc8 0%, #9aade5 100%);
-}
+} 
 
 .form-group-inner .row .col-lg-3 {
     padding-left: 15% !important;
@@ -25576,7 +25576,7 @@ text-align: right !important;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #e9ebea !important;
+    background-color: #ffc93b8f !important;
 }
 
 .loader {
@@ -25597,74 +25597,73 @@ text-align: right !important;
 }
 
 input.input-validation-error,
-textarea.input-validation-error,
-select.input-validation-error {
-    border: 1px solid #CD0A0A !important;
-}
+        textarea.input-validation-error,
+        select.input-validation-error {
+            border: 1px solid #CD0A0A !important;
+        }
 
-.dataTables_wrapper .dataTables_processing {
-    position: unset !important;
-}
-
-.view-file-in {
-    height: 60px;
-    padding: 2px 0px;
-    /*background-color: #1d68ba;*/
-}
-
-
-@media screen and (max-width: 600px) {
-    .table-wrapper table {
-        border: 0;
-    }
-
-    .table-wrapper table caption {
-        font-size: 1.3em;
-    }
-
-    .table-wrapper table thead {
-        border: none;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-
-    .table-wrapper table tr {
-        border-bottom: 3px solid #ddd;
-        display: block;
-        margin-bottom: .625em;
-    }
-
-    .table-wrapper table td {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        font-size: .8em;
-        text-align: right;
-    }
-
-    .table-wrapper table td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        width: 50%;
-        text-align: left;
-    }
-
-    .table-wrapper table td:last-child {
-        border-bottom: 0;
-    }
-
-    .table-wrapper .table-bordered>tbody>tr>td {
-        font-size: 11px !important;
-    }
-}
+        .dataTables_wrapper .dataTables_processing {
+            position: unset !important;
+        }
+        .view-file-in {
+            height: 60px;
+            padding: 2px 0px;
+            /*background-color: #1d68ba;*/
+        }
 
 
-/*Header Panel*/
+        @media screen and (max-width: 600px) {
+            .table-wrapper table {
+                border: 0;
+            }
+        
+            .table-wrapper table caption {
+                font-size: 1.3em;
+            }
+        
+            .table-wrapper table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+        
+            .table-wrapper table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+        
+            .table-wrapper table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+        
+            .table-wrapper table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                width: 50%;
+                text-align: left;
+            }
+        
+            .table-wrapper table td:last-child {
+                border-bottom: 0;
+            }
+        
+            .table-wrapper .table-bordered>tbody>tr>td {
+                font-size: 11px !important;
+            }
+        }
+
+
+        /*Header Panel*/
 .inbox-email-menu-list .compose-email a,
 .btn-group-xs>.btn,
 .login-btn-inner .btn-primary.active.focus,
@@ -25844,7 +25843,7 @@ select.input-validation-error {
 table.dataTable thead th,
 table.dataTable tfoot th,
 #footerResponsive {
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
 }
 
 
@@ -25934,14 +25933,14 @@ table.dataTable tfoot th,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .cart th {
@@ -26128,7 +26127,7 @@ table.dataTable tfoot th,
 table.dataTable thead th,
 table.dataTable tfoot th,
 #footerResponsive {
-    background-color: #d3e4f4;
+    background-color: #ecbe28;
 }
 
 
@@ -26218,14 +26217,14 @@ table.dataTable tfoot th,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #434d58 !important;
-    /*#d3e4f4 Text Color*/
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9ebea), color-stop(100%, #d3e4f4));
+    /*#ecbe28 Text Color*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc93b8f), color-stop(100%, #ecbe28));
 }
 
 .cart th {
@@ -26503,7 +26502,7 @@ th {
 
     thead {
         display: table-header-group;
-        background-color: #d3e4f4;
+        background-color: #ecbe28;
     }
 
     img,
@@ -30809,7 +30808,7 @@ tbody.collapse.in {
     border-top: 0;
     border-bottom: 4px dashed;
     border-bottom: 4px solid;
-
+    
 }
 
 .dropup .dropdown-menu,
@@ -34584,7 +34583,7 @@ button.close {
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-/* @font-face {
+ /* @font-face {
     font-family: 'FontAwesome';
     src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
@@ -37311,10 +37310,8 @@ button.close {
 .fa-percent:before {
     content: "\f295"
 }
-
-
 @media screen and (min-width: 991px){
     .content-inner-all {
-        margin-top: -14vh !important;
+        margin-top: -19vh !important;
     }
     }

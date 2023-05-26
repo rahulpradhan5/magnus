@@ -23,7 +23,7 @@ uid:any;
       // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
       // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-      this.http.get<any>('https://moneysagaconsultancy.com/api/api/generationtree?user_id='+this.uid).subscribe(response => {
+      this.http.get<any>('http://moneysagaconsultancy.com/api/api/generationtree?user_id='+this.uid).subscribe(response => {
         this.apiResponse = response;
         console.log()
     });

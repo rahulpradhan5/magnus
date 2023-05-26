@@ -1,5 +1,9 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as XLSX from 'xlsx';
+import { HttpHeaders } from '@angular/common/http';
 declare var jQuery: any;
 
 @Component({
@@ -8,15 +12,18 @@ declare var jQuery: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { 
-   }
+  testimonials: any;
+  constructor(private http: HttpClient, public auths: AngularFireAuth,) {
+  }
 
   ngOnInit(): void {
+    this.http.get("http://moneysagaconsultancy.com/api/api/testis").subscribe((data: any) => {
+      this.testimonials = data.data;
+    })
   }
 
-  ngOnUpdate():void {
+  ngOnUpdate(): void {
     console.log("dklf");
   }
-  
+
 }

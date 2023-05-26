@@ -15,15 +15,15 @@ import { HttpClient } from '@angular/common/http';
 
 export class MemberEpinLoginComponent implements OnInit {
 
-  constructor(private http: HttpClient,private auth: AuthService, fStore: AngularFirestore, public auths: AngularFireAuth, private storage: AngularFireStorage, private router: Router) { }
-  myId:any;
-  mpin:any;
-  revenue:any;
-  payments:any;
-  packag:any;
+  constructor(private http: HttpClient, private auth: AuthService, fStore: AngularFirestore, public auths: AngularFireAuth, private storage: AngularFireStorage, private router: Router) { }
+  myId: any;
+  mpin: any;
+  revenue: any;
+  payments: any;
+  packag: any;
   packages: any = '';
   user: any = '';
-  usdata:any = '';
+  usdata: any = '';
 
   ngOnInit(): void {
     // const uid = 'ab00003';
@@ -36,70 +36,72 @@ export class MemberEpinLoginComponent implements OnInit {
       // this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
       // console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-      this.http.get('http://moneysagaconsultancy.com/api/api/Package?user_id='+this.myId)
-      .subscribe((data:any) => {
-        console.log(data);
-       if(data.epin == ''){
-        this.mpin = 'not generated';
-       }else{
-        this.mpin = data.epin[0]['epin'];
-       }
-       if(data.revenue == ''){
-        this.revenue = 0;
-       }else{
-        this.revenue = data.revenue[0]['revenue'];
-       }
-       this.payments = data.payments;
-       console.log(this.payments);
-  
-       this.packag = data.package ;
-       this.usdata = data.users;
-      })
+      this.http.get('http://moneysagaconsultancy.com/api/api/Package?user_id=' + this.myId)
+        .subscribe((data: any) => {
+          console.log(data);
+          if (data.epin == '') {
+            this.mpin = 'not generated';
+          } else {
+            this.mpin = data.epin[0]['epin'];
+          }
+          if (data.revenue == '') {
+            this.revenue = 0;
+          } else {
+            this.revenue = data.revenue[0]['revenue'];
+          }
+          this.payments = data.payments;
+          console.log(this.payments);
+
+          this.packag = data.package;
+          this.usdata = data.users;
+        })
     })
-      // const uid = sessionStorage.getItem('firebaseUserId');
+    // const uid = sessionStorage.getItem('firebaseUserId');
     // this.myId = uid;
-   
+
   }
-  givepackage(event: Event){
+  givepackage(event: Event) {
     event.preventDefault();
-    if(this.user === ''){
+    if (this.user === '') {
       alert('enter user id');
       return
     }
-    if(this.packages === ''){
+    if (this.packages === '') {
       alert('select any packages');
       return
     }
-    if(this.mpin == 'not generated'){
+    if (this.mpin == 'not generated') {
       alert('Please Go check epin and genrate the epin');
       return
     }
 
-    
+
     let myArray = this.packages.split(',');
-    if(Number(myArray[1]) >= this.revenue){
+    if (Number(myArray[1]) >= this.revenue) {
       alert('you have low balance');
-     
+
       return
     }
-    if(Number(myArray[1]) >= this.revenue-this.revenue*10/100){
+    if (Number(myArray[1]) >= this.revenue - this.revenue * 10 / 100) {
       alert('you have low balance');
-     
+
       return
     }
-    if(Number(myArray[1]) < this.revenue){
-    this.http.get('http://moneysagaconsultancy.com/api/api/givePackage?user_id='+this.myId+'&guid='+this.user+'&package='+myArray[0])
-    .subscribe( (data: any) => {
-      alert(data.data);
-    },
-    (error: any) => {
-      alert('Order placed successfully');
-      location.reload(); // refresh the page on error
+    if (Number(myArray[1]) < this.revenue) {
+      this.http.get('http://moneysagaconsultancy.com/api/api/givePackage?user_id=' + this.myId + '&guid=' + this.user + '&package=' + myArray[0])
+        .subscribe((data: any) => {
+          alert(data.data);
+        },
+          (error: any) => {
+            alert('Order placed successfully');
+            location.reload(); // refresh the page on error
+          }
+        )
     }
-    )
+
   }
-   
+  parseAmount(value: string): number {
+    return parseInt(value, 10);
   }
- 
 
 }

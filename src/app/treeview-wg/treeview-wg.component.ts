@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-treeview-wg',
@@ -26,15 +27,27 @@ export class TreeviewWgComponent implements OnInit {
   rightrightleftuser:any;
   rightrightrightuser:any;
   uuid :any;
-  constructor(private http: HttpClient,public ActiveRoute:ActivatedRoute) { }
+  myId:any;
+  referid:any;
+  leftdata:any;
+  searchTerm:any = "";
+  rightdata:any;
+  display:boolean=false;
+  constructor(public auths : AngularFireAuth,private http: HttpClient,public ActiveRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+    this.auths.user.subscribe(data => {
+      // console.log('data-->');
+      // console.log(data);
+      // this.email = data?.email;
+
+      this.myId = data?.displayName;
      const uid = this.ActiveRoute.snapshot.params['id'];
     this.uuid=uid;
     this.http.get<any>('http://moneysagaconsultancy.com/api/api/tree?user_id='+uid).subscribe(response => {
+      
         this.apiResponse = response.data;
-        console.log(this.apiResponse);
+        console.log(response);
         // level 2 left and right users
         this.leftuser = this.apiResponse.children.left || 'undefined';
         this.rightuser = this.apiResponse.children.right || 'undefined';
@@ -54,11 +67,27 @@ export class TreeviewWgComponent implements OnInit {
         this.rightleftrightuser = this.apiResponse.children.right?.children.left?.children.right || 'undefined';
         this.rightrightleftuser = this.apiResponse.children.right?.children.right?.children.left || 'undefined';
         this.rightrightrightuser =this.apiResponse.children.right?.children.right?.children.right || 'undefined';
+        if(this.apiResponse.referrer_id != null || Number(this.apiResponse.referrer_id) >= Number(this.myId)){
+          this.display = true
+        }
     console.log(this.rightrightrightuser);
     });
+    this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.myId)
+      .subscribe((data:any) => {
+        console.log(data);
+
+        this.leftdata = data.total_details.leftdata;
+        this.rightdata = data.total_details.rightdata;
+   
+        console.log(this.leftdata);
+      })
+  });
 }
+filterData()
+{
+  location.href="tree/"+this.searchTerm+"/view";
 
-
+}
 
 }
 

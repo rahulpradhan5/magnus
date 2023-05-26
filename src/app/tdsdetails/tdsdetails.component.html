@@ -4,7 +4,7 @@
     </div>
 
     <div class="content-inner-all">
-        <div class="admin-dashone-data-table-area" style="user-select: text;">
+        <div class="admin-dashone-data-table-area" style="user-select: text;margin-top: 60px;">
             <div class="container-fluid" style="user-select: text;">
                 <div class="row" style="user-select: text;">
                     <div class="col-lg-12" style="user-select: text;">
@@ -231,7 +231,7 @@
 
                                 <div class="sparkline16-hd" style="user-select: text;">
                                     <div class="main-sparkline16-hd" style="user-select: text;">
-                                        <h1 style="user-select: text;">Commission Ledger</h1>
+                                        <h1 style="user-select: text;">Tds Details</h1>
 
 
                                     </div>
@@ -259,9 +259,47 @@
                                                                     <img _ngcontent-ome-c52="" (click)="exportTableToExcel('tblCommissionLegder', 'myFile')" src="https://i.postimg.cc/y6S78MBz/export-excel.png" style="user-select: text;height: 35px;"></span></a></div>
                                                         <div class="clear" style="user-select: text;"></div>
                                                         <form class="form-inline my-2 my-lg-0">
-                                                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                                          </form>
+                                                            <div class="heading"
+                                                                style="width: 100%;align-items: center;text-align: start;color: #fff;background-color: gold;">
+                                                                <h4>filter</h4>
+                                                            </div>
+                                                            <div class="div"
+                                                                style="width: 100%;padding: 20px;display: flex;align-items: center;justify-content: flex-start;gap: 20px;">
+                                                                <div class="flex"
+                                                                    style="display: flex;gap: 10px;align-items: center;">
+                                                                    <label for="">Payout Type</label>
+                                                                    <select name="Package" id="Package"
+                                                                        [(ngModel)]="Package"
+                                                                        style="padding: 5px;outline: none;border: 1px solid rgba(0, 0, 0, 0.404);border-radius: 2px;">
+                                                                        <option value="">Payout Type</option>
+                                                                        <option value="Paired">Paired</option>
+                                                                        <option value="Direct">Direct</option>
+                                                                        <option value="Renew">Renew</option>
+                                                                        <option value="Paired , Direct">Paired , Direct</option>
+                                                                        <option value="Paired , Direct , Renew">Paired , Direct , Renew</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="flex"
+                                                                    style="display: flex;gap: 10px;align-items: center;">
+                                                                    <label for="">Start Date</label>
+                                                                    <input type="date" name="startDate" id="startDate"
+                                                                        [(ngModel)]="startDate"
+                                                                        style="padding: 5px;outline: none;border: 1px solid rgba(0, 0, 0, 0.404);border-radius: 2px;">
+                                                                </div>
+                                                                <div class="flex"
+                                                                    style="display: flex;gap: 10px;align-items: center;">
+                                                                    <label for="">End Date</label>
+                                                                    <input type="date" name="endDate" id="endDate"
+                                                                        [(ngModel)]="endDate"
+                                                                        style="padding: 5px;outline: none;border: 1px solid rgba(0, 0, 0, 0.404);border-radius: 2px;">
+                                                                </div>
+                                                                <div class="flex"
+                                                                    style="display: flex;gap: 10px;align-items: center;">
+                                                                    <button (click)="filters()"
+                                                                        style="padding:  5px 10px;color: black;background-color: gold;border-radius: 5px;">Search</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                         <div id="tblCommissionLegder_processing"
                                                             class="dataTables_processing"
                                                             style="display: none; user-select: text;">
@@ -313,22 +351,22 @@
                                                             <tbody style="user-select: text;">
 
 
-                                                                <tr role="row" class="odd" style="user-select: text;"  *ngFor="let user of commisiondata">
+                                                                <tr role="row" class="odd" style="user-select: text;"  *ngFor="let user of filtereduserdata; let i = index">
                                                                     <td data-label="Sr. No" class="sorting_1"
-                                                                        style="user-select: text;">1</td>
+                                                                        style="user-select: text;">{{ i + 1 }}</td>
 
 
 
 
 
                                                                     <td data-label=" Company Payout No.(Remark)"
-                                                                        style="user-select: text;"> Payout No.{{user.id}}</td>
+                                                                        style="user-select: text;"> Payout No.{{user.payout_id}} ({{user.type}})</td>
                                                                     <td data-label="Start Date"
                                                                         style="user-select: text;">{{getDateBefore(user.dt)}}</td>
                                                                     <td data-label="End Date"
                                                                         style="user-select: text;">{{user.dt}}</td>
                                                                     <td data-label="Total Income"
-                                                                        style="user-select: text;">₹ {{user.amount | number}}</td>
+                                                                        style="user-select: text;">₹ {{user.amount / 2 | number}}</td>
                                                                     
                                                                     
                                                                 </tr>
@@ -343,7 +381,7 @@
                                                                     <td id="showTD" style="user-select: text;"></td>
                                                                     <td style="padding-bottom: 16px; user-select: text;"
                                                                         data-label="Total Income" id="SetTDStyle"> ₹
-                                                                        {{getSumOfAmount() | number}}</td>
+                                                                        {{getSumOfAmount()/2 | number}}</td>
                                                                   
                                                                 </tr>
                                                             </tbody>

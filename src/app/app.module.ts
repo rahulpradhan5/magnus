@@ -80,6 +80,10 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { SponsorRegisterComponent } from './sponsor-register/sponsor-register.component';
 import { SidemenuNavbarComponent } from './sidemenu-navbar/sidemenu-navbar.component';
 import { PackageGiveComponent } from './package-give/package-give.component';
+import { GivePackageComponent } from './give-package/give-package.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { DirectimcomeComponent } from './directimcome/directimcome.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
  @NgModule({
   declarations: [
@@ -153,7 +157,11 @@ import { PackageGiveComponent } from './package-give/package-give.component';
     BankDetailsComponent,
     SponsorRegisterComponent,
     SidemenuNavbarComponent,
-    PackageGiveComponent
+    PackageGiveComponent,
+    GivePackageComponent,
+    TestimonialsComponent,
+    DirectimcomeComponent,
+    InvoiceComponent
    ],
   imports: [
     BrowserModule,

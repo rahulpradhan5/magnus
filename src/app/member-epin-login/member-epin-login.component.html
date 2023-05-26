@@ -4,7 +4,7 @@
     </div>
 
     <div class="content-inner-all">
-        <div class="admin-dashone-data-table-area">
+        <div class="admin-dashone-data-table-area" style="margin-top: 60px;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12" style="background-color: #1F1F1F;">
@@ -91,7 +91,7 @@
                                     <div class="panel-footer  ">
                                         <a class="" href="/Customerinfo" target="_blank" title="Pancard">
                                             <span class="pull-left"> </span>
-                                            <span class="pull-right" style="font-size: 12px;">{{myId}}
+                                            <span class="pull-right" style="font-size: 15px;">{{myId}}
                                                 <!-- <i class="fa fa-arrow-circle-right"></i> -->
                                             </span>
                                             <div class="clearfix"></div>
@@ -134,95 +134,103 @@
 
 
 
-                        
-                       
-                        <form (submit)="givepackage($event)"  class="form mx-3"  
-                            style="margin-top: 50px;margin-bottom: 31px;user-select: text;" >
-                            <input name="__RequestVerificationToken"
-                            type="hidden"
-                            value="v_zvF5Aj1btuvZXIonAp-PknqKNm5V8PkGHhFGVpSCX5yQbRvezYyr5yDqKd_hHt-Z6M2rle-BAWs7LOUuZRBhv8P7UcCist6tMBnMWgPpo1">
-                            <div class="input-group input-group-lg mx-1"
-                            style="user-select: text;margin: 19px 0px;padding: 0 11vw;">
-                            <div class="input-group-prepend ">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Enter User-ID</span>
+
+
+                        <form (submit)="givepackage($event)" class="form mx-3"
+                            style="margin-top: 50px;margin-bottom: 31px;user-select: text;">
+                            <input name="__RequestVerificationToken" type="hidden"
+                                value="v_zvF5Aj1btuvZXIonAp-PknqKNm5V8PkGHhFGVpSCX5yQbRvezYyr5yDqKd_hHt-Z6M2rle-BAWs7LOUuZRBhv8P7UcCist6tMBnMWgPpo1">
+                            <div class="input-group input-group-lg mx-1" 
+                                style="user-select: text;margin: 19px 0px;padding: 0 ;width: 65%;">
+                                <div class="input-group-prepend " style="background-color: linear-gradient(to bottom, #bd8427, #c7902e, #d19c35, #daa83c, #e4b544);">
+                                    <span class="input-group-text" id="inputGroup-sizing-lg" style="    background-image: linear-gradient(to bottom, #bd8427, #c7902e, #d19c35, #daa83c, #e4b544) !important;
+                                    border: none;
+                                    border-radius: 5px;
+                                    color: #fff;"
+                                        >Enter
+                                        User-ID</span>
+                                </div>
+                                <input class="form-control" id="txtSecretCode" name="SecretCode" type="text" value=""
+                                    [(ngModel)]="user">
                             </div>
-                            <input class="form-control" id="txtSecretCode"
-                                                                    name="SecretCode" type="text" value="" [(ngModel)] = "user">
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8  d-flex flex-column justify-content-center">
-                                <div class="sparkline11-list shadow-reset mg-b-30">
-                                    <div class="sparkline11-hd">
-                                        <div class="main-sparkline11-hd">
-                                            <h1 class="text-align-center">Select user</h1>
-                                            <div class="sparkline11-outline-icon">
-                                                <span class="sparkline11-collapse-link">
-                                                    <!-- <i
+                            <div class="row">
+                                <div class="col-lg-8  d-flex flex-column justify-content-center">
+                                    <div class="sparkline11-list shadow-reset mg-b-30">
+                                        <div class="sparkline11-hd">
+                                            <div class="main-sparkline11-hd">
+                                                <h1 class="text-align-center">Select user</h1>
+                                                <div class="sparkline11-outline-icon">
+                                                    <span class="sparkline11-collapse-link">
+                                                        <!-- <i
                                                     class="fa fa-chevron-down"></i> -->
-                                                </span>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="sparkline11-graph dashone-comment dashtwo-comment comment-scrollbar mCustomScrollbar _mCS_5 mCS-autoHide"
-                                        style="position: relative; overflow: visible;height: auto !important;">
-                                        <div id="mCSB_5"
-                                            class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside"
-                                            tabindex="0" style="max-height: none;">
-                                            <div id="mCSB_5_container" class="mCSB_container"
-                                                style="position:relative; top:0; left:0;" dir="ltr">
+                                        <div class="sparkline11-graph dashone-comment dashtwo-comment comment-scrollbar mCustomScrollbar _mCS_5 mCS-autoHide"
+                                            style="position: relative; overflow: visible;height: auto !important;">
+                                            <div id="mCSB_5"
+                                                class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside"
+                                                tabindex="0" style="max-height: none;">
+                                                <div id="mCSB_5_container" class="mCSB_container"
+                                                    style="position:relative; top:0; left:0;" dir="ltr">
 
-                                                <style>
-                                                    #MyrecentJoining_filter {
-                                                        display: none;
-                                                    }
-                                                </style>
+                                                    <style>
+                                                        #MyrecentJoining_filter {
+                                                            display: none;
+                                                        }
+                                                    </style>
 
-                                                <div class="table-wrapper">
-                                                    <div class="x_content " id="ScrollableDiv">
-                                                        <div class="table-wrapper">
-                                                            <div class="x_content " id="ScrollableDiv">
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlSelect1">Select an
-                                                                        user:</label>
-                                                                    <select class="form-control"
-                                                                    id="txtSecretCode"
-                                                                    name="SecretCode" type="text" value="" [(ngModel)] = "user" *ngIf="packag.length != 0"  >
-                                                                    <ng-container *ngFor="let datas of usdata">
-                                                                        <option   [value]="datas.id" >Name: {{datas.name}} ( id: {{datas.id}} )</option>
-                                                                        </ng-container>
-                                                                    </select>
-                                                                    <select class="form-control"
-                                                                    id="txtSecretCode"
-                                                                    name="SecretCode" type="text" value="" [(ngModel)] = "packages" *ngIf="packag.length == 0" >
-                                                                        <option  value="">No user Available</option>
-                                                                       
-                                                                    </select>
+                                                    <div class="table-wrapper">
+                                                        <div class="x_content " id="ScrollableDiv">
+                                                            <div class="table-wrapper">
+                                                                <div class="x_content " id="ScrollableDiv">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleFormControlSelect1">Select an
+                                                                            user:</label>
+                                                                        <select class="form-control" id="txtSecretCode"
+                                                                            name="SecretCode" type="text" value=""
+                                                                            [(ngModel)]="user"
+                                                                            *ngIf="packag.length != 0">
+                                                                            <ng-container *ngFor="let datas of usdata">
+                                                                                <option [value]="datas.id">Name:
+                                                                                    {{datas.name}} ( id: {{datas.id}} )
+                                                                                </option>
+                                                                            </ng-container>
+                                                                        </select>
+                                                                        <select class="form-control" id="txtSecretCode"
+                                                                            name="SecretCode" type="text" value=""
+                                                                            [(ngModel)]="packages"
+                                                                            *ngIf="packag.length == 0">
+                                                                            <option value="">No user Available</option>
+
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
+
                                                 </div>
-
-
                                             </div>
-                                        </div>
 
-                                        <div id="mCSB_5_scrollbar_vertical"
-                                            class="mCSB_scrollTools mCSB_5_scrollbar mCS-light-1 mCSB_scrollTools_vertical">
-                                            <div class="mCSB_draggerContainer" style="display: none;">
-                                                <div id="mCSB_5_dragger_vertical" class="mCSB_dragger"
-                                                    style="position: absolute; min-height: 30px; display: block; height: 66px; max-height: 305px; top: 0px;">
-                                                    <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                            <div id="mCSB_5_scrollbar_vertical"
+                                                class="mCSB_scrollTools mCSB_5_scrollbar mCS-light-1 mCSB_scrollTools_vertical">
+                                                <div class="mCSB_draggerContainer" style="display: none;">
+                                                    <div id="mCSB_5_dragger_vertical" class="mCSB_dragger"
+                                                        style="position: absolute; min-height: 30px; display: block; height: 66px; max-height: 305px; top: 0px;">
+                                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                                    </div>
+                                                    <div class="mCSB_draggerRail"></div>
                                                 </div>
-                                                <div class="mCSB_draggerRail"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-8  d-flex flex-column justify-content-center">
                                     <div class="sparkline11-list shadow-reset mg-b-30">
@@ -259,18 +267,26 @@
                                                                     <div class="form-group">
                                                                         <label for="exampleFormControlSelect1">Select an
                                                                             option:</label>
-                                                                        <select class="form-control"
-                                                                        id="txtSecretCode"
-                                                                        name="SecretCode" type="text" value="" [(ngModel)] = "packages" *ngIf="packag.length != 0"  >
-                                                                        <ng-container *ngFor="let datas of packag">
-                                                                            <option   [value]="[datas.id, datas.package_amount]" *ngIf="datas.package_amount != 0">{{datas.package_name}} (₹ {{datas.package_amount | number}})</option>
+                                                                        <select class="form-control" id="txtSecretCode"
+                                                                            name="SecretCode" type="text" value=""
+                                                                            [(ngModel)]="packages"
+                                                                            *ngIf="packag.length != 0">
+                                                                            <ng-container *ngFor="let datas of packag">
+                                                                                <option
+                                                                                    [value]="[datas.id, datas.package_amount]"
+                                                                                    *ngIf="datas.package_amount != 0">
+                                                                                    {{datas.package_name}} (₹
+                                                                                    {{datas.package_amount | number}})
+                                                                                </option>
                                                                             </ng-container>
                                                                         </select>
-                                                                        <select class="form-control"
-                                                                        id="txtSecretCode"
-                                                                        name="SecretCode" type="text" value="" [(ngModel)] = "packages" *ngIf="packag.length == 0" >
-                                                                            <option  value="">No Package Available</option>
-                                                                           
+                                                                        <select class="form-control" id="txtSecretCode"
+                                                                            name="SecretCode" type="text" value=""
+                                                                            [(ngModel)]="packages"
+                                                                            *ngIf="packag.length == 0">
+                                                                            <option value="">No Package Available
+                                                                            </option>
+
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -298,8 +314,7 @@
 
                             </div>
 
-                            <button type="submit" class="btn fw-bold" style="margin-top: 3px;"
-                               >Submit</button>
+                            <button type="submit" class="btn fw-bold" style="margin-top: 3px;">Submit</button>
                         </form>
                         <div class="row">
                             <div class="col-lg-12">
@@ -338,7 +353,9 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th>Transaction id</th>
-                                                                        <th>Amount</th>
+                                                                        <th>Course Amount</th>
+                                                                        <th>Gst Amount</th>
+                                                                        <th>Total Amount</th>
                                                                         <th>Date</th>
 
                                                                     </tr>
@@ -346,17 +363,24 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     <ng-container *ngFor="let dats of payments">
-                                                                    <tr  *ngIf="dats.revenue != '0'">
+                                                                        <tr *ngIf="dats.revenue != '0'" style="text-align: center;">
 
-                                                                        <td data-label="Required Left">{{dats.id}}</td>
-                                                                        <td data-label="Required Right">₹ {{dats.amount | number}}</td>
-                                                                        <td data-label="Actual Right">{{dats.created_at}}</td>
+                                                                            <td data-label="Required Left">{{dats.id}}
+                                                                            </td>
+                                                                            <td data-label="Required Right">₹
+                                                                                {{dats.amount | number}}</td>
+                                                                                <td data-label="Required Right">₹
+                                                                                    {{(dats.amount * 5)/100 | number}}</td>
+                                                                                    <td data-label="Required Right">₹{{ parseAmount(dats.amount) + (dats.amount * 5)/100 | number }}</td>
 
-                                                                        <!-- <td data-label="Remaining Left">0.00</td>
+                                                                            <td data-label="Actual Right">
+                                                                                {{dats.created_at | date:'dd/MM/yyyy '}}</td>
+
+                                                                            <!-- <td data-label="Remaining Left">0.00</td>
                                                                     <td data-label="Remaining Right">0.00</td> -->
-                                                                    </tr>
-                                                                </ng-container>
-                                                                  
+                                                                        </tr>
+                                                                    </ng-container>
+
                                                                 </tbody>
                                                             </table>
                                                         </div>

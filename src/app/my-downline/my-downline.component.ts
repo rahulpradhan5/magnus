@@ -22,6 +22,12 @@ export class MyDownlineComponent implements OnInit {
   leftdata:any;
   rightdata:any;
   myId:any;
+  Package: any = "";
+  startDate: any = "";
+  endDate: any = "";
+  position: any = "";
+  filterData: any;
+  actualData:any;
   constructor(private auths:AngularFireAuth,private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -46,11 +52,35 @@ export class MyDownlineComponent implements OnInit {
         this.totalrightpv = data.total_right_pv;
         this.totalconfirmleftpv = data.total_confirm_left_pv;
         this.totalcomfirmrightpv = data.total_confirm_right_pv;
-        this.ownPv = data.ownPv;
+        this.ownPv = data.ownpv[0].package_amount;
         this.leftdata = data.total_details.leftdata;
         this.rightdata = data.total_details.rightdata;
-   
-        console.log(this.leftdata);
+        const mergedData = this.leftdata.concat(this.rightdata);
+        mergedData.sort((a:any, b:any) => (a.id > b.id) ? 1 : -1);
+        
+        // Group the merged array by id and assign position
+        const groupedData = mergedData.reduce((result:any, item:any) => {
+          if (!result[item.id]) {
+            result[item.id] = item;
+          } else {
+            Object.assign(result[item.id], item);
+          }
+        
+          // Assign position based on the source data
+          if (this.leftdata.find((data:any) => data.id === item.id)) {
+            result[item.id].position = 'left';
+          } else if (this.rightdata.find((data:any) => data.id === item.id)) {
+            result[item.id].position = 'right';
+          }
+        
+          return result;
+        }, {});
+        // Convert the grouped result to an array
+        const mergedArray = Object.values(groupedData);
+        this.actualData = mergedArray
+        this.filterData = this.actualData;
+        console.log(this.filterData);
+       
       })
       
     })
@@ -63,4 +93,43 @@ export class MyDownlineComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, fileName + '.xlsx');
   }
+
+  filters() {
+    if (this.Package === '' && this.startDate === '' && this.endDate === '' && this.position === '') {
+      this.filterData = this.actualData;
+    } else {
+      this.filterData = this.actualData.filter((user: any) => {
+        let positionMatch = true;
+        let dateMatch = true;
+        let packageMatch = true;
+
+        // Filter by position
+        if (this.position !== '' && user.position !== this.position) {
+          positionMatch = false;
+        }
+
+        // Filter by date range
+        if (this.startDate !== '' && this.endDate !== '') {
+          const startDate = new Date(this.startDate);
+          const endDate = new Date(this.endDate);
+          const createdAt = new Date(user.created_at);
+          if (createdAt < startDate || createdAt > endDate) {
+            dateMatch = false;
+          }
+        }
+
+        // Filter by package
+        if (this.Package !== '' && user.package_name !== this.Package) {
+         
+            packageMatch = false;
+          
+        }
+
+        return positionMatch && dateMatch && packageMatch;
+      });
+    }
+
+    console.log(this.filterData);
+  }
 }
+

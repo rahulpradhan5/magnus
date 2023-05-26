@@ -162,7 +162,7 @@ export class DashboardComponent implements OnInit {
         this.todayLeftcountPv = data?.today_left_count_pv;
         this.todayRightcountPv = data?.today_right_count_pv;
         this.ownPv = data.ownPv;
-        this.todayownPv = data.TodayownPv;
+        this.todayownPv = data.ownpv[0].package_amount;
         this.startDate = data?.subcription[0]?.start_date||'0000-00-00';
         this.endDate = data?.subcription[0]?.end_date||'0000-00-00';
         this.rank = data.rank;

@@ -1,0 +1,159 @@
+<div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+        <app-side-menu></app-side-menu>
+
+    </div>
+
+    <div class="invoice" style="width: 100%; align-items: center;display: flex;justify-content: center;background-color: #fff;padding: 20px;flex-direction: column;">
+        <h1 style="width:100%;padding: 10px;color: #fff;background-color: #ecbe28;font-weight: bold;text-align: center;">Payout Statement</h1>
+        <div class="main-div" style="margin-top: 30px;">
+            <div class="date" style="margin-left: 60px;">
+                <span>{{invoice[0][0].dt | date:'dd/MM/yyyy'}}</span>
+            </div>
+            <div class="table" >
+                <table style="width: 800px;border: 1px solid black;margin-left: 60px;display: flex;flex-direction: column;" #table>
+                    <thead>
+                        <td class="header" style="display: flex;">
+                            <div class="left" style="width: 60%; padding: 20px">
+                                <img src="../../assets/img/logonew.png" alt="" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="right">
+                                <h1 style="font-size: 24px;font-weight: bold;color: #ecbe28;">MoneySaga Consultancy Services LLP</h1>
+                                <p>Address - Flat no.7, Lane no. 1</p>
+                                <p>Saikrupa Apartment, Shani Mandir Lane,</p>
+                                <p>Netaji Nagar, Pimple Gurav, Pune.- 411061</p>
+                                <p>Contact No- +919673768585</p>
+                                <p>Email ID - info@moneysagaconsultancy.com</p>
+                                <p>URL - https://moneysagaconsultancy.com</p>
+                            </div>
+                        </td>
+                        <td style="text-align: center;display: flex;justify-content: center;align-items: center;">
+                            <h1>Payout Statement</h1>
+                        </td>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: center;justify-content: center;border-right: 1px solid black;">Details</td>
+                            <td  style="width: 50%;display: flex;align-items: center;justify-content: center;">Payout</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;padding: 10px;flex-direction: column;gap: 10px;">
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Name</td>
+                                <td style="width: 50%;font-weight: 500;font-size:14px; word-wrap: break-word;">:{{invoice['refrall'][0].name}}</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">ID</td>
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">:{{invoice['refrall'][0].user_id}}</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Email</td>
+                                <td style="width: 50%;font-weight: 500;font-size:14px; word-wrap: break-word;">:{{personaldata.email}}</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Mobile No</td>
+                                <td style="width: 50%;font-weight: 500;font-size:14px;text-overflow: clip;">:{{mobile}}
+                                </td>
+                            </tr>
+                            
+                            </td>
+                            <td  style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;padding: 10px;flex-direction: column;gap: 10px;">
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">Company Payout No.</td>
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">: {{invoice[0][0].id}}</td>
+                                </tr>
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">My Payout No.</td>
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">: {{invoice['payoutcount']}}</td>
+                                </tr>
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">Period</td>
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">: {{invoice['priode']}}</td>
+                                </tr>
+                            </td>
+                        </tr>
+                        <td style="text-align: center;display: flex;justify-content: center;align-items: center;">
+                            <h1>PAYOUT DETAILS</h1>
+                        </td>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: center;justify-content: center;border-right: 1px solid black;">Amount</td>
+                            <td  style="width: 50%;display: flex;align-items: center;justify-content: center;">Deduction</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;padding: 10px;flex-direction: column;gap: 10px;">
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Direct Commission</td>
+                                <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['direct'] | number}}.00</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Pair Commission</td>
+                                <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['pair'] | number}}.00</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Renewal Commission</td>
+                                <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['renewal'] | number}}.00</td>
+                            </tr>
+                            <tr style="width: 100%;display: flex;justify-content: center;">
+                                <td style="width: 50%;font-weight: 500;font-size:14px;">Total</td>
+                                <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['total'] | number}}.00</td>
+                            </tr>
+                            </td>
+                            <td  style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;padding: 10px;flex-direction: column;gap: 10px;">
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">TDS</td>
+                                    <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['tds'] | number}}.00</td>
+                                </tr>
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;font-size:14px;">Admin Charges</td>
+                                    <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{invoice['tds'] | number}}.00</td>
+                                </tr>
+                                <tr style="width: 100%;display: flex;justify-content: center;">
+                                    <td style="width: 50%;font-weight: 500;">Total</td>
+                                    <td style="width: 50%;font-weight: 400;text-align: end;">₹ {{(invoice['totalDid'] | number)}}.00</td>
+                                </tr>
+                            </td>
+                        </tr>
+                    </thead>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                                Brought Forward</td>
+                            <td  style="width: 50%;display: flex;align-items: flex-end;justify-content: flex-end;font-weight: 500;"> ₹ {{invoice[0][0].bf | number}}.00</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                                Carried Forward</td>
+                            <td  style="width: 50%;display: flex;align-items: flex-end;justify-content: flex-end;font-weight: 500;"> ₹ {{invoice[0][0].cf | number}}.00</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                                Total Amount Payable</td>
+                            <td  style="width: 50%;display: flex;align-items: flex-end;justify-content: flex-end;font-weight: 500;"> ₹ {{invoice[0][0].revenue | number}}.00</td>
+                        </tr>                   
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: center;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                               Total Deduction <p style="font-size: small;"> (TDS -5% + Admin -5% = 10%)</p></td>
+                            <td  style="width: 50%;display: flex;align-items: flex-end;justify-content: flex-end;font-weight: 500;"> - ₹ {{invoice['totalDid'] | number}}.00 </td>
+                        </tr>                   
+                       
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: flex-start;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                                Net Payable</td>
+                            <td  style="width: 50%;display: flex;align-items: flex-end;justify-content: flex-end;font-weight: 500;"> ₹ {{invoice[0][0].amount | number}}.00</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 50%;display: flex;align-items: center;justify-content: flex-start;border-right: 1px solid black;font-weight: 500;">	
+                                Net Payable (In words)</td>
+                            <td  style="width: 50%;display: flex;text-transform: capitalize;align-items: flex-end;justify-content: flex-end;font-weight: 500;font-size: 14px;"> rupees {{word}} only</td>
+                        </tr>
+                        <tr style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                            <td style="width: 100%;display: flex;align-items: flex-start;justify-content: flex-start;font-weight: 500;">	
+                                * This is a Computer generated statement, no signature is required.</td>
+                           </tr>
+                        
+                </table>
+                <div class="button" style="width: 100%;align-items: center;justify-content: center;display: flex;margin-top: 20px;">
+                    <button (click)="generatePDF()" style="padding: 10px 10px; background-color: #ecbe28;color: #fff;font-weight: 500;border-radius: 5px;">Download Pdf</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

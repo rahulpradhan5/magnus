@@ -16,6 +16,7 @@ export class WelcomeLetterDetailsComponent implements OnInit {
   mobile:any;
   image:any;
   doj:any;
+  customId:any;
     constructor(public afa: AngularFireAuth, private fdb: AngularFirestore) {
       afa.user.subscribe(data => {
         // console.log('data-->');
@@ -23,6 +24,7 @@ export class WelcomeLetterDetailsComponent implements OnInit {
         this.email = data?.email;
   
         this.uid = data?.uid;
+        this.customId = data?.displayName
         this.image = data?.photoURL;
         this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
         // let NewTime = hour + ":" + minuts + ":" + seconds

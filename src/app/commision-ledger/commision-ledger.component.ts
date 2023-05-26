@@ -14,8 +14,12 @@ export class CommisionLedgerComponent implements OnInit {
 parseFloat: any;
 email:any;
 uid:any;
-filtereduserdata:any;
+filtereduserdata:any[]=[];
 searchTerm:any='';
+Package: any = "";
+startDate: any = "";
+endDate: any = "";
+position: any = "";
   constructor(private http: HttpClient,private afa : AngularFireAuth) { 
    
   }
@@ -32,7 +36,7 @@ searchTerm:any='';
       this.date =new Date().getDate()+ "/"+new Date().getMonth()+ "/"+new Date().getFullYear()+ "  "+ new Date().getHours()+ ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
       // let NewTime = hour + ":" + minuts + ":" + seconds
       console.log('<--data-->'); console.log(this.date); console.log('<--data-->');
-      this.http.get('https://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
+      this.http.get('http://moneysagaconsultancy.com/api/api/totaluserdata?user_id='+this.uid)
       .subscribe((datas:any) => {
         console.log(datas);
         this.commisiondata=datas.payout;
@@ -42,13 +46,13 @@ searchTerm:any='';
    
   }
   getSumOfAmount() {
-    return this.commisiondata.reduce((total, current) => total + parseInt(current.amount), 0);
+    return this.filtereduserdata.reduce((total, current) => total + parseInt(current.amount), 0);
   }
   getSumOfDiuduction() {
-    return this.commisiondata.reduce((acc, commisiondata) => acc + commisiondata.revenue*10/100, 0);
+    return this.filtereduserdata.reduce((acc, commisiondata) => acc + commisiondata.revenue*10/100, 0);
   }
   getsum() {
-    return this.commisiondata.reduce((total, current) => total + parseInt(current.revenue), 0);
+    return this.filtereduserdata.reduce((total, current) => total + parseInt(current.revenue), 0);
   }
   getDateBefore(dateString: string): string {
     // Convert the date string to a Date object
@@ -71,19 +75,37 @@ searchTerm:any='';
     XLSX.writeFile(wb, fileName + '.xlsx');
   }
 
-  filterData() {
-    if (this.searchTerm == '') {
+  filters() {
+    if (this.Package === '' && this.startDate === '' && this.endDate === '' && this.position === '') {
       this.filtereduserdata = this.commisiondata;
-      
     } else {
       this.filtereduserdata = this.commisiondata.filter((user: any) => {
-        let nameMatch = false;
-        let idMatch = false;
-        
-        if (user.id && user.id.toString && user.id.toString().toLowerCase().includes(this.searchTerm.toLowerCase())) {
-          idMatch = true;
+        let positionMatch = true;
+        let dateMatch = true;
+        let packageMatch = true;
+
+        // Filter by position
+        if (this.position !== '' && user.position !== this.position) {
+          positionMatch = false;
         }
-        return  idMatch;
+
+        // Filter by date range
+        if (this.startDate !== '' && this.endDate !== '') {
+          const startDate = new Date(this.startDate);
+          const endDate = new Date(this.endDate);
+          const createdAt = new Date(user.dt);
+          if (createdAt < startDate || createdAt > endDate) {
+            dateMatch = false;
+          }
+        }
+
+        // Filter by package
+        if (this.Package !== '' && user.type !== this.Package) {
+         
+            packageMatch = false;
+          
+        }
+        return positionMatch && dateMatch && packageMatch;
       });
     }
   }
